@@ -670,9 +670,10 @@
             <h2 style="font-size: 2.5rem; font-weight: 800; color: #2a7a4c; margin-bottom: 20px;">Подберите уход от вашего любимого бренда</h2>
         </div>
         
-        <div class="brands-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+        <!-- ИЗМЕНЕНИЕ: Используем auto-fill и увеличиваем minmax -->
+        <div class="brands-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; justify-items: center;">
             <!-- Бренд 1 - Optima -->
-            <a href="/brands/optima" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <a href="/brands/optima" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%;">
                 <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwFJEMC7o9hZ9ti5Jl55Nzpim_SoW5aO9ZAs7mxOtVxNEss0vKrKPT3e-nj7-Zd9imlw3heGuMjN-EssH3cjXf92qf6Tmq1eg7FncJmvzr202r4evfpbtm3drENElvi1uNK_DwM8dEod-3ONQZ7KXh40daULBd7ICIleSiVJEcCP0X7qn-SU-n5z1A6KnvVjm2_aehKzbOiCxIiMXM_jE0CntxtpGlMZ_l7E1fp4ufWVzxWtgkFdx7l0quKXwaAuUgVocFnONjwxHB') center/cover; transition: all 0.4s ease;"></div>
                 <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
                     <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">OPTIMA</h4>
@@ -686,7 +687,7 @@
             </a>
 
             <!-- Бренд 2 - DSD de Luxe -->
-            <a href="/brands/dsd" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <a href="/brands/dsd" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%;">
                 <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE3cffYDD6mK4fkIGJV8MXZlR29ahetP2KS1nWMwGviQpBu9ZZNP1O4s9aNsh6DBXGPSF2WapRRxObtsySEHmP0bw3v-imibIbOrY2TBHR3n-bddQ4GmBlsO8Ke67or_aXuqMz-WzNBmFAxbzWOw393CpMribqSFJCaMxsecwp2X9ax7ijtWl2qvaDQRg-3c8R-av9LS4WGSgB7-56jm9usdIDkmoVXazLgI-cQrJzjwVzPMgIjw4_lrRWz7AvfCRFuD94b5lF6rm-') center/cover; transition: all 0.4s ease;"></div>
                 <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
                     <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">DSD de Luxe</h4>
@@ -700,7 +701,7 @@
             </a>
 
             <!-- Бренд 3 - Monnali -->
-            <a href="/brands/monnali" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <a href="/brands/monnali" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%;">
                 <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCri_jJMPr53P76ljfDGFlkA7FUQHrfWg3mLB_WkGaJ5dRo2lNMbTAeN16I57GTV2_bYSFwnNhzI81i1BAn2kz5McJ3REinn24FP70ISg8bjWM1gryjnnsI4RajgxMHwXLJb1KqfVFobQ8faAgmzMrwJ7zy19U4Lv8d95EHqfnh8g2Uq33mD9R40lh2vhG_1rtpl54TIpV_bzkWEWsTh8q6LRJxve-x52DV2nRNqY0yZnNEd0SZE58XxakRtM1Yt_LG0lEzV34cpx5o') center/cover; transition: all 0.4s ease;"></div>
                 <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
                     <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">MONNALI</h4>
@@ -714,7 +715,7 @@
             </a>
 
             <!-- Бренд 4 - Fabao -->
-            <a href="/brands/fabao" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <a href="/brands/fabao" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%;">
                 <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJV6R3jrYvX1LL0_mGyKstVb9ZmsRU1mB0_TuLYejcQbbtbwEFr2JsUZHwuiomiBf7XwyQJ4Fe8gxeOz2XX4jl29ipBzqC2ZbM12Rdm3YVFf-9GzIBKDkl3iUkL4kbU7rlsj1iqwfgh_iYfwQgQPoPjo6YOGsupzCGf1bi2u8tcftDym3JREk4W0piD8klXusZ0GnikWpdwXpcaavQNbtgr_8kkpC5ieVw1veRXomCs9GNuP-IYLy6ojGWBDI9dl42BMN4zV3No4Ci') center/cover; transition: all 0.4s ease;"></div>
                 <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
                     <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">FABAO</h4>
@@ -726,19 +727,20 @@
                     </div>
                 </div>
             </a>
+
             <!-- Бренд 5 - Кудзю -->
-            <a href="/brands/fabao" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJV6R3jrYvX1LL0_mGyKstVb9ZmsRU1mB0_TuLYejcQbbtbwEFr2JsUZHwuiomiBf7XwyQJ4Fe8gxeOz2XX4jl29ipBzqC2ZbM12Rdm3YVFf-9GzIBKDkl3iUkL4kbU7rlsj1iqwfgh_iYfwQgQPoPjo6YOGsupzCGf1bi2u8tcftDym3JREk4W0piD8klXusZ0GnikWpdwXpcaavQNbtgr_8kkpC5ieVw1veRXomCs9GNuP-IYLy6ojGWBDI9dl42BMN4zV3No4Ci') center/cover; transition: all 0.4s ease;"></div>
+            <!-- <a href="/brands/kudzhu" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%;">
+                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://sdmntprukwest.oaiusercontent.com/files/00000000-b6a8-6243-84ec-77f4b4f4eb44/raw?se=2025-10-08T16%3A57%3A39Z&sp=r&sv=2024-08-04&sr=b&scid=9b783ebe-a186-56b0-aa51-6f2ab4d2197d&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-08T07%3A52%3A31Z&ske=2025-10-09T07%3A52%3A31Z&sks=b&skv=2024-08-04&sig=sd2K6/YHXyNVNSKJ%2BPOV%2BuVgQJoNzWGpKcjx54IfagU%3D') center/cover; transition: all 0.4s ease;"></div>
                 <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">Кудзю</h4>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">КУДЗЮ</h4>
                     <p style="font-size: 0.95rem; line-height: 1.5; text-align: center; margin-bottom: 20px;">
-                        натуральная косметика с экстрактами растений, подходит для чувствительной кожи головы.
+                        Натуральная косметика с экстрактами растений, подходит для чувствительной кожи головы.
                     </p>
                     <div style="text-align: center; font-weight: 600; font-size: 0.9rem;">
                         Смотреть товары →
                     </div>
                 </div>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -761,12 +763,40 @@
     .brand-tile:hover .brand-image {
         transform: scale(1.05);
     }
-    
 
-    .brands-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
+    /* Адаптивная сетка - ОБНОВЛЕНО */
+    @media (max-width: 1400px) {
+        .brands-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .brands-grid {
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .brands-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+            gap: 20px !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .brands-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .brands-grid {
+            grid-template-columns: 1fr !important;
+            max-width: 300px;
+            margin: 0 auto;
+        }
     }
 
     /* Плавные переходы */
