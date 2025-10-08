@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        body {
+            background-color: #f8fdf9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Хедер */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2a7a4c;
+        }
+        
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #2a7a4c;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #2a7a4c;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 8px 15px;
+        }
+        
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-left: 5px;
+            width: 150px;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #2a7a4c;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Квадратный блок с слайдером */
+        .square-hero {
+            margin: 40px auto;
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Слайдер */
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-1 {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .slide-2 {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .slide-3 {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        /* Контент в левом нижнем углу */
+        .hero-content {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            z-index: 10;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            max-width: 600px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            max-width: 600px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-emphasis {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            color: white;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #2a7a4c;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1f5c38;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(42, 122, 76, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #2a7a4c;
+            transform: translateY(-2px);
+        }
+        
+        .btn-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Индикаторы слайдера */
+        .slider-indicators {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .indicator.active {
+            background: white;
+        }
+
+        /* Блок "Почему выбирают нас" */
+        .advantages-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .advantages-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            color: #2a7a4c;
+            margin-bottom: 60px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #f8fdf9;
+            border-radius: 12px;
+            border-left: 4px solid #2a7a4c;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(42, 122, 76, 0.1);
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(42, 122, 76, 0.15);
+        }
+
+        .advantage-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a7a4c, #3a9d69);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .advantage-icon .material-icons {
+            font-size: 28px;
+        }
+
+        .advantage-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2a7a4c;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .advantage-content p {
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .advantages-button {
+            text-align: center;
+        }
+
+        .btn-telegram {
+            background: #2a7a4c;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(42, 122, 76, 0.3);
+        }
+
+        .btn-telegram:hover {
+            background: #1f5c38;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 122, 76, 0.4);
+        }
+
+        .btn-telegram .btn-icon {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .square-hero {
+                height: 400px;
+            }
+            
+            .hero-content {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle,
+            .hero-emphasis {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .advantages-section {
+                padding: 60px 0;
+            }
+            
+            .advantages-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .advantage-item {
+                padding: 20px;
+            }
+            
+            .advantage-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .advantage-icon .material-icons {
+                font-size: 24px;
+            }
+            
+            .advantage-content h3 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .square-hero {
+                height: 350px;
+            }
+            
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-content {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+            }
+
+            .advantages-title {
+                font-size: 1.8rem;
+            }
+            
+            .advantage-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .btn-telegram {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">H</div>
+                    <span>Название</span>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <span class="material-icons">search</span>
+                        <input type="text" placeholder="Поиск...">
+                    </div>
+                    <div class="cart-icon">
+                        <span class="material-icons">shopping_bag</span>
+                        <div class="cart-count">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Квадратный блок со слайдером -->
+        <div class="square-hero">
+            <!-- Слайдер -->
+            <div class="slider">
+                <div class="slide slide-1 active"></div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+            </div>
+            
+            <!-- Индикаторы слайдера -->
+            <div class="slider-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+            </div>
+            
+            <!-- Контент в левом нижнем углу -->
+            <div class="hero-content">
+                <h1 class="hero-title">Профессиональная лечебная косметика для восстановления, роста и защиты</h1>
+                <p class="hero-subtitle">Лечебная косметика для волос от ведущих мировых брендов: Optima, DSD, Monnali, Fabao, Кудзю и других. Средства от выпадения волос, перхоти, себореи, а также для роста и восстановления.</p>
+                <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <span class="material-icons btn-icon">local_offer</span>
+                        <span>Смотреть бренды</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span class="material-icons btn-icon">question_answer</span>
+                        <span>Задать вопрос в Telegram</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок "Почему выбирают нас" - Вариант 1 -->
+<section class="advantages-section" style="padding: 80px 0; background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);">
+    <div class="container">
+        <div style="margin-bottom: 60px;">
+            <h2 class="advantages-title" style="font-size: 2.5rem; font-weight: 800; color: #2a7a4c; margin-bottom: 20px; text-align: left;">Почему выбирают нас</h2>
+        </div>
+        
+        <div class="advantages-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px;">
+            <!-- Карточка 1 -->
+            <div class="advantage-card" style="background: white; padding: 40px 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(42, 122, 76, 0.1); transition: all 0.3s ease; border: 1px solid #f0f7f3;">
+                <div class="advantage-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2a7a4c, #3a9d69); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white;">
+                    <span class="material-icons" style="font-size: 36px;">verified</span>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: #2a7a4c; margin-bottom: 15px;">Только оригинальная сертифицированная продукция</h3>
+                <p style="color: #666; line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="advantage-card" style="background: white; padding: 40px 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(42, 122, 76, 0.1); transition: all 0.3s ease; border: 1px solid #f0f7f3;">
+                <div class="advantage-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2a7a4c, #3a9d69); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white;">
+                    <span class="material-icons" style="font-size: 36px;">local_offer</span>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: #2a7a4c; margin-bottom: 15px;">Гибкая система скидок и бонусов</h3>
+                <p style="color: #666; line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="advantage-card" style="background: white; padding: 40px 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(42, 122, 76, 0.1); transition: all 0.3s ease; border: 1px solid #f0f7f3;">
+                <div class="advantage-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2a7a4c, #3a9d69); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white;">
+                    <span class="material-icons" style="font-size: 36px;">local_shipping</span>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: #2a7a4c; margin-bottom: 15px;">Отправка по всей Беларуси</h3>
+                <p style="color: #666; line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="advantage-card" style="background: white; padding: 40px 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(42, 122, 76, 0.1); transition: all 0.3s ease; border: 1px solid #f0f7f3;">
+                <div class="advantage-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2a7a4c, #3a9d69); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white;">
+                    <span class="material-icons" style="font-size: 36px;">spa</span>
+                </div>
+                <h3 style="font-size: 1.3rem; font-weight: 700; color: #2a7a4c; margin-bottom: 15px;">Более ?? брендов профессиональной косметики</h3>
+                <p style="color: #666; line-height: 1.6;">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            </div>
+        </div>
+
+        <!-- Telegram блок -->
+        <div class="telegram-cta" style="background: linear-gradient(135deg, #2a7a4c, #3a9d69); padding: 50px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 15px 35px rgba(42, 122, 76, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="text-align: left; max-width: 400px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">Онлайн-чат в Telegram</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 0;">Задавайте любые вопросы — наши специалисты помогут с выбором</p>
+                </div>
+                <button class="btn-telegram" style="background: white; color: #2a7a4c; padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; border: none; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    <span class="material-icons" style="font-size: 1.3rem;">telegram</span>
+                    <span>Перейти в чат</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Слайдер
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            // Функция для переключения слайда
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                indicators[currentSlide].classList.remove('active');
+                
+                currentSlide = (n + slideCount) % slideCount;
+                
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+            }
+            
+            // Автоматическое переключение слайдов
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            // Запуск автоматического слайдера
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Обработчики для индикаторов
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    clearInterval(slideInterval);
+                    goToSlide(index);
+                    // Перезапускаем автоматическое переключение
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+            
+            // Остановка слайдера при наведении
+            const sliderContainer = document.querySelector('.square-hero');
+            sliderContainer.addEventListener('mouseenter', function() {
+                clearInterval(slideInterval);
+            });
+            
+            // Возобновление слайдера при уходе курсора
+            sliderContainer.addEventListener('mouseleave', function() {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+    </script>
+
+
+
+
+
+
+<!-- Блок с брендами - С реальными картинками -->
+<section class="brands-section" style="padding: 80px 0; background: white;">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; color: #2a7a4c; margin-bottom: 20px;">Подберите уход от вашего любимого бренда</h2>
+        </div>
+        
+        <div class="brands-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+            <!-- Бренд 1 - Optima -->
+            <a href="/brands/optima" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwFJEMC7o9hZ9ti5Jl55Nzpim_SoW5aO9ZAs7mxOtVxNEss0vKrKPT3e-nj7-Zd9imlw3heGuMjN-EssH3cjXf92qf6Tmq1eg7FncJmvzr202r4evfpbtm3drENElvi1uNK_DwM8dEod-3ONQZ7KXh40daULBd7ICIleSiVJEcCP0X7qn-SU-n5z1A6KnvVjm2_aehKzbOiCxIiMXM_jE0CntxtpGlMZ_l7E1fp4ufWVzxWtgkFdx7l0quKXwaAuUgVocFnONjwxHB') center/cover; transition: all 0.4s ease;"></div>
+                <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">OPTIMA</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; text-align: center; margin-bottom: 20px;">
+                        Широкий ассортимент средств для всех типов волос: для восстановления, объёма, окрашенных и жирных волос.
+                    </p>
+                    <div style="text-align: center; font-weight: 600; font-size: 0.9rem;">
+                        Смотреть товары →
+                    </div>
+                </div>
+            </a>
+
+            <!-- Бренд 2 - DSD de Luxe -->
+            <a href="/brands/dsd" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE3cffYDD6mK4fkIGJV8MXZlR29ahetP2KS1nWMwGviQpBu9ZZNP1O4s9aNsh6DBXGPSF2WapRRxObtsySEHmP0bw3v-imibIbOrY2TBHR3n-bddQ4GmBlsO8Ke67or_aXuqMz-WzNBmFAxbzWOw393CpMribqSFJCaMxsecwp2X9ax7ijtWl2qvaDQRg-3c8R-av9LS4WGSgB7-56jm9usdIDkmoVXazLgI-cQrJzjwVzPMgIjw4_lrRWz7AvfCRFuD94b5lF6rm-') center/cover; transition: all 0.4s ease;"></div>
+                <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">DSD de Luxe</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; text-align: center; margin-bottom: 20px;">
+                        Профессиональная трихологическая косметика против выпадения, себореи и для стимуляции роста.
+                    </p>
+                    <div style="text-align: center; font-weight: 600; font-size: 0.9rem;">
+                        Смотреть товары →
+                    </div>
+                </div>
+            </a>
+
+            <!-- Бренд 3 - Monnali -->
+            <a href="/brands/monnali" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCri_jJMPr53P76ljfDGFlkA7FUQHrfWg3mLB_WkGaJ5dRo2lNMbTAeN16I57GTV2_bYSFwnNhzI81i1BAn2kz5McJ3REinn24FP70ISg8bjWM1gryjnnsI4RajgxMHwXLJb1KqfVFobQ8faAgmzMrwJ7zy19U4Lv8d95EHqfnh8g2Uq33mD9R40lh2vhG_1rtpl54TIpV_bzkWEWsTh8q6LRJxve-x52DV2nRNqY0yZnNEd0SZE58XxakRtM1Yt_LG0lEzV34cpx5o') center/cover; transition: all 0.4s ease;"></div>
+                <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">MONNALI</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; text-align: center; margin-bottom: 20px;">
+                        Японский уход премиум-класса для восстановления и роста волос.
+                    </p>
+                    <div style="text-align: center; font-weight: 600; font-size: 0.9rem;">
+                        Смотреть товары →
+                    </div>
+                </div>
+            </a>
+
+            <!-- Бренд 4 - Fabao -->
+            <a href="/brands/fabao" class="brand-tile" style="display: block; position: relative; aspect-ratio: 1; border-radius: 16px; overflow: hidden; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div class="brand-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJV6R3jrYvX1LL0_mGyKstVb9ZmsRU1mB0_TuLYejcQbbtbwEFr2JsUZHwuiomiBf7XwyQJ4Fe8gxeOz2XX4jl29ipBzqC2ZbM12Rdm3YVFf-9GzIBKDkl3iUkL4kbU7rlsj1iqwfgh_iYfwQgQPoPjo6YOGsupzCGf1bi2u8tcftDym3JREk4W0piD8klXusZ0GnikWpdwXpcaavQNbtgr_8kkpC5ieVw1veRXomCs9GNuP-IYLy6ojGWBDI9dl42BMN4zV3No4Ci') center/cover; transition: all 0.4s ease;"></div>
+                <div class="brand-info" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(42, 122, 76, 0.95); padding: 30px; display: flex; flex-direction: column; justify-content: center; opacity: 0; transition: all 0.4s ease; color: white;">
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; text-align: center;">FABAO</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.5; text-align: center; margin-bottom: 20px;">
+                        Терапевтические средства для лечения кожи головы и активизации роста.
+                    </p>
+                    <div style="text-align: center; font-weight: 600; font-size: 0.9rem;">
+                        Смотреть товары →
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Анимации для брендов */
+    .brand-tile {
+        transition: all 0.4s ease;
+    }
+
+    .brand-tile:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+    }
+
+    .brand-tile:hover .brand-info {
+        opacity: 1;
+    }
+
+    .brand-tile:hover .brand-image {
+        transform: scale(1.05);
+    }
+
+    /* Адаптивность для десктопа */
+    @media (max-width: 1400px) {
+        .brands-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .brands-grid {
+            grid-template-columns: 1fr !important;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    /* Плавные переходы */
+    .brand-tile,
+    .brand-image,
+    .brand-info {
+        transition: all 0.4s ease;
+    }
+</style>
+
+<script>
+    // Интерактивность для брендов
+    document.addEventListener('DOMContentLoaded', function() {
+        const brandTiles = document.querySelectorAll('.brand-tile');
+        
+        brandTiles.forEach(tile => {
+            tile.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
+                
+                const image = this.querySelector('.brand-image');
+                const info = this.querySelector('.brand-info');
+                
+                if (image) image.style.transform = 'scale(1.05)';
+                if (info) info.style.opacity = '1';
+            });
+            
+            tile.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+                
+                const image = this.querySelector('.brand-image');
+                const info = this.querySelector('.brand-info');
+                
+                if (image) image.style.transform = 'scale(1)';
+                if (info) info.style.opacity = '0';
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
