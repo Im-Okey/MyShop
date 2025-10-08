@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HairCare | Профессиональный уход за волосами</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a7a4c;
+            --primary-light: #3a9d69;
+            --primary-dark: #1f5c38;
+            --accent: #ff6b6b;
+            --soft-bg: #f8fdf9;
+            --warm-white: #fefefe;
+            --text: #2d3748;
+            --text-light: #718096;
+            --shadow-soft: 0 8px 32px rgba(42, 122, 76, 0.08);
+            --shadow-medium: 0 12px 40px rgba(42, 122, 76, 0.12);
+            --border-radius: 24px;
+            --border-radius-small: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fdf9 0%, #f0f7f3 100%);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Декоративные элементы */
+        .organic-shape {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(42, 122, 76, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .shape-1 { top: 10%; left: -150px; }
+        .shape-2 { bottom: 20%; right: -100px; width: 400px; height: 400px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Хедер с стеклянным эффектом */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(42, 122, 76, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: var(--shadow-soft);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--soft-bg);
+            border-radius: 50px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 122, 76, 0.1);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            margin-left: 8px;
+            width: 140px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            background: var(--soft-bg);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Герой-секция с органичным дизайном */
+        .hero-section {
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(42, 122, 76, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(42, 122, 76, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .hero-emphasis {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 40px;
+            padding: 16px 24px;
+            background: rgba(42, 122, 76, 0.05);
+            border-radius: var(--border-radius-small);
+            border-left: 4px solid var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius-small);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 20px;
+            right: 20px;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            bottom: 60px;
+            left: 20px;
+            animation-delay: 2s;
+        }
+
+        .floating-card:nth-child(3) {
+            bottom: 20px;
+            right: 60px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Секция брендов */
+        .brands-section {
+            padding: 80px 0;
+            background: var(--warm-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .brand-card {
+            background: var(--warm-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            border: 1px solid rgba(42, 122, 76, 0.1);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .brand-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .brand-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 122, 76, 0.9), rgba(58, 157, 105, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            transition: all 0.4s ease;
+            color: white;
+            text-align: center;
+        }
+
+        .brand-card:hover .brand-overlay {
+            opacity: 1;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .brand-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .brand-link {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-info {
+            padding: 24px;
+        }
+
+        .brand-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .brand-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background: rgba(42, 122, 76, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Секция преимуществ */
+        .advantages-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fdf9 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .advantage-card {
+            background: var(--warm-white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(42, 122, 76, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .advantage-card:hover .advantage-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .advantage-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .advantage-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA секция */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="rgba(255,255,255,0.05)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z"/></svg>');
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--primary);
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(135deg, #1a5a3c, var(--primary-dark));
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text {
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+            }
+            
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                margin: 40px 10px;
+                padding: 60px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Декоративные элементы -->
+    <div class="organic-shape shape-1"></div>
+    <div class="organic-shape shape-2"></div>
+
+    <!-- Хедер -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">H</div>
+                    <span>HairCare</span>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <span class="material-icons">search</span>
+                        <input type="text" placeholder="Поиск...">
+                    </div>
+                    <div class="cart-icon">
+                        <span class="material-icons">shopping_bag</span>
+                        <div class="cart-count">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">Профессиональный уход</div>
+                    <h1 class="hero-title">Здоровые волосы начинаются здесь</h1>
+                    <p class="hero-subtitle">Откройте мир профессиональной косметики для волос от ведущих брендов. Решаем проблемы, а не просто продаем средства.</p>
+                    <div class="hero-emphasis">Индивидуальный подбор средств с учетом особенностей ваших волос</div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span class="material-icons btn-icon">spa</span>
+                            <span>Подобрать уход</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="material-icons btn-icon">chat</span>
+                            <span>Консультация</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image"></div>
+                    <div class="floating-card">
+                        <div class="material-icons" style="color: var(--primary);">verified</div>
+                        <div>Сертифицированная продукция</div>
+                    </div>
+                    <div class="floating-card">
+                        <div class="material-icons" style="color: var(--primary);">local_shipping</div>
+                        <div>Быстрая доставка</div>
+                    </div>
+                    <div class="floating-card">
+                        <div class="material-icons" style="color: var(--primary);">support_agent</div>
+                        <div>Поддержка 24/7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция брендов -->
+    <section class="brands-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Познакомьтесь с нашими брендами</h2>
+                <p class="section-subtitle">Только проверенная профессиональная косметика от мировых лидеров</p>
+            </div>
+            
+            <div class="brands-grid">
+                <!-- Бренд 1 -->
+                <div class="brand-card">
+                    <div class="brand-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwFJEMC7o9hZ9ti5Jl55Nzpim_SoW5aO9ZAs7mxOtVxNEss0vKrKPT3e-nj7-Zd9imlw3heGuMjN-EssH3cjXf92qf6Tmq1eg7FncJmvzr202r4evfpbtm3drENElvi1uNK_DwM8dEod-3ONQZ7KXh40daULBd7ICIleSiVJEcCP0X7qn-SU-n5z1A6KnvVjm2_aehKzbOiCxIiMXM_jE0CntxtpGlMZ_l7E1fp4ufWVzxWtgkFdx7l0quKXwaAuUgVocFnONjwxHB')"></div>
+                    <div class="brand-overlay">
+                        <h4 class="brand-name">OPTIMA</h4>
+                        <p class="brand-description">Широкий ассортимент средств для всех типов волос</p>
+                        <a href="#" class="brand-link">
+                            <span>Смотреть товары</span>
+                            <span class="material-icons" style="font-size: 16px;">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="brand-info">
+                        <h3 class="brand-title">OPTIMA</h3>
+                        <p>Для восстановления, объема и ухода за окрашенными волосами</p>
+                        <div class="brand-tags">
+                            <span class="tag">Восстановление</span>
+                            <span class="tag">Объем</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Бренд 2 -->
+                <div class="brand-card">
+                    <div class="brand-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBE3cffYDD6mK4fkIGJV8MXZlR29ahetP2KS1nWMwGviQpBu9ZZNP1O4s9aNsh6DBXGPSF2WapRRxObtsySEHmP0bw3v-imibIbOrY2TBHR3n-bddQ4GmBlsO8Ke67or_aXuqMz-WzNBmFAxbzWOw393CpMribqSFJCaMxsecwp2X9ax7ijtWl2qvaDQRg-3c8R-av9LS4WGSgB7-56jm9usdIDkmoVXazLgI-cQrJzjwVzPMgIjw4_lrRWz7AvfCRFuD94b5lF6rm-')"></div>
+                    <div class="brand-overlay">
+                        <h4 class="brand-name">DSD de Luxe</h4>
+                        <p class="brand-description">Профессиональная трихологическая косметика</p>
+                        <a href="#" class="brand-link">
+                            <span>Смотреть товары</span>
+                            <span class="material-icons" style="font-size: 16px;">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="brand-info">
+                        <h3 class="brand-title">DSD de Luxe</h3>
+                        <p>Против выпадения, себореи и для стимуляции роста</p>
+                        <div class="brand-tags">
+                            <span class="tag">Рост</span>
+                            <span class="tag">Лечение</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Бренд 3 -->
+                <div class="brand-card">
+                    <div class="brand-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCri_jJMPr53P76ljfDGFlkA7FUQHrfWg3mLB_WkGaJ5dRo2lNMbTAeN16I57GTV2_bYSFwnNhzI81i1BAn2kz5McJ3REinn24FP70ISg8bjWM1gryjnnsI4RajgxMHwXLJb1KqfVFobQ8faAgmzMrwJ7zy19U4Lv8d95EHqfnh8g2Uq33mD9R40lh2vhG_1rtpl54TIpV_bzkWEWsTh8q6LRJxve-x52DV2nRNqY0yZnNEd0SZE58XxakRtM1Yt_LG0lEzV34cpx5o')"></div>
+                    <div class="brand-overlay">
+                        <h4 class="brand-name">MONNALI</h4>
+                        <p class="brand-description">Японский уход премиум-класса</p>
+                        <a href="#" class="brand-link">
+                            <span>Смотреть товары</span>
+                            <span class="material-icons" style="font-size: 16px;">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="brand-info">
+                        <h3 class="brand-title">MONNALI</h3>
+                        <p>Для восстановления и роста волос</p>
+                        <div class="brand-tags">
+                            <span class="tag">Премиум</span>
+                            <span class="tag">Восстановление</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция преимуществ -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Почему доверяют нам</h2>
+                <p class="section-subtitle">Мы заботимся о каждой детали, чтобы вы получали лучшее</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">verified</span>
+                    </div>
+                    <h3 class="advantage-title">Только оригинальная продукция</h3>
+                    <p class="advantage-description">Все товары сертифицированы и имеют гарантию качества от производителей</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">support_agent</span>
+                    </div>
+                    <h3 class="advantage-title">Профессиональная консультация</h3>
+                    <p class="advantage-description">Наши специалисты помогут подобрать оптимальный уход для вашего типа волос</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">local_shipping</span>
+                    </div>
+                    <h3 class="advantage-title">Быстрая доставка</h3>
+                    <p class="advantage-description">Отправляем заказы в день оформления по всей Беларуси</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">loyalty</span>
+                    </div>
+                    <h3 class="advantage-title">Программа лояльности</h3>
+                    <p class="advantage-description">Накопительные скидки и специальные предложения для постоянных клиентов</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">spa</span>
+                    </div>
+                    <h3 class="advantage-title">Широкий ассортимент</h3>
+                    <p class="advantage-description">Более 20 брендов профессиональной косметики для любого типа волос</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <span class="material-icons" style="font-size: 36px;">security</span>
+                    </div>
+                    <h3 class="advantage-title">Гарантия результата</h3>
+                    <p class="advantage-description">Мы уверены в эффективности нашей продукции и предлагаем гарантию возврата</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Готовы начать уход за волосами?</h2>
+                <p class="cta-description">Получите бесплатную консультацию и подбор средств от нашего специалиста</p>
+                <button class="btn btn-cta">
+                    <span class="material-icons btn-icon">chat</span>
+                    <span>Получить консультацию</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>HairCare</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Профессиональный уход за волосами с любовью к каждой прядке</p>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="#" style="color: white;"><span class="material-icons">telegram</span></a>
+                        <a href="#" style="color: white;"><span class="material-icons">instagram</span></a>
+                        <a href="#" style="color: white;"><span class="material-icons">facebook</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Каталог</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Шампуни</a></li>
+                        <li><a href="#">Маски</a></li>
+                        <li><a href="#">Сыворотки</a></li>
+                        <li><a href="#">Масла</a></li>
+                        <li><a href="#">Стайлинг</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Помощь</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Вопросы и ответы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Блог</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+375291234567">+375 (29) 123-45-67</a></li>
+                        <li><a href="mailto:info@haircare.by">info@haircare.by</a></li>
+                        <li>Беларусь, доставка по всей стране</li>
+                        <li>Пн-Пт: 9:00-20:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 HairCare. С любовью к вашим волосам 💚</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для якорей
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за карточками
+        document.querySelectorAll('.brand-card, .advantage-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Изменение хедера при скролле
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Микро-анимация для логотипа
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('mouseenter', () => {
+            logo.style.transform = 'scale(1.05)';
+        });
+        logo.addEventListener('mouseleave', () => {
+            logo.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
