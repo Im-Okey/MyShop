@@ -127,303 +127,350 @@
 
 
 <body>
-    <!-- Хедер -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">H</div>
-                    <span>Название</span>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">H</div>
+                <span>Название</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <span class="material-icons">search</span>
+                    <input type="text" placeholder="Поиск...">
                 </div>
                 
-                <nav>
-                    <ul>
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">О компании</a></li>
-                    </ul>
-                </nav>
+                <!-- Компактный переключатель тем -->
+                <div class="theme-switcher-compact">
+                    <button class="theme-trigger">
+                        <span class="material-icons">palette</span>
+                    </button>
+                    <div class="theme-dropdown">
+                        <div class="theme-options">
+                            <button class="theme-option active" data-theme="classic" title="Классика">
+                                <div class="theme-preview classic"></div>
+                            </button>
+                            <button class="theme-option" data-theme="fresh" title="Свежая">
+                                <div class="theme-preview fresh"></div>
+                            </button>
+                            <button class="theme-option" data-theme="olive" title="Оливковая">
+                                <div class="theme-preview olive"></div>
+                            </button>
+                            <button class="theme-option" data-theme="turquoise" title="Бирюза">
+                                <div class="theme-preview turquoise"></div>
+                            </button>
+                            <button class="theme-option" data-theme="pistachio" title="Фисташка">
+                                <div class="theme-preview pistachio"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="header-actions">
-                    <div class="search-box">
-                        <span class="material-icons">search</span>
-                        <input type="text" placeholder="Поиск...">
-                    </div>
-                    <div class="cart-icon">
-                        <span class="material-icons">shopping_bag</span>
-                        <div class="cart-count">3</div>
-                    </div>
+                <div class="cart-icon">
+                    <span class="material-icons">shopping_bag</span>
+                    <div class="cart-count">3</div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <style>
-        /* ===== СТИЛИ ХЕДЕРА ===== */
-        header {
-            background-color: var(--bg-secondary);
-            box-shadow: var(--shadow-light);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-white);
-            font-weight: bold;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 0;
-            position: relative;
-        }
-        
-        nav a:hover {
-            color: var(--primary-color);
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .search-box {
-            display: flex;
-            align-items: center;
-            background: var(--bg-light);
-            border-radius: 20px;
-            padding: 8px 15px;
-            transition: var(--transition);
-        }
-        
-        .search-box:focus-within {
-            background: var(--bg-secondary);
-            box-shadow: 0 0 0 2px var(--primary-light);
-        }
-        
-        .search-box input {
-            border: none;
-            background: transparent;
-            outline: none;
-            margin-left: 5px;
-            width: 150px;
-            color: var(--text-primary);
-        }
-        
-        .search-box input::placeholder {
-            color: var(--text-light);
-        }
-        
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-        
-        .cart-icon:hover {
-            background: var(--bg-light);
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: var(--primary-color);
-            color: var(--text-white);
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
+/* ===== СТИЛИ ХЕДЕРА ===== */
+header {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        /* ===== АДАПТИВНОСТЬ ХЕДЕРА ===== */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px 0;
-            }
-            
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .search-box input {
-                width: 120px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header-content {
-                padding: 15px 0;
-            }
-            
-            nav ul {
-                gap: 10px;
-            }
-            
-            nav a {
-                font-size: 0.9rem;
-            }
-            
-            .search-box {
-                padding: 6px 12px;
-            }
-            
-            .search-box input {
-                width: 100px;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .logo-icon {
-                width: 25px;
-                height: 25px;
-            }
-        }
-    </style>
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
 
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-weight: bold;
+}
 
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
 
-<!-- Переключатель цветовых схем -->
-<div class="theme-switcher">
-    <div class="theme-buttons">
-        <button class="theme-btn active" data-theme="classic">🌿 Классика</button>
-        <button class="theme-btn" data-theme="fresh">🍃 Свежая</button>
-        <button class="theme-btn" data-theme="olive">🫒 Оливковая</button>
-        <button class="theme-btn" data-theme="turquoise">🌊 Бирюза</button>
-        <button class="theme-btn" data-theme="pistachio">🌰 Фисташка</button>
-    </div>
-    <div class="theme-info">
-        <span>Выберите цветовую схему</span>
-    </div>
-</div>
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 8px 0;
+    position: relative;
+}
 
-<style>
-    .theme-switcher {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: var(--bg-secondary);
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: var(--shadow-heavy);
-        border: 1px solid var(--border-medium);
-        max-width: 280px;
+nav a:hover {
+    color: var(--primary-color);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-light);
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: var(--transition);
+}
+
+.search-box:focus-within {
+    background: var(--bg-secondary);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    margin-left: 5px;
+    width: 150px;
+    color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+    color: var(--text-light);
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.cart-icon:hover {
+    background: var(--bg-light);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* ===== КОМПАКТНЫЙ ПЕРЕКЛЮЧАТЕЛЬ ТЕМ ===== */
+.theme-switcher-compact {
+    position: relative;
+}
+
+.theme-trigger {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-trigger:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-heavy);
+    padding: 15px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-medium);
+    z-index: 1000;
+}
+
+.theme-switcher-compact:hover .theme-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.theme-option {
+    background: none;
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-option:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+.theme-option.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.theme-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.theme-preview.classic { background: #2a7a4c; }
+.theme-preview.fresh { background: #93c572; }
+.theme-preview.olive { background: #556b2f; }
+.theme-preview.turquoise { background: #2c7a78; }
+.theme-preview.pistachio { background: #689550; }
+
+/* ===== АДАПТИВНОСТЬ ХЕДЕРА ===== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
     }
-
-    .theme-buttons {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin-bottom: 10px;
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .theme-btn {
-        padding: 10px 15px;
-        border: 1px solid var(--border-medium);
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        border-radius: 8px;
-        font-size: 0.85rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: left;
+    
+    .search-box input {
+        width: 120px;
     }
-
-    .theme-btn:hover {
-        background: var(--primary-light);
-        color: var(--text-white);
-        transform: translateY(-1px);
+    
+    .theme-dropdown {
+        right: -50px;
     }
+}
 
-    .theme-btn.active {
-        background: var(--primary-color);
-        color: var(--text-white);
-        border-color: var(--primary-color);
+@media (max-width: 480px) {
+    .header-content {
+        padding: 15px 0;
     }
+    
+    nav ul {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+    }
+    
+    .search-box {
+        padding: 6px 12px;
+    }
+    
+    .search-box input {
+        width: 100px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .theme-options {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+    
+    .theme-preview {
+        width: 20px;
+        height: 20px;
+    }
+}
 
-    .theme-info {
-        text-align: center;
-        font-size: 0.8rem;
-        color: var(--text-secondary);
-    }
-
-    @media (max-width: 768px) {
-        .theme-switcher {
-            top: 10px;
-            right: 10px;
-            max-width: 250px;
-        }
-        
-        .theme-btn {
-            font-size: 0.8rem;
-            padding: 8px 12px;
-        }
-    }
+/* Убираем старый переключатель тем */
+.theme-switcher {
+    display: none;
+}
 </style>
 
 <script>
@@ -491,14 +538,14 @@
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-        const themeButtons = document.querySelectorAll('.theme-btn');
+        const themeOptions = document.querySelectorAll('.theme-option');
         const root = document.documentElement;
 
-        themeButtons.forEach(button => {
-            button.addEventListener('click', function() {
+        themeOptions.forEach(option => {
+            option.addEventListener('click', function() {
                 const themeName = this.dataset.theme;
                 
-                themeButtons.forEach(btn => btn.classList.remove('active'));
+                themeOptions.forEach(opt => opt.classList.remove('active'));
                 this.classList.add('active');
                 
                 applyTheme(themeName);
@@ -514,9 +561,9 @@
         }
 
         const savedTheme = localStorage.getItem('selectedTheme') || 'classic';
-        const savedButton = document.querySelector(`[data-theme="${savedTheme}"]`);
-        if (savedButton) {
-            savedButton.click();
+        const savedOption = document.querySelector(`[data-theme="${savedTheme}"]`);
+        if (savedOption) {
+            savedOption.click();
         }
     });
 </script>
@@ -548,226 +595,406 @@
 
 
 
-
-  <!-- Квадратный блок со слайдером -->
-    <div class="container">
-        <div class="square-hero">
-            <!-- Слайдер -->
-            <div class="slider">
-                <div class="slide slide-1 active"></div>
-                <div class="slide slide-2"></div>
-                <div class="slide slide-3"></div>
-            </div>
-            
-            <!-- Индикаторы слайдера -->
-            <div class="slider-indicators">
-                <div class="indicator active" data-slide="0"></div>
-                <div class="indicator" data-slide="1"></div>
-                <div class="indicator" data-slide="2"></div>
-            </div>
-            
-            <!-- Контент в левом нижнем углу -->
-            <div class="hero-content">
-                <h1 class="hero-title">Профессиональная лечебная косметика для здоровья ваших волос</h1>
-                <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
-                <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <span class="material-icons btn-icon">local_offer</span>
-                        <span>Смотреть бренды</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <span class="material-icons btn-icon">question_answer</span>
-                        <span>Задать вопрос в Telegram</span>
-                    </button>
+ <!-- Полноэкранный слайдер -->
+<div class="fullscreen-slider">
+    <!-- Слайды -->
+    <div class="slide slide-1 active">
+        <div class="slide-content">
+            <div class="container">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Профессиональная лечебная косметика для здоровья ваших волос</h1>
+                    <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
+                    <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span class="material-icons btn-icon">local_offer</span>
+                            <span>Смотреть бренды</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="material-icons btn-icon">question_answer</span>
+                            <span>Задать вопрос в Telegram</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div class="slide slide-2">
+        <div class="slide-content">
+            <div class="container">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Профессиональная лечебная косметика для здоровья ваших волос</h1>
+                    <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
+                    <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span class="material-icons btn-icon">local_offer</span>
+                            <span>Смотреть бренды</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="material-icons btn-icon">question_answer</span>
+                            <span>Задать вопрос в Telegram</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide slide-3">
+        <div class="slide-content">
+            <div class="container">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Профессиональная лечебная косметика для здоровья ваших волос</h1>
+                    <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
+                    <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span class="material-icons btn-icon">local_offer</span>
+                            <span>Смотреть бренды</span>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span class="material-icons btn-icon">question_answer</span>
+                            <span>Задать вопрос в Telegram</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Индикаторы -->
+    <div class="slider-indicators">
+        <div class="indicator active" data-slide="0"></div>
+        <div class="indicator" data-slide="1"></div>
+        <div class="indicator" data-slide="2"></div>
+    </div>
+</div>
 
-    <style>
-        /* ===== СТИЛИ ГЕРОЙ-СЛАЙДЕРА ===== */
-        .square-hero {
-            margin: 40px auto;
-            width: 100%;
-            height: 600px;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .slide.active {
-            opacity: 1;
-        }
-        
-        .slide-1 {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                             url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-        }
-        
-        .slide-2 {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                             url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-        }
-        
-        .slide-3 {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                             url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-        }
-        
-        .hero-content {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px;
-            z-index: 10;
-            color: var(--text-white);
-        }
-        
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            max-width: 600px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 1.2rem;
-            max-width: 600px;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .hero-emphasis {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1.8rem;
-            color: var(--text-white);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
+<style>
+/* ===== ПОЛНОЭКРАННЫЙ СЛАЙДЕР ===== */
+.fullscreen-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 800px;
+    overflow: hidden;
+}
 
-        
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .slider-indicators {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .indicator.active {
-            background: var(--text-white);
-            transform: scale(1.2);
-        }
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; /* Оставляем центрирование по вертикали */
+}
 
-        /* ===== АДАПТИВНОСТЬ ГЕРОЙ-СЛАЙДЕРА ===== */
-        @media (max-width: 1024px) {
-            .square-hero {
-                height: 500px;
-            }
-            
-            .hero-title {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .square-hero {
-                height: 400px;
-                margin: 20px auto;
-            }
-            
-            .hero-content {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-            }
-            
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-subtitle,
-            .hero-emphasis {
-                font-size: 1rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .square-hero {
-                height: 350px;
-            }
-            
-            .hero-title {
-                font-size: 1.6rem;
-            }
-            
-            .hero-content {
-                bottom: 15px;
-                left: 15px;
-                right: 15px;
-            }
-            
-            .slider-indicators {
-                bottom: 10px;
-                right: 10px;
-            }
-        }
+.slide.active {
+    opacity: 1;
+}
 
+.slide-1 {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                     url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+.slide-2 {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                     url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+.slide-3 {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                     url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+.slide-content {
+    width: 100%;
+    color: var(--text-white);
+}
+
+.hero-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Добавляем отступ сверху ТОЛЬКО для десктопа */
+@media (min-width: 1025px) {
+    .slide-content {
+        padding-top: 200px; /* Только на больших экранах */
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    max-width: 1000px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-emphasis {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+    padding-left: 20px;
+    max-width: 800px;
+}
+
+.hero-emphasis::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Индикаторы */
+.slider-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.indicator.active {
+    background: var(--text-white);
+    transform: scale(1.2);
+    border-color: var(--accent-color);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1400px) {
+    .hero-content-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-title {
+        max-width: 900px;
+        font-size: 3.2rem;
+    }
+    
+    .hero-subtitle,
+    .hero-emphasis {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .fullscreen-slider {
+        max-height: 700px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+        max-width: 800px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 600px;
+    }
+    
+    /* На планшетах убираем верхний отступ или делаем меньше */
+    .slide-content {
+        padding-top: 60px; /* Меньший отступ на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .fullscreen-slider {
+        max-height: 600px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        max-width: 100%;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    
+    .hero-emphasis {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .slider-indicators {
+        bottom: 20px;
+    }
+    
+    .hero-content-wrapper {
+        padding: 0 20px;
+    }
+    
+    /* На мобильных убираем верхний отступ полностью */
+    .slide-content {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .fullscreen-slider {
+        max-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-emphasis {
+        font-size: 1rem;
+    }
+    
+    .hero-content-wrapper {
+        padding: 0 15px;
+    }
+    
+    .slider-indicators {
+        gap: 10px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Анимация появления контента */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide.active .hero-content-wrapper > * {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.slide.active .hero-title {
+    animation-delay: 0.2s;
+}
+
+.slide.active .hero-subtitle {
+    animation-delay: 0.4s;
+}
+
+.slide.active .hero-emphasis {
+    animation-delay: 0.6s;
+}
+
+.slide.active .hero-buttons {
+    animation-delay: 0.8s;
+}
+
+.slide.active .hero-content-wrapper > * {
+    opacity: 0;
+}
+</style>
+
+<script>
+// Базовый JavaScript для слайдера
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        // Скрываем все слайды
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
         
-    </style>
+        // Показываем нужный слайд
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+    
+    function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) next = 0;
+        showSlide(next);
+    }
+    
+    // Обработчики событий для индикаторов
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', function() {
+            showSlide(parseInt(this.dataset.slide));
+        });
+    });
+    
+    // Автопереключение каждые 5 секунд
+    setInterval(nextSlide, 5000);
+});
+</script>
 
 
 
