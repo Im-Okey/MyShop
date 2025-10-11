@@ -1095,7 +1095,6 @@ header {
 .indicator.active {
     background: var(--text-white);
     transform: scale(1.2);
-    border-color: var(--accent-color);
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
@@ -2937,685 +2936,568 @@ header {
 
 
 
-    <!-- Блок Акции и скидки -->
-    <section class="promotions-section">
-        <div class="container">
-            <!-- Заголовок -->
-            <div class="promotions-header">
-                <h2>Специальные предложения</h2>
-                <p>Эксклюзивные условия для вашей красоты</p>
-            </div>
 
-            <!-- Карусель акций -->
-            <div class="promotions-carousel">
-                <!-- Контейнер слайдов -->
-                <div class="carousel-container">
-                    <!-- Слайд 1 - Новинки -->
-                    <div class="carousel-slide active" data-slide="0">
-                        <div class="slide-content">
-                            <div class="text-content">
-                                <span class="promo-badge">НОВАЯ КОЛЛЕКЦИЯ</span>
-                                <h3>Monnali<br>Японский шелк</h3>
-                                <div class="divider"></div>
-                                <p>Эксклюзивная формула с экстрактом японского шелка для мгновенного преображения волос</p>
-                                <button class="btn-promo">
-                                    <span>Исследовать коллекцию</span>
-                                    <span class="material-icons">arrow_forward</span>
-                                </button>
-                            </div>
-                            <div class="image-content">
-                                <div class="promo-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCri_jJMPr53P76ljfDGFlkA7FUQHrfWg3mLB_WkGaJ5dRo2lNMbTAeN16I57GTV2_bYSFwnNhzI81i1BAn2kz5McJ3REinn24FP70ISg8bjWM1gryjnnsI4RajgxMHwXLJb1KqfVFobQ8faAgmzMrwJ7zy19U4Lv8d95EHqfnh8g2Uq33mD9R40lh2vhG_1rtpl54TIpV_bzkWEWsTh8q6LRJxve-x52DV2nRNqY0yZnNEd0SZE58XxakRtM1Yt_LG0lEzV34cpx5o')"></div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Слайд 2 - Скидки -->
-                    <div class="carousel-slide" data-slide="1">
-                        <div class="slide-content">
-                            <div class="text-content dark-bg">
-                                <span class="promo-badge light">РАСПРОДАЖА</span>
-                                <h3>DSD de Luxe<br>Скидка 25%</h3>
-                                <div class="divider light"></div>
-                                <p>Профессиональная косметика премиум-класса со скидкой 25% на всю линейку</p>
-                                <div class="promo-stats">
-                                    <div class="stat">
-                                        <div class="stat-value">25%</div>
-                                        <div class="stat-label">СКИДКА</div>
-                                    </div>
-                                    <div class="stat">
-                                        <div class="stat-value">7</div>
-                                        <div class="stat-label">ДНЕЙ</div>
-                                    </div>
-                                    <div class="stat">
-                                        <div class="stat-value">50+</div>
-                                        <div class="stat-label">ТОВАРОВ</div>
-                                    </div>
-                                </div>
-                                <button class="btn-promo light">
-                                    <span>Смотреть товары</span>
-                                    <span class="material-icons">arrow_forward</span>
-                                </button>
-                            </div>
-                            <div class="image-content light-bg">
-                                <div class="promo-simple">
-                                    <div class="promo-icon">⚡</div>
-                                    <div class="promo-brand">DSD de Luxe</div>
-                                    <div class="promo-discount">-25%</div>
-                                    <div class="promo-text">на всю коллекцию</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Слайд 3 - Наборы -->
-                    <div class="carousel-slide" data-slide="2">
-                        <div class="slide-content">
-                            <div class="text-content">
-                                <span class="promo-badge accent">ВЫГОДНЫЕ НАБОРЫ</span>
-                                <h3>Готовые решения<br>до -35%</h3>
-                                <div class="divider accent"  style="margin-top: -30px;"></div>
-                                <p >Комплексные наборы для полноценного ухода с максимальной экономией</p>
-                                <div class="discount-grid"  style="margin-top: -30px;">
-                                    <div class="discount-item">
-                                        <div class="discount-value">-25%</div>
-                                        <div class="discount-label">Увлажнение</div>
-                                    </div>
-                                    <div class="discount-item">
-                                        <div class="discount-value">-30%</div>
-                                        <div class="discount-label">Для роста</div>
-                                    </div>
-                                    <div class="discount-item">
-                                        <div class="discount-value">-35%</div>
-                                        <div class="discount-label">Восстановление</div>
-                                    </div>
-                                    <div class="discount-item">
-                                        <div class="discount-value">-20%</div>
-                                        <div class="discount-label">Для объема</div>
-                                    </div>
-                                </div>
-                                <button class="btn-promo accent-btn">
-                                    <span>Смотреть наборы</span>
-                                    <span class="material-icons">arrow_forward</span>
-                                </button>
-                            </div>
-                            <div class="image-content accent-bg">
-                                <div class="kits-showcase">
-                                    <div class="kit-preview">
-                                        <div class="kit-icon"></div>
-                                        <div class="kit-name">Набор "Сияние"</div>
-                                        <div class="kit-discount">-25%</div>
-                                    </div>
-                                    <div class="kit-preview">
-                                        <div class="kit-icon"></div>
-                                        <div class="kit-name">Набор "Роскошь"</div>
-                                        <div class="kit-discount">-35%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+<!-- Блок Акции и скидки -->
+<section class="promo-banners-section">
+    <div class="container">
+        <!-- Заголовок и навигация -->
+        <div class="promo-banners-header">
+            <div class="promo-header-content">
+                <div class="promo-header-text">
+                    <h2 class="promo-banners-title">Специальные предложения</h2>
+                    <p class="promo-banners-subtitle">Эксклюзивные условия для вашей красоты</p>
                 </div>
-
-                <!-- Навигационные стрелки -->
-                <button class="carousel-arrow prev">
-                    <span class="material-icons">chevron_left</span>
-                </button>
-                <button class="carousel-arrow next">
-                    <span class="material-icons">chevron_right</span>
-                </button>
-
-                <!-- Индикаторы -->
-                <div class="carousel-indicators">
-                    <div class="indicator active" data-slide="0"></div>
-                    <div class="indicator" data-slide="1"></div>
-                    <div class="indicator" data-slide="2"></div>
-                </div>
-            </div>
-
-            <!-- Мини-акции -->
-            <div class="mini-promotions">
-                <div class="mini-promo">
-                    <div class="mini-icon">↔</div>
-                    <h4>Бесплатная доставка</h4>
-                    <p>При заказе от 250 рублей</p>
-                </div>
-                <div class="mini-promo">
-                    <div class="mini-icon">★</div>
-                    <h4>Накопительная скидка</h4>
-                    <p>До 15% для постоянных клиентов</p>
-                </div>
-                <div class="mini-promo">
-                    <div class="mini-icon">✉</div>
-                    <h4>Персональные предложения</h4>
-                    <p>Подпишитесь на уведомления</p>
+                <div class="promo-header-nav">
+                    <button class="slider-nav slider-prev">
+                        <span class="material-icons">arrow_back_ios</span>
+                    </button>
+                    <button class="slider-nav slider-next">
+                        <span class="material-icons">arrow_forward_ios</span>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <style>
-        /* ===== СТИЛИ БЛОКА АКЦИИ ===== */
-        .promotions-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-primary) 100%);
+        <!-- Слайдер баннеров -->
+        <div class="promo-slider-wrapper">
+            <div class="promo-slider-container">
+                <!-- Баннер 1 -->
+                <a href="/promo/new-collection" class="promo-banner promo-banner-large">
+                    <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+                        <div class="banner-badge">НОВАЯ КОЛЛЕКЦИЯ</div>
+                        <div class="banner-overlay"></div>
+                    </div>
+                    <div class="banner-content">
+                        <div class="banner-header">
+                            <h3 class="banner-title">Monnali - Японский шелк</h3>
+                            <div class="banner-date">до 15.12.2024</div>
+                        </div>
+                        <p class="banner-description">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                        <div class="banner-cta">
+                            <span>Узнать больше</span>
+                            <span class="material-icons">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Баннер 2 -->
+                <a href="/promo/sale-dsd" class="promo-banner promo-banner-large">
+                    <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+                        <div class="banner-badge banner-badge-sale">РАСПРОДАЖА -25%</div>
+                        <div class="banner-overlay"></div>
+                    </div>
+                    <div class="banner-content">
+                        <div class="banner-header">
+                            <h3 class="banner-title">DSD de Luxe - Скидки на всю линейку</h3>
+                            <div class="banner-date">15.11 - 30.11.2024</div>
+                        </div>
+                        <p class="banner-description">Профессиональная косметика премиум-класса со скидкой 25%. Идеальное решение для проблемных волос</p>
+                        <div class="banner-cta">
+                            <span>Смотреть товары</span>
+                            <span class="material-icons">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Баннер 3 -->
+                <a href="/promo/kits" class="promo-banner promo-banner-large">
+                    <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+                        <div class="banner-badge banner-badge-kit">ВЫГОДА ДО -35%</div>
+                        <div class="banner-overlay"></div>
+                    </div>
+                    <div class="banner-content">
+                        <div class="banner-header">
+                            <h3 class="banner-title">Готовые наборы для ухода</h3>
+                            <div class="banner-date">до 31.12.2024</div>
+                        </div>
+                        <p class="banner-description">Комплексные наборы для полноценного ухода с максимальной экономией. Все необходимое в одной коробке</p>
+                        <div class="banner-cta">
+                            <span>Выбрать набор</span>
+                            <span class="material-icons">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    /* ===== СТИЛИ БОЛЬШИХ БАННЕРОВ ===== */
+    .promo-banners-section {
+        padding: 80px 0;
+        background: var(--bg-tertiary);
+    }
+
+    .promo-banners-header {
+        margin-bottom: 50px;
+    }
+
+    .promo-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+    }
+
+    .promo-header-text {
+        flex: 1;
+    }
+
+    .promo-header-nav {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 5px;
+    }
+
+    .promo-banners-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+
+    .promo-banners-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        max-width: 600px;
+    }
+
+    /* Слайдер */
+    .promo-slider-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promo-slider-container {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .promo-banner {
+        min-width: 100%;
+        display: block;
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .banner-image {
+        position: relative;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .banner-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--text-white);
+        color: var(--primary-color);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .banner-badge-sale {
+        background: var(--accent-color);
+        color: var(--text-white);
+    }
+
+    .banner-badge-kit {
+        background: var(--success-color);
+        color: var(--text-white);
+    }
+
+    .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+    }
+
+    .banner-content {
+        padding: 35px 40px;
+    }
+
+    .banner-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        gap: 20px;
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.2;
+        flex: 1;
+        margin: 0;
+    }
+
+    .banner-date {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        white-space: nowrap;
+        padding: 8px 12px;
+        background: var(--bg-light);
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    .banner-description {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 600px;
+    }
+
+    .banner-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    /* Навигация слайдера - стрелочки */
+    .slider-nav {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        color: var(--primary-color);
+        font-size: 2rem;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .slider-nav:hover {
+        color: var(--primary-dark);
+        background: rgba(0,0,0,0.05);
+    }
+
+    .slider-nav:active {
+        background: transparent;
+        transform: scale(0.95);
+    }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 1024px) {
+        .banner-image {
+            height: 250px;
+        }
+        
+        .banner-content {
+            padding: 30px;
+        }
+        
+        .banner-title {
+            font-size: 1.6rem;
+        }
+    }
+
+    /* На мобильных - сенсорный слайдер как в брендах */
+    @media (max-width: 768px) {
+        .promo-banners-section {
+            padding: 60px 0;
         }
 
-        .promotions-header {
-            text-align: center;
-            margin-bottom: 60px;
+        .promo-banners-title {
+            font-size: 2rem;
         }
 
-        .promotions-header h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--text-primary);
-            margin-bottom: 15px;
-        }
-
-        .promotions-header p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .promotions-carousel {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-            background: var(--bg-secondary);
-        }
-
-        .carousel-container {
-            display: flex;
-            transition: transform 0.6s ease;
-            height: 500px;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            height: 100%;
-        }
-
-        .slide-content {
-            display: flex;
-            height: 100%;
-        }
-
-        .text-content {
-            flex: 1;
-            padding: 70px;
-            display: flex;
+        .promo-header-content {
             flex-direction: column;
-            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
         }
 
-        .text-content.dark-bg {
-            background: var(--gradient-primary);
-            color: var(--text-white);
+        .promo-header-nav {
+            align-self: flex-end;
         }
 
-        .promo-badge {
-            background: var(--primary-color);
-            color: var(--text-white);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            display: inline-block;
+        .promo-slider-wrapper {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-bottom: 10px;
+            cursor: grab;
         }
 
-        .promo-badge.light {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
+        .promo-slider-wrapper:active {
+            cursor: grabbing;
         }
 
-        .promo-badge.accent {
-            background: var(--accent-color);
+        /* Скрываем скроллбар */
+        .promo-slider-wrapper::-webkit-scrollbar {
+            display: none;
         }
 
-        .text-content h3 {
-            font-size: 2.8rem;
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .dark-bg h3 {
-            color: var(--text-white);
-        }
-
-        .divider {
-            width: 40px;
-            height: 1px;
-            background: var(--primary-color);
-            margin: 25px 0;
-        }
-
-        .divider.light {
-            background: rgba(255,255,255,0.5);
-        }
-
-        .divider.accent {
-            background: var(--accent-color);
-        }
-
-        .text-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 35px;
-            line-height: 1.7;
-            max-width: 400px;
-        }
-
-        .dark-bg p {
-            color: rgba(255,255,255,0.9);
-        }
-
-        .btn-promo {
-            background: transparent;
-            color: var(--primary-color);
-            border: 1.5px solid var(--primary-color);
-            padding: 14px 36px;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            align-self: flex-start;
+        .promo-slider-container {
             display: flex;
-            align-items: center;
+            gap: 20px;
+            padding: 0 20px;
+            height: auto;
+        }
+
+        .promo-banner {
+            flex: 0 0 auto;
+            width: calc(100vw - 80px);
+            max-width: 400px;
+            min-width: 0;
+            scroll-snap-align: start;
+            border-radius: 16px;
+        }
+
+        /* Первая карточка с дополнительным отступом слева */
+        .promo-slider-container .promo-banner:first-child {
+            margin-left: 0;
+        }
+
+        .banner-image {
+            height: 200px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .banner-content {
+            padding: 25px;
+        }
+
+        .banner-header {
+            flex-direction: column;
+            align-items: flex-start;
             gap: 10px;
         }
 
-        .btn-promo:hover {
-            background: var(--primary-color);
-            color: var(--text-white);
-            transform: translateX(5px);
+        .banner-title {
+            font-size: 1.4rem;
         }
 
-        .btn-promo.light {
-            background: var(--text-white);
-            color: var(--primary-color);
-            border: none;
+        .banner-date {
+            align-self: flex-start;
         }
 
-        .btn-promo.light:hover {
-            background: var(--bg-light);
-            transform: translateX(5px);
+        .banner-description {
+            font-size: 1rem;
         }
 
-        .btn-promo.accent-btn {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+        /* Скрываем стрелки на мобильных */
+        .promo-header-nav {
+            display: none;
         }
+    }
 
-        .btn-promo.accent-btn:hover {
-            background: var(--accent-color);
-            color: var(--text-white);
-        }
-
-        .image-content {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .light-bg {
-            background: var(--bg-light);
-        }
-
-        .accent-bg {
-            background: #fffbeb;
-        }
-
-        .promo-image {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .promo-simple {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .promo-icon {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .promo-brand {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .promo-discount {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--primary-color);
-            margin: 10px 0;
-        }
-
-        .promo-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .promo-stats {
-            display: flex;
-            gap: 20px;
+    @media (max-width: 480px) {
+        .promo-banners-header {
             margin-bottom: 30px;
         }
 
-        .stat {
-            text-align: center;
+        .promo-banners-title {
+            font-size: 1.8rem;
         }
 
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 300;
-            color: var(--text-white);
-            margin-bottom: 5px;
+        .promo-slider-container {
+            gap: 16px;
+            padding: 0 16px;
         }
 
-        .stat-label {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .discount-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 25px;
-            max-width: 280px;
-        }
-
-        .discount-item {
-            background: #fffaf0;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #fed7aa;
-        }
-
-        .discount-value {
-            font-size: 1.3rem;
-            font-weight: 300;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-
-        .discount-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .kits-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 30px;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-
-        .kit-preview {
-            background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            transform: rotate(-2deg);
-        }
-
-        .kit-preview:nth-child(even) {
-            transform: rotate(1deg);
-            margin-top: 15px;
-        }
-
-        .kit-icon {
-            width: 50px;
-            height: 50px;
-            background: #fef3c7;
-            border-radius: 8px;
-            margin: 0 auto 12px;
-        }
-
-        .kit-name {
-            font-weight: 500;
-            font-size: 0.85rem;
-            margin-bottom: 6px;
-        }
-
-        .kit-discount {
-            color: var(--accent-color);
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: 1.5px solid var(--border-medium);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .carousel-arrow:hover {
-            background: var(--primary-color);
-            color: var(--text-white);
-            border-color: var(--primary-color);
-        }
-
-        .carousel-arrow.prev {
-            left: 20px;
-        }
-
-        .carousel-arrow.next {
-            right: 20px;
-        }
-
-        .carousel-indicators {
-            position: absolute;
-            bottom: 25px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .indicator {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .indicator.active {
-            background: rgba(255,255,255,0.8);
-            border-color: rgba(255,255,255,0.5);
-        }
-
-        .mini-promotions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 60px;
-        }
-
-        .mini-promo {
-            background: var(--bg-secondary);
-            padding: 30px;
+        .promo-banner {
+            width: calc(100vw - 64px);
             border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
         }
 
-        .mini-promo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .banner-image {
+            height: 180px;
+            border-radius: 12px 12px 0 0;
         }
 
-        .mini-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .banner-content {
+            padding: 20px;
         }
 
-        .mini-promo h4 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 10px;
+        .banner-title {
+            font-size: 1.3rem;
         }
 
-        .mini-promo p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        .banner-badge {
+            top: 15px;
+            left: 15px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
         }
 
-        /* ===== АДАПТИВНОСТЬ БЛОКА АКЦИИ ===== */
-        @media (max-width: 1024px) {
-            .carousel-container {
-                height: 400px;
-            }
+        .banner-description {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+    }
 
-            .text-content {
-                padding: 40px;
-            }
+    /* Для очень маленьких экранов */
+    @media (max-width: 375px) {
+        .promo-banner {
+            width: calc(100vw - 48px);
+        }
+        
+        .promo-slider-container {
+            gap: 12px;
+            padding: 0 12px;
+        }
+    }
+</style>
 
-            .text-content h3 {
-                font-size: 2.2rem;
-            }
+<script>
+    // Слайдер для баннеров
+    document.addEventListener('DOMContentLoaded', function() {
+        const sliderContainer = document.querySelector('.promo-slider-container');
+        const slides = document.querySelectorAll('.promo-banner');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(slideIndex) {
+            sliderContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+            currentSlide = slideIndex;
         }
 
-        @media (max-width: 768px) {
-            .promotions-section {
-                padding: 60px 0;
-            }
-
-            .promotions-header h2 {
-                font-size: 2rem;
-            }
-
-            .slide-content {
-                flex-direction: column;
-            }
-
-            .carousel-container {
-                height: auto;
-            }
-
-            .text-content, .image-content {
-                flex: none;
-            }
-
-            .image-content {
-                height: 200px;
-            }
-
-            .text-content {
-                padding: 30px;
-            }
-
-            .carousel-arrow {
-                width: 36px;
-                height: 36px;
-            }
-
-            .carousel-arrow.prev {
-                left: 10px;
-            }
-
-            .carousel-arrow.next {
-                right: 10px;
-            }
+        function nextSlide() {
+            const nextIndex = (currentSlide + 1) % totalSlides;
+            showSlide(nextIndex);
         }
 
-        @media (max-width: 480px) {
-            .promotions-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .text-content {
-                padding: 20px;
-            }
-
-            .text-content h3 {
-                font-size: 1.8rem;
-            }
-
-            .promo-stats {
-                gap: 10px;
-            }
-
-            .stat-value {
-                font-size: 1.5rem;
-            }
-
-            .discount-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .kits-showcase {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .mini-promotions {
-                grid-template-columns: 1fr;
-            }
+        function prevSlide() {
+            const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
         }
-    </style>
 
+        // Обработчики событий только для десктопа
+        if (window.innerWidth > 768) {
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+            });
 
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+            });
 
+            // Убираем фон при нажатии
+            prevBtn.addEventListener('mousedown', function() {
+                this.style.backgroundColor = 'transparent';
+            });
 
+            nextBtn.addEventListener('mousedown', function() {
+                this.style.backgroundColor = 'transparent';
+            });
 
+            prevBtn.addEventListener('mouseup', function() {
+                this.style.backgroundColor = '';
+            });
 
+            nextBtn.addEventListener('mouseup', function() {
+                this.style.backgroundColor = '';
+            });
+        }
 
+        // На мобильных - сенсорный скролл как в брендах
+        if (window.innerWidth <= 768) {
+            const sliderWrapper = document.querySelector('.promo-slider-wrapper');
+            
+            sliderWrapper.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
 
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
 
+            sliderWrapper.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                sliderWrapper.style.cursor = 'grabbing';
+                startX = e.pageX - sliderWrapper.offsetLeft;
+                scrollLeft = sliderWrapper.scrollLeft;
+            });
 
+            sliderWrapper.addEventListener('mouseleave', () => {
+                isDragging = false;
+                sliderWrapper.style.cursor = 'grab';
+            });
 
+            sliderWrapper.addEventListener('mouseup', () => {
+                isDragging = false;
+                sliderWrapper.style.cursor = 'grab';
+            });
 
+            sliderWrapper.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - sliderWrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                sliderWrapper.scrollLeft = scrollLeft - walk;
+            });
 
+            // Touch events для мобильных устройств
+            sliderWrapper.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].pageX - sliderWrapper.offsetLeft;
+                scrollLeft = sliderWrapper.scrollLeft;
+                sliderWrapper.style.cursor = 'grabbing';
+            });
 
+            sliderWrapper.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const x = e.touches[0].pageX - sliderWrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                sliderWrapper.scrollLeft = scrollLeft - walk;
+            });
 
+            sliderWrapper.addEventListener('touchend', () => {
+                isDragging = false;
+                sliderWrapper.style.cursor = 'grab';
+            });
+        }
+
+        // Инициализация
+        showSlide(0);
+
+        // Ресайз
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                showSlide(currentSlide);
+            }
+        });
+    });
+</script>
 
 
 
@@ -4349,131 +4231,6 @@ header {
 
 
 
-
-
-
-
-
-<script>
-    // Карусель акций
-    document.addEventListener('DOMContentLoaded', function() {
-        const carouselContainer = document.querySelector('.carousel-container');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.carousel-indicators .indicator');
-        const prevButton = document.querySelector('.carousel-arrow.prev');
-        const nextButton = document.querySelector('.carousel-arrow.next');
-        
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        let autoSlideInterval;
-
-        // Функция переключения слайда
-        function goToSlide(slideIndex) {
-            // Скрываем все слайды
-            slides.forEach(slide => slide.classList.remove('active'));
-            
-            // Показываем текущий слайд
-            slides[slideIndex].classList.add('active');
-            
-            // Перемещаем карусель
-            carouselContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
-            
-            // Обновляем индикаторы
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === slideIndex);
-            });
-            
-            currentSlide = slideIndex;
-        }
-
-        // Следующий слайд
-        function nextSlide() {
-            const nextSlideIndex = (currentSlide + 1) % totalSlides;
-            goToSlide(nextSlideIndex);
-        }
-
-        // Предыдущий слайд
-        function prevSlide() {
-            const prevSlideIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-            goToSlide(prevSlideIndex);
-        }
-
-        // Автоматическое переключение
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                nextSlide();
-            }, 5000);
-        }
-
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-
-        // Обработчики событий
-        prevButton.addEventListener('click', function() {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-        });
-
-        nextButton.addEventListener('click', function() {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
-        });
-
-        // Обработчики для индикаторов
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                stopAutoSlide();
-                goToSlide(index);
-                startAutoSlide();
-            });
-        });
-
-        // Остановка автоматического переключения при наведении
-        const carousel = document.querySelector('.promotions-carousel');
-        carousel.addEventListener('mouseenter', stopAutoSlide);
-        carousel.addEventListener('mouseleave', startAutoSlide);
-
-        // Обработчики для кнопок акций
-        document.querySelectorAll('.btn-promo').forEach(button => {
-            button.addEventListener('click', function() {
-                const slide = this.closest('.carousel-slide');
-                const slideIndex = parseInt(slide.getAttribute('data-slide'));
-                const slideTitles = [
-                    'Новая коллекция Monnali',
-                    'Распродажа DSD de Luxe',
-                    'Наборы со скидкой'
-                ];
-                
-                console.log(`Переход к акции: ${slideTitles[slideIndex]}`);
-                // Здесь можно добавить логику перехода на страницу акции
-            });
-        });
-
-        // Telegram кнопка
-        document.querySelector('.btn-telegram').addEventListener('click', function() {
-            console.log('Переход в Telegram чат');
-            // window.open('https://t.me/your_channel', '_blank');
-        });
-
-        // Социальные сети
-        document.querySelectorAll('.social-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const platform = this.querySelector('.material-icons').textContent;
-                console.log(`Переход в ${platform}`);
-            });
-        });
-
-        // Запуск
-        startAutoSlide();
-
-        // Инициализация
-        goToSlide(0);
-    });
-</script>
 
 
 <style>
