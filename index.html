@@ -1014,10 +1014,12 @@ header {
     padding: 0 20px;
 }
 
-/* МЕНЯЕМ ТОЧКУ ПЕРЕХОДА С 1025 НА 540px */
-@media (min-width: 541px) {
+
+
+/* Для больших экранов оставляем большой отступ */
+@media (min-width: 1025px) {
     .slide-content {
-        padding-top: 200px; /* Большой отступ на десктопе и планшетах */
+        padding-top: 200px; /* Большой отступ на десктопе */
     }
 }
 
@@ -1137,12 +1139,12 @@ header {
     }
 }
 
-/* Мобильные устройства - ФИКСИРОВАННАЯ ВЕРСТКА */
+/* Мобильные устройства - УМЕНЬШАЕМ ВЫСОТУ ЕЩЕ */
 @media (max-width: 768px) {
     .fullscreen-slider {
-        height: 560px; /* УМЕНЬШАЕМ высоту на 40px */
-        max-height: 560px;
-        min-height: 560px;
+        height: 500px; /* УМЕНЬШАЕМ до 500px */
+        max-height: 500px;
+        min-height: 500px;
     }
     
     .slide-content {
@@ -1151,22 +1153,22 @@ header {
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Чуть уменьшаем шрифт */
         max-width: 100%;
         margin-bottom: 1rem;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Чуть уменьшаем шрифт */
         max-width: 100%;
         margin-bottom: 1rem;
         line-height: 1.5;
     }
     
     .hero-emphasis {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Чуть уменьшаем шрифт */
         max-width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
     }
     
     .hero-buttons {
@@ -1178,8 +1180,8 @@ header {
     .btn {
         width: 100%;
         justify-content: center;
-        padding: 12px 16px;
-        font-size: 0.9rem;
+        padding: 10px 14px; /* Уменьшаем padding */
+        font-size: 0.85rem;
     }
     
     .slider-indicators {
@@ -1197,12 +1199,12 @@ header {
     }
 }
 
-/* Маленькие мобильные - УМЕНЬШАЕМ ВЫСОТУ */
+/* Маленькие мобильные - ЕЩЕ МЕНЬШЕ */
 @media (max-width: 540px) {
     .fullscreen-slider {
-        height: 520px; /* УМЕНЬШАЕМ еще на 40px */
-        max-height: 520px;
-        min-height: 520px;
+        height: 450px; /* УМЕНЬШАЕМ до 450px */
+        max-height: 450px;
+        min-height: 450px;
     }
     
     .slide-content {
@@ -1211,7 +1213,7 @@ header {
     }
     
     .hero-title {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         margin-bottom: 0.8rem;
     }
     
@@ -1222,7 +1224,7 @@ header {
     
     .hero-emphasis {
         font-size: 0.9rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
     }
     
     .hero-buttons {
@@ -1231,8 +1233,8 @@ header {
     }
     
     .btn {
-        padding: 10px 14px;
-        font-size: 0.85rem;
+        padding: 9px 12px; /* Еще меньше padding */
+        font-size: 0.8rem;
     }
     
     .hero-content-wrapper {
@@ -1250,12 +1252,12 @@ header {
     }
 }
 
-/* Очень маленькие экраны - ЕЩЕ МЕНЬШЕ */
+/* Очень маленькие экраны - МИНИМАЛЬНАЯ ВЫСОТА */
 @media (max-width: 480px) {
     .fullscreen-slider {
-        height: 480px; /* УМЕНЬШАЕМ до 480px */
-        max-height: 480px;
-        min-height: 480px;
+        height: 420px; /* УМЕНЬШАЕМ до 420px */
+        max-height: 420px;
+        min-height: 420px;
     }
     
     .slide-content {
@@ -1264,7 +1266,7 @@ header {
     }
     
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .hero-subtitle {
@@ -1314,44 +1316,40 @@ header {
 </style>
 
 <script>
-// Базовый JavaScript для слайдера
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    let currentSlide = 0;
-    
-    function showSlide(index) {
-        // Скрываем все слайды
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
+    // Базовый JavaScript для слайдера
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
         
-        // Показываем нужный слайд
-        currentSlide = index;
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
-    
-    function nextSlide() {
-        let next = currentSlide + 1;
-        if (next >= slides.length) next = 0;
-        showSlide(next);
-    }
-    
-    // Обработчики событий для индикаторов
-    indicators.forEach(indicator => {
-        indicator.addEventListener('click', function() {
-            showSlide(parseInt(this.dataset.slide));
+        function showSlide(index) {
+            // Скрываем все слайды
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Показываем нужный слайд
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
+        }
+        
+        // Обработчики событий для индикаторов
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                showSlide(parseInt(this.dataset.slide));
+            });
         });
+        
+        // Автопереключение каждые 5 секунд
+        setInterval(nextSlide, 5000);
     });
-    
-    // Автопереключение каждые 5 секунд
-    setInterval(nextSlide, 5000);
-});
 </script>
-
-
-
-
 
 
 
