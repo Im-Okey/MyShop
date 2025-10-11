@@ -650,7 +650,7 @@ header {
 }
 
 /* Мобильные */
-@media (max-width: 847px) {
+@media (max-width: 768px) {
     .desktop-only {
         display: none !important;
     }
@@ -881,7 +881,6 @@ header {
 
 
 
-<!-- Полноэкранный слайдер -->
 <div class="fullscreen-slider">
     <!-- Слайды -->
     <div class="slide slide-1 active">
@@ -1015,13 +1014,12 @@ header {
     padding: 0 20px;
 }
 
-/* Добавляем отступ сверху ТОЛЬКО для десктопа */
-@media (min-width: 1025px) {
+/* МЕНЯЕМ ТОЧКУ ПЕРЕХОДА С 1025 НА 540px */
+@media (min-width: 541px) {
     .slide-content {
-        padding-top: 200px; /* Большой отступ на десктопе */
+        padding-top: 200px; /* Большой отступ на десктопе и планшетах */
     }
 }
-
 
 .hero-title {
     font-size: 3.5rem;
@@ -1142,9 +1140,9 @@ header {
 /* Мобильные устройства - ФИКСИРОВАННАЯ ВЕРСТКА */
 @media (max-width: 768px) {
     .fullscreen-slider {
-        height: 600px; /* ФИКСИРОВАННАЯ высота */
-        max-height: 600px;
-        min-height: 600px;
+        height: 560px; /* УМЕНЬШАЕМ высоту на 40px */
+        max-height: 560px;
+        min-height: 560px;
     }
     
     .slide-content {
@@ -1199,12 +1197,12 @@ header {
     }
 }
 
-/* Маленькие мобильные - ТА ЖЕ ФИКСИРОВАННАЯ ВЫСОТА */
-@media (max-width: 480px) {
+/* Маленькие мобильные - УМЕНЬШАЕМ ВЫСОТУ */
+@media (max-width: 540px) {
     .fullscreen-slider {
-        height: 550px; /* Немного меньше на маленьких экранах */
-        max-height: 550px;
-        min-height: 550px;
+        height: 520px; /* УМЕНЬШАЕМ еще на 40px */
+        max-height: 520px;
+        min-height: 520px;
     }
     
     .slide-content {
@@ -1252,12 +1250,12 @@ header {
     }
 }
 
-/* Очень маленькие экраны */
-@media (max-width: 360px) {
+/* Очень маленькие экраны - ЕЩЕ МЕНЬШЕ */
+@media (max-width: 480px) {
     .fullscreen-slider {
-        height: 500px; /* Еще меньше на очень маленьких */
-        max-height: 500px;
-        min-height: 500px;
+        height: 480px; /* УМЕНЬШАЕМ до 480px */
+        max-height: 480px;
+        min-height: 480px;
     }
     
     .slide-content {
@@ -1350,7 +1348,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(nextSlide, 5000);
 });
 </script>
-
 
 
 
