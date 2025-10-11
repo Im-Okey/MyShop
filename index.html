@@ -3249,12 +3249,12 @@ header {
         flex: 1;
     }
 
-    /* Уникальные классы для навигации акций */
+    /* Уникальные классы для навигации акций - ВЫРАВНИВАЕМ СПРАВА */
     .promo-header-nav {
         display: flex;
         gap: 10px;
         margin-bottom: 5px;
-        margin-left: auto;
+        margin-left: auto; /* Это выравнивает стрелки справа */
     }
 
     .section-title {
@@ -3504,21 +3504,21 @@ header {
         }
         
         .promo-banner {
-            width: 400px;
+            width: 380px; /* Уменьшил для планшетов */
         }
         
         .promo-banner {
-            width: 400px !important;
-            flex: 0 0 400px !important;
+            width: 380px !important;
+            flex: 0 0 380px !important;
             margin: 5px 0;
         }
 
         .banner-image {
-            height: 220px;
+            height: 200px; /* Уменьшил высоту изображения */
         }
 
         .banner-content {
-            padding: 25px;
+            padding: 20px; /* Уменьшил отступы */
         }
     }
 
@@ -3549,21 +3549,21 @@ header {
             margin: 0 -16px;
             padding-left: 16px;
             padding-right: 16px;
-            /* Добавляем отступ справа для показа части следующего слайда */
-            padding-right: 60px;
+            /* УВЕЛИЧИВАЕМ отступ справа для лучшего показа части следующего слайда */
+            padding-right: 80px;
         }
 
         .promo-banner {
-            width: 320px !important;
-            flex: 0 0 320px !important;
+            width: 300px !important; /* УМЕНЬШИЛ для телефонов */
+            flex: 0 0 300px !important;
         }
 
         .banner-image {
-            height: 200px;
+            height: 180px; /* Уменьшил высоту изображения */
         }
 
         .banner-content {
-            padding: 20px;
+            padding: 18px; /* Уменьшил отступы */
         }
 
         .banner-title {
@@ -3592,16 +3592,16 @@ header {
         }
         
         .promo-slider-container {
-            padding-right: 40px;
+            padding-right: 60px; /* УВЕЛИЧИВАЕМ отступ */
         }
         
         .promo-banner {
-            width: 280px !important;
-            flex: 0 0 280px !important;
+            width: 260px !important; /* ЕЩЕ УМЕНЬШИЛ для маленьких телефонов */
+            flex: 0 0 260px !important;
         }
 
         .banner-image {
-            height: 180px;
+            height: 160px; /* Еще уменьшил высоту */
         }
 
         .banner-content {
@@ -3620,6 +3620,15 @@ header {
 
         .banner-date {
             align-self: flex-start;
+            font-size: 0.8rem;
+        }
+
+        .banner-description {
+            font-size: 0.85rem;
+        }
+
+        .banner-cta {
+            font-size: 0.9rem;
         }
     }
 
@@ -3702,7 +3711,6 @@ header {
         handleResize();
     });
 </script>
-
 
 
 
