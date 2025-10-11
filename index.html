@@ -1388,7 +1388,7 @@ header {
     }
 
     .container {
-        max-width: 100%;
+        max-width: 1400px;
         overflow: hidden;
     }
 
@@ -1416,15 +1416,26 @@ header {
         text-decoration: none;
         font-weight: 600;
         transition: var(--transition);
-        padding: 8px 16px;
+        padding: 8px 0 8px 16px;
         border-radius: var(--border-radius);
         white-space: nowrap;
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
     }
 
     .view-all-link:hover {
         gap: 12px;
-        background: var(--bg-light);
+        padding: 8px 16px 8px 16px; /* Симметричные отступы при ховере */
+        transform: translateY(-1px);
+    }
+
+    .view-all-link:hover .material-icons {
+        transform: translateX(2px);
+    }
+
+    .view-all-link .material-icons {
+        transition: transform 0.3s ease;
     }
 
     .new-products-slider {
@@ -1440,6 +1451,11 @@ header {
         scrollbar-width: none;
         -ms-overflow-style: none;
         padding-bottom: 10px;
+        cursor: grab;
+    }
+
+    .products-container:active {
+        cursor: grabbing;
     }
 
     .products-container::-webkit-scrollbar {
@@ -1638,14 +1654,14 @@ header {
         
         .products-container {
             overflow-x: auto;
-            scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             padding-right: 20px; /* Показываем что есть скролл */
+            /* УБИРАЕМ scroll-snap-type для свободного скролла */
         }
         
         .product-card {
-            width: 280px; /* Фиксированная шировка как на телефоне */
-            scroll-snap-align: start;
+            width: 280px; /* Фиксированная ширина как на телефоне */
+            /* УБИРАЕМ scroll-snap-align */
         }
         
         /* Убираем адаптацию ширины - всегда фиксированная ширина */
@@ -1946,7 +1962,6 @@ header {
         handleResize();
     });
 </script>
-
 
 
 
