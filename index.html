@@ -883,7 +883,7 @@ header {
 
 <div class="fullscreen-slider">
     <!-- Слайды -->
-    <div class="slide slide-1 active">
+    <div class="slide slide-1 active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
         <div class="slide-content">
             <div class="container">
                 <div class="hero-content-wrapper">
@@ -905,7 +905,7 @@ header {
         </div>
     </div>
     
-    <div class="slide slide-2">
+    <div class="slide slide-2" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
         <div class="slide-content">
             <div class="container">
                 <div class="hero-content-wrapper">
@@ -927,7 +927,7 @@ header {
         </div>
     </div>
     
-    <div class="slide slide-3">
+    <div class="slide slide-3" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
         <div class="slide-content">
             <div class="container">
                 <div class="hero-content-wrapper">
@@ -986,20 +986,7 @@ header {
     opacity: 1;
 }
 
-.slide-1 {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                     url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-}
-
-.slide-2 {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                     url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-}
-
-.slide-3 {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                     url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-}
+/* Убрал background-image из CSS - теперь они в HTML */
 
 /* БАЗОВЫЕ ОТСТУПЫ ДЛЯ ВСЕХ УСТРОЙСТВ */
 .slide-content {
@@ -1660,7 +1647,6 @@ header {
         
         .product-card {
             width: 280px; /* Фиксированная ширина как на телефоне */
-            /* УБИРАЕМ scroll-snap-align */
         }
         
         /* Убираем адаптацию ширины - всегда фиксированная ширина */
@@ -3266,7 +3252,6 @@ header {
         .promo-slider-container {
             display: flex;
             gap: 20px;
-            padding: 0 20px;
             height: auto;
         }
 
@@ -3275,13 +3260,7 @@ header {
             width: calc(100vw - 80px);
             max-width: 400px;
             min-width: 0;
-            scroll-snap-align: start;
             border-radius: 16px;
-        }
-
-        /* Первая карточка с дополнительным отступом слева */
-        .promo-slider-container .promo-banner:first-child {
-            margin-left: 0;
         }
 
         .banner-image {
@@ -3328,7 +3307,6 @@ header {
 
         .promo-slider-container {
             gap: 16px;
-            padding: 0 16px;
         }
 
         .promo-banner {
@@ -3370,10 +3348,11 @@ header {
         
         .promo-slider-container {
             gap: 12px;
-            padding: 0 12px;
         }
     }
 </style>
+    
+
 
 <script>
     // Слайдер для баннеров
@@ -3429,14 +3408,9 @@ header {
             });
         }
 
-        // На мобильных - сенсорный скролл как в брендах
         if (window.innerWidth <= 768) {
             const sliderWrapper = document.querySelector('.promo-slider-wrapper');
             
-            sliderWrapper.addEventListener('dragstart', (e) => {
-                e.preventDefault();
-            });
-
             let isDragging = false;
             let startX = 0;
             let scrollLeft = 0;
@@ -3471,7 +3445,6 @@ header {
                 isDragging = true;
                 startX = e.touches[0].pageX - sliderWrapper.offsetLeft;
                 scrollLeft = sliderWrapper.scrollLeft;
-                sliderWrapper.style.cursor = 'grabbing';
             });
 
             sliderWrapper.addEventListener('touchmove', (e) => {
@@ -3483,7 +3456,6 @@ header {
 
             sliderWrapper.addEventListener('touchend', () => {
                 isDragging = false;
-                sliderWrapper.style.cursor = 'grab';
             });
         }
 
@@ -3844,357 +3816,357 @@ header {
 
 
 
-    <!-- Футер -->
-    <footer>
-        <div class="container">
-            <!-- Верхняя часть футера -->
-            <div class="footer-main">
-                <!-- Колонка 1: О компании и контакты -->
-                <div class="footer-column">
-                    <div class="logo">
-                        <div class="logo-icon">H</div>
-                        <span>Название</span>
+<!-- Футер -->
+<footer>
+    <div class="container">
+        <!-- Верхняя часть футера -->
+        <div class="footer-main">
+            <!-- Колонка 1: О компании и контакты -->
+            <div class="footer-column">
+                <div class="logo">
+                    <div class="logo-icon">H</div>
+                    <span>Название</span>
+                </div>
+                
+                <p class="footer-description">
+                    Профессиональная лечебная косметика для здоровья ваших волос. 
+                    Мы работаем только с проверенными мировыми брендами.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="material-icons">phone</span>
+                        <span>+375 (XX) XXX-XX-XX</span>
                     </div>
-                    
-                    <p class="footer-description">
-                        Профессиональная лечебная косметика для здоровья ваших волос. 
-                        Мы работаем только с проверенными мировыми брендами.
-                    </p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="material-icons">phone</span>
-                            <span>+375 (XX) XXX-XX-XX</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="material-icons">email</span>
-                            <span>info@example.by</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="material-icons">schedule</span>
-                            <span>Пн-Пт: 9:00-18:00</span>
-                        </div>
+                    <div class="contact-item">
+                        <span class="material-icons">email</span>
+                        <span>info@example.by</span>
                     </div>
-                </div>
-
-                <!-- Колонка 2: Навигация -->
-                <div class="footer-column">
-                    <h4>Навигация</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Акции</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </div>
-
-                <!-- Колонка 3: Бренды -->
-                <div class="footer-column">
-                    <h4>Бренды</h4>
-                    <ul class="footer-links">
-                        <li><a href="/brands/optima">Optima</a></li>
-                        <li><a href="/brands/dsd">DSD de Luxe</a></li>
-                        <li><a href="/brands/monnali">Monnali</a></li>
-                        <li><a href="/brands/fabao">Fabao</a></li>
-                        <li><a href="/brands/kudzhu">Кудзю</a></li>
-                        <li><a href="/brands" class="all-brands">Все бренды →</a></li>
-                    </ul>
-                </div>
-
-                <!-- Колонка 4: Покупателям -->
-                <div class="footer-column">
-                    <h4>Покупателям</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Возврат</a></li>
-                        <li><a href="#">Гарантия</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                    </ul>
-                </div>
-
-                <!-- Колонка 5: Социальные сети -->
-                <div class="footer-column">
-                    <h4>Свяжитесь с нами</h4>
-                    
-                    <!-- Социальные сети -->
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <span class="material-icons">telegram</span>
-                        </a>
-                        <a href="#" class="social-link">
-                            <span class="material-icons">instagram</span>
-                        </a>
-                        <a href="#" class="social-link">
-                            <span class="material-icons">facebook</span>
-                        </a>
-                        <a href="#" class="social-link">
-                            <span class="material-icons">whatsapp</span>
-                        </a>
-                    </div>
-
-                    <!-- Правовые ссылки -->
-                    <div class="legal-links">
-                        <a href="#">Политика конфиденциальности</a>
-                        <a href="#">Пользовательское соглашение</a>
-                        <a href="#">Карта сайта</a>
+                    <div class="contact-item">
+                        <span class="material-icons">schedule</span>
+                        <span>Пн-Пт: 9:00-18:00</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Юридическая информация -->
-            <div class="legal-info">
-                <div class="legal-content">
-                    <span>ИП Иванов И.И., УНП 123456789</span>
-                    <span class="divider"></span>
-                    <span>Свидетельство о госрегистрации №12345678912345 от 01.01.2025</span>
-                    <span class="divider"></span>
-                    <span>Регистрационный номер в Торговом реестре: 123456789</span>
-                </div>
+            <!-- Колонка 2: Навигация -->
+            <div class="footer-column">
+                <h4>Навигация</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
             </div>
 
-            <!-- Нижняя часть футера -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    © 2025 Название. Все права защищены.
+            <!-- Колонка 3: Бренды -->
+            <div class="footer-column">
+                <h4>Бренды</h4>
+                <ul class="footer-links">
+                    <li><a href="/brands/optima">Optima</a></li>
+                    <li><a href="/brands/dsd">DSD de Luxe</a></li>
+                    <li><a href="/brands/monnali">Monnali</a></li>
+                    <li><a href="/brands/fabao">Fabao</a></li>
+                    <li><a href="/brands/kudzhu">Кудзю</a></li>
+                    <li><a href="/brands" class="all-brands">Все бренды →</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 4: Покупателям -->
+            <div class="footer-column">
+                <h4>Покупателям</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Гарантия</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 5: Социальные сети -->
+            <div class="footer-column">
+                <h4>Свяжитесь с нами</h4>
+                
+                <!-- Социальные сети -->
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <span class="material-icons">telegram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">instagram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">facebook</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">whatsapp</span>
+                    </a>
+                </div>
+
+                <!-- Правовые ссылки -->
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                    <a href="#">Карта сайта</a>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <style>
-        /* ===== СТИЛИ ФУТЕРА ===== */
-        footer {
-            background: var(--gradient-dark);
-            color: var(--text-white);
-            padding: 60px 0 0;
-        }
+        <!-- Юридическая информация -->
+        <div class="legal-info">
+            <div class="legal-content">
+                <span>ИП Иванов И.И., УНП 123456789</span>
+                <span class="divider"></span>
+                <span>Свидетельство о госрегистрации №12345678912345 от 01.01.2025</span>
+                <span class="divider"></span>
+                <span>Регистрационный номер в Торговом реестре: 123456789</span>
+            </div>
+        </div>
 
+        <!-- Нижняя часть футера -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 Название. Все права защищены.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* ===== СТИЛИ ФУТЕРА ===== */
+    footer {
+        background: var(--gradient-dark);
+        color: var(--text-white);
+        padding: 60px 0 0;
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer-column:first-child {
+        max-width: 300px;
+    }
+
+    .footer-column .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+        color: var(--text-white);
+    }
+
+    .footer-description {
+        color: rgba(255,255,255,0.7);
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255,255,255,0.9);
+    }
+
+    .contact-item .material-icons {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+    }
+
+    .footer-column h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-white);
+    }
+
+    .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: var(--transition);
+        font-size: 0.95rem;
+        position: relative;
+        padding: 4px 0;
+    }
+
+    .footer-links a:hover {
+        color: var(--primary-color);
+        transform: translateX(5px);
+    }
+
+    .footer-links a.all-brands {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        transition: var(--transition);
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        background: var(--primary-color);
+        transform: translateY(-2px);
+    }
+
+    .social-link .material-icons {
+        color: var(--primary-color);
+        transition: var(--transition);
+    }
+
+    .social-link:hover .material-icons {
+        color: var(--text-white);
+    }
+
+    .legal-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .legal-links a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        padding: 4px 0;
+        position: relative;
+    }
+
+    .legal-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .legal-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--primary-color);
+        transition: var(--transition);
+    }
+
+    .legal-links a:hover::after {
+        width: 100%;
+    }
+
+    .legal-info {
+        padding: 15px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .legal-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.85rem;
+    }
+
+    .legal-content .divider {
+        width: 1px;
+        height: 12px;
+        background: rgba(255,255,255,0.3);
+    }
+
+    .footer-bottom {
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .copyright {
+        color: rgba(255,255,255,0.6);
+        font-size: 0.9rem;
+    }
+
+    /* ===== АДАПТИВНОСТЬ ФУТЕРА ===== */
+    @media (max-width: 1200px) {
         .footer-main {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            padding-bottom: 40px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
         }
+    }
 
-        .footer-column:first-child {
-            max-width: 300px;
-        }
-
-        .footer-column .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            color: var(--text-white);
-        }
-
-        .footer-description {
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .contact-item .material-icons {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
-
-        .footer-column h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-white);
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.95rem;
-            position: relative;
-            padding: 4px 0;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            transform: translateX(5px);
-        }
-
-        .footer-links a.all-brands {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .social-link .material-icons {
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .social-link:hover .material-icons {
-            color: var(--text-white);
-        }
-
-        .legal-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .legal-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            padding: 4px 0;
-            position: relative;
-        }
-
-        .legal-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .legal-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .legal-links a:hover::after {
-            width: 100%;
-        }
-
-        .legal-info {
-            padding: 15px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+    @media (max-width: 768px) {
+        .footer-main {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
         .legal-content {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-
-        .legal-content .divider {
-            width: 1px;
-            height: 12px;
-            background: rgba(255,255,255,0.3);
-        }
-
-        .footer-bottom {
-            padding: 25px 0;
+            flex-direction: column;
+            gap: 10px;
             text-align: center;
         }
 
-        .copyright {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+        .legal-content .divider {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        footer {
+            padding: 40px 0 0;
         }
 
-        /* ===== АДАПТИВНОСТЬ ФУТЕРА ===== */
-        @media (max-width: 1200px) {
-            .footer-main {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 30px;
-            }
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
-        @media (max-width: 768px) {
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-
-            .legal-content {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .legal-content .divider {
-                display: none;
-            }
+        .footer-column:first-child {
+            max-width: 100%;
         }
 
-        @media (max-width: 576px) {
-            footer {
-                padding: 40px 0 0;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-column:first-child {
-                max-width: 100%;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .legal-content span {
-                text-align: center;
-                display: block;
-            }
+        .social-links {
+            justify-content: center;
         }
-    </style>
+
+        .legal-content span {
+            text-align: center;
+            display: block;
+        }
+    }
+</style>
 
 
 
