@@ -650,7 +650,7 @@ header {
 }
 
 /* Мобильные */
-@media (max-width: 768px) {
+@media (max-width: 867px) {
     .desktop-only {
         display: none !important;
     }
@@ -1001,11 +1001,12 @@ header {
                      url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
 }
 
+/* БАЗОВЫЕ ОТСТУПЫ ДЛЯ ВСЕХ УСТРОЙСТВ */
 .slide-content {
     width: 100%;
     color: var(--text-white);
     padding-top: 20px;
-    padding-bottom: 80px; /* Фиксированный отступ снизу для индикаторов */
+    padding-bottom: 80px;
 }
 
 .hero-content-wrapper {
@@ -1014,12 +1015,10 @@ header {
     padding: 0 20px;
 }
 
-
-
-/* Для больших экранов оставляем большой отступ */
-@media (min-width: 1025px) {
+/* БОЛЬШОЙ ОТСТУП ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ */
+@media (min-width: 625px) {
     .slide-content {
-        padding-top: 200px; /* Большой отступ на десктопе */
+        padding-top: 200px;
     }
 }
 
@@ -1068,19 +1067,19 @@ header {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 40px; /* Фиксированный отступ от индикаторов */
+    margin-bottom: 40px;
 }
 
 /* Индикаторы - фиксированная позиция */
 .slider-indicators {
     position: absolute;
-    bottom: 15px; /* 15px от низа */
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 12px;
     z-index: 10;
-    padding: 15px 0; /* 15px отступ сверху и снизу */
+    padding: 15px 0;
 }
 
 .indicator {
@@ -1133,40 +1132,40 @@ header {
         max-width: 600px;
     }
     
+    /* НЕ МЕНЯЕМ PADDING-TOP ЗДЕСЬ! */
     .slide-content {
-        padding-top: 40px;
-        padding-bottom: 80px; /* Сохраняем отступ для индикаторов */
+        padding-bottom: 80px;
     }
 }
 
-/* Мобильные устройства - УМЕНЬШАЕМ ВЫСОТУ ЕЩЕ */
+/* МОБИЛЬНЫЕ УСТРОЙСТВА - ДЕЛАЕМ БЛОК ВЫШЕ */
 @media (max-width: 768px) {
     .fullscreen-slider {
-        height: 500px; /* УМЕНЬШАЕМ до 500px */
-        max-height: 500px;
-        min-height: 500px;
+        height: 520px; /* УВЕЛИЧИВАЕМ высоту на 20px */
+        max-height: 520px;
+        min-height: 520px;
     }
     
     .slide-content {
-        padding-top: 30px;
-        padding-bottom: 80px; /* Фиксированный отступ снизу */
+        padding-top: 40px; /* УВЕЛИЧИВАЕМ отступ сверху */
+        padding-bottom: 80px;
     }
     
     .hero-title {
-        font-size: 1.8rem; /* Чуть уменьшаем шрифт */
+        font-size: 1.8rem;
         max-width: 100%;
         margin-bottom: 1rem;
     }
     
     .hero-subtitle {
-        font-size: 0.95rem; /* Чуть уменьшаем шрифт */
+        font-size: 0.95rem;
         max-width: 100%;
         margin-bottom: 1rem;
         line-height: 1.5;
     }
     
     .hero-emphasis {
-        font-size: 0.95rem; /* Чуть уменьшаем шрифт */
+        font-size: 0.95rem;
         max-width: 100%;
         margin-bottom: 1.2rem;
     }
@@ -1174,18 +1173,18 @@ header {
     .hero-buttons {
         flex-direction: column;
         gap: 0.8rem;
-        margin-bottom: 40px; /* Фиксированный отступ */
+        margin-bottom: 40px;
     }
     
     .btn {
         width: 100%;
         justify-content: center;
-        padding: 10px 14px; /* Уменьшаем padding */
+        padding: 10px 14px;
         font-size: 0.85rem;
     }
     
     .slider-indicators {
-        bottom: 15px; /* Фиксированно 15px от низа */
+        bottom: 15px;
         padding: 15px 0;
     }
     
@@ -1199,17 +1198,17 @@ header {
     }
 }
 
-/* Маленькие мобильные - ЕЩЕ МЕНЬШЕ */
+/* МАЛЕНЬКИЕ МОБИЛЬНЫЕ - ТАКЖЕ ВЫШЕ */
 @media (max-width: 540px) {
     .fullscreen-slider {
-        height: 450px; /* УМЕНЬШАЕМ до 450px */
-        max-height: 450px;
-        min-height: 450px;
+        height: 480px; /* УВЕЛИЧИВАЕМ высоту */
+        max-height: 480px;
+        min-height: 480px;
     }
     
     .slide-content {
-        padding-top: 25px;
-        padding-bottom: 80px; /* Сохраняем отступ для индикаторов */
+        padding-top: 35px; /* УВЕЛИЧИВАЕМ отступ сверху */
+        padding-bottom: 80px;
     }
     
     .hero-title {
@@ -1228,12 +1227,12 @@ header {
     }
     
     .hero-buttons {
-        margin-bottom: 40px; /* Фиксированный отступ */
+        margin-bottom: 40px;
         gap: 0.6rem;
     }
     
     .btn {
-        padding: 9px 12px; /* Еще меньше padding */
+        padding: 9px 12px;
         font-size: 0.8rem;
     }
     
@@ -1242,7 +1241,7 @@ header {
     }
     
     .slider-indicators {
-        bottom: 15px; /* Всегда 15px от низа */
+        bottom: 15px;
         padding: 15px 0;
     }
     
@@ -1252,16 +1251,16 @@ header {
     }
 }
 
-/* Очень маленькие экраны - МИНИМАЛЬНАЯ ВЫСОТА */
+/* ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ - ВЫШЕ */
 @media (max-width: 480px) {
     .fullscreen-slider {
-        height: 420px; /* УМЕНЬШАЕМ до 420px */
-        max-height: 420px;
-        min-height: 420px;
+        height: 450px; /* УВЕЛИЧИВАЕМ высоту */
+        max-height: 450px;
+        min-height: 450px;
     }
     
     .slide-content {
-        padding-top: 20px;
+        padding-top: 30px; /* УВЕЛИЧИВАЕМ отступ сверху */
         padding-bottom: 80px;
     }
     
