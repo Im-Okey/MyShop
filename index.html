@@ -1646,7 +1646,8 @@ header {
 
     .new-products-slider {
         position: relative;
-        overflow: hidden;
+        overflow: visible; /* Меняем hidden на visible */
+        margin: 15px 0; /* Добавляем отступы для ховер-эффекта */
     }
 
     .products-container {
@@ -1656,9 +1657,10 @@ header {
         scroll-behavior: smooth;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding-bottom: 10px;
+        padding: 15px 0; /* Добавляем отступы сверху и снизу */
         cursor: grab;
     }
+
 
     .products-container:active {
         cursor: grabbing;
@@ -3077,6 +3079,16 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+
+
 <!-- Блок Акции и скидки -->
 <section class="promo-banners-section">
     <div class="container">
@@ -3087,11 +3099,11 @@ header {
                     <h2 class="section-title">Специальные предложения</h2>
                     <p class="section-subtitle">Эксклюзивные условия для вашей красоты</p>
                 </div>
-                <div class="section-header-nav">
-                    <button class="slider-nav slider-prev">
+                <div class="promo-header-nav">
+                    <button class="promo-nav-btn promo-prev">
                         <span class="material-icons">arrow_back_ios</span>
                     </button>
-                    <button class="slider-nav slider-next">
+                    <button class="promo-nav-btn promo-next">
                         <span class="material-icons">arrow_forward_ios</span>
                     </button>
                 </div>
@@ -3190,6 +3202,24 @@ header {
 </section>
 
 <style>
+    /* CSS переменные */
+    :root {
+        --primary-color: #8B5FBF;
+        --primary-dark: #6B46A5;
+        --accent-color: #FF6B6B;
+        --success-color: #4CAF50;
+        --text-primary: #333333;
+        --text-secondary: #666666;
+        --text-light: #999999;
+        --text-white: #FFFFFF;
+        --bg-primary: #FFFFFF;
+        --bg-secondary: #F8F9FA;
+        --bg-light: #F0F0F0;
+        --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-heavy: 0 12px 28px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s ease;
+    }
+
     /* ===== СТИЛИ БЛОКА АКЦИЙ ===== */
     .promo-banners-section {
         padding: 80px 0;
@@ -3219,10 +3249,12 @@ header {
         flex: 1;
     }
 
-    .section-header-nav {
+    /* Уникальные классы для навигации акций */
+    .promo-header-nav {
         display: flex;
         gap: 10px;
         margin-bottom: 5px;
+        margin-left: auto;
     }
 
     .section-title {
@@ -3240,8 +3272,8 @@ header {
         max-width: 600px;
     }
 
-    /* Навигация слайдера - стрелочки */
-    .slider-nav {
+    /* Уникальные классы для кнопок навигации акций */
+    .promo-nav-btn {
         background: transparent;
         border: none;
         cursor: pointer;
@@ -3255,12 +3287,12 @@ header {
         border-radius: 4px;
     }
 
-    .slider-nav:hover {
+    .promo-nav-btn:hover {
         color: var(--primary-dark);
         background: rgba(0,0,0,0.05);
     }
 
-    .slider-nav:active {
+    .promo-nav-btn:active {
         background: transparent;
         transform: scale(0.95);
     }
@@ -3268,7 +3300,8 @@ header {
     /* Слайдер */
     .promo-slider {
         position: relative;
-        overflow: hidden;
+        overflow: visible;
+        margin: 15px 0;
     }
 
     .promo-slider-container {
@@ -3278,8 +3311,10 @@ header {
         scroll-behavior: smooth;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding-bottom: 10px;
+        padding: 15px 0;
         cursor: grab;
+        /* Добавляем отступ справа для показа части следующего слайда */
+        padding-right: 60px;
     }
 
     .promo-slider-container:active {
@@ -3296,6 +3331,7 @@ header {
         min-width: 400px;
         text-decoration: none;
         color: inherit;
+        margin: 8px 0;
     }
 
     .promo-banner-inner {
@@ -3441,18 +3477,30 @@ header {
                 width: calc(50% - 10px);
             }
         }
+
+        /* Оставляем горизонтальный скролл на ПК */
+        .promo-slider-container {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding: 15px 10px;
+        }
+        
+        .promo-banner {
+            margin: 8px 0;
+        }
     }
 
     /* На планшетах и меньше - фиксированная ширина баннеров и скролл */
     @media (max-width: 1024px) {
-        .section-header-nav {
+        .promo-header-nav {
             display: none;
         }
         
         .promo-slider-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-right: 20px;
+            padding-right: 40px;
+            padding: 10px 0;
         }
         
         .promo-banner {
@@ -3462,6 +3510,7 @@ header {
         .promo-banner {
             width: 400px !important;
             flex: 0 0 400px !important;
+            margin: 5px 0;
         }
 
         .banner-image {
@@ -3500,6 +3549,8 @@ header {
             margin: 0 -16px;
             padding-left: 16px;
             padding-right: 16px;
+            /* Добавляем отступ справа для показа части следующего слайда */
+            padding-right: 60px;
         }
 
         .promo-banner {
@@ -3538,6 +3589,10 @@ header {
         
         .section-title {
             font-size: 1.6rem;
+        }
+        
+        .promo-slider-container {
+            padding-right: 40px;
         }
         
         .promo-banner {
@@ -3584,7 +3639,7 @@ header {
             gap: 5px;
         }
         
-        .slider-nav:hover {
+        .promo-nav-btn:hover {
             background: transparent;
             color: var(--primary-color);
         }
@@ -3594,8 +3649,8 @@ header {
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const promoContainer = document.querySelector('.promo-slider-container');
-        const prevBtn = document.querySelector('.slider-prev');
-        const nextBtn = document.querySelector('.slider-next');
+        const prevBtn = document.querySelector('.promo-prev');
+        const nextBtn = document.querySelector('.promo-next');
         
         // Функции для кнопок на десктопе
         function scrollPromo(direction) {
@@ -3634,11 +3689,11 @@ header {
 
         // Скрываем кнопки на планшетах и мобильных
         function handleResize() {
-            const sectionHeaderNav = document.querySelector('.section-header-nav');
+            const promoHeaderNav = document.querySelector('.promo-header-nav');
             if (window.innerWidth <= 1024) {
-                if (sectionHeaderNav) sectionHeaderNav.style.display = 'none';
+                if (promoHeaderNav) promoHeaderNav.style.display = 'none';
             } else {
-                if (sectionHeaderNav) sectionHeaderNav.style.display = 'flex';
+                if (promoHeaderNav) promoHeaderNav.style.display = 'flex';
             }
         }
         
@@ -3647,18 +3702,6 @@ header {
         handleResize();
     });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
