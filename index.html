@@ -127,15 +127,17 @@
 
 
 <body>
-    <header>
+<header>
     <div class="container">
         <div class="header-content">
+            <!-- Логотип -->
             <div class="logo">
                 <div class="logo-icon">H</div>
-                <span>Название</span>
+                <span class="logo-text">Название</span>
             </div>
             
-            <nav>
+            <!-- Навигация для десктопа -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#">Каталог</a></li>
                     <li><a href="#">Блог</a></li>
@@ -144,14 +146,16 @@
                 </ul>
             </nav>
             
+            <!-- Правая часть -->
             <div class="header-actions">
-                <div class="search-box">
+                <!-- Поиск (только на десктопе) -->
+                <div class="search-box desktop-only">
                     <span class="material-icons">search</span>
                     <input type="text" placeholder="Поиск...">
                 </div>
                 
-                <!-- Компактный переключатель тем -->
-                <div class="theme-switcher-compact">
+                <!-- Переключатель тем (только на десктопе) -->
+                <div class="theme-switcher-compact desktop-only">
                     <button class="theme-trigger">
                         <span class="material-icons">palette</span>
                     </button>
@@ -176,23 +180,72 @@
                     </div>
                 </div>
                 
+                <!-- Корзина -->
                 <div class="cart-icon">
                     <span class="material-icons">shopping_bag</span>
                     <div class="cart-count">3</div>
                 </div>
+                
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu mobile-only">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
             </div>
+        </div>
+    </div>
+    
+    <!-- Мобильное меню на весь экран -->
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav">
+            <!-- Контент меню начинается ПОД хедером -->
+            <nav>
+                <ul>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                </ul>
+                
+                <!-- Переключатель тем для мобильных -->
+                <div class="mobile-themes">
+                    <div class="theme-options">
+                        <button class="theme-option active" data-theme="classic" title="Классика">
+                            <div class="theme-preview classic"></div>
+                            <span>Классика</span>
+                        </button>
+                        <button class="theme-option" data-theme="fresh" title="Свежая">
+                            <div class="theme-preview fresh"></div>
+                            <span>Свежая</span>
+                        </button>
+                        <button class="theme-option" data-theme="olive" title="Оливковая">
+                            <div class="theme-preview olive"></div>
+                            <span>Оливковая</span>
+                        </button>
+                        <button class="theme-option" data-theme="turquoise" title="Бирюза">
+                            <div class="theme-preview turquoise"></div>
+                            <span>Бирюза</span>
+                        </button>
+                        <button class="theme-option" data-theme="pistachio" title="Фисташка">
+                            <div class="theme-preview pistachio"></div>
+                            <span>Фисташка</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
 </header>
 
-    <style>
+<style>
 /* ===== СТИЛИ ХЕДЕРА ===== */
 header {
     background-color: var(--bg-secondary);
     box-shadow: var(--shadow-light);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header-content {
@@ -202,6 +255,7 @@ header {
     padding: 15px 0;
 }
 
+/* Логотип */
 .logo {
     display: flex;
     align-items: center;
@@ -224,13 +278,14 @@ header {
     font-weight: bold;
 }
 
-nav ul {
+/* Навигация для десктопа */
+.desktop-nav ul {
     display: flex;
     list-style: none;
     gap: 25px;
 }
 
-nav a {
+.desktop-nav a {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 500;
@@ -239,11 +294,11 @@ nav a {
     position: relative;
 }
 
-nav a:hover {
+.desktop-nav a:hover {
     color: var(--primary-color);
 }
 
-nav a::after {
+.desktop-nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -254,16 +309,18 @@ nav a::after {
     transition: var(--transition);
 }
 
-nav a:hover::after {
+.desktop-nav a:hover::after {
     width: 100%;
 }
 
+/* Правая часть хедера */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Поиск */
 .search-box {
     display: flex;
     align-items: center;
@@ -291,12 +348,16 @@ nav a:hover::after {
     color: var(--text-light);
 }
 
+/* Корзина */
 .cart-icon {
     position: relative;
     cursor: pointer;
     padding: 8px;
     border-radius: var(--border-radius);
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-icon:hover {
@@ -305,14 +366,14 @@ nav a:hover::after {
 
 .cart-count {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: 2px;
+    right: 2px;
     background: var(--primary-color);
     color: var(--text-white);
     border-radius: 50%;
     width: 18px;
     height: 18px;
-    font-size: 12px;
+    font-size: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -378,10 +439,14 @@ nav a:hover::after {
     padding: 4px;
     cursor: pointer;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 .theme-option:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     border-color: var(--primary-color);
 }
 
@@ -403,51 +468,207 @@ nav a:hover::after {
 .theme-preview.turquoise { background: #2c7a78; }
 .theme-preview.pistachio { background: #689550; }
 
-/* ===== АДАПТИВНОСТЬ ХЕДЕРА ===== */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
+/* ===== БУРГЕР-МЕНЮ ===== */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1001; /* Повышаем z-index чтобы был над меню */
+}
+
+.burger-line {
+    width: 20px;
+    height: 2px;
+    background: var(--text-secondary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Правильная анимация бургера в крестик */
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+}
+
+.burger-menu:hover .burger-line {
+    background: var(--primary-color);
+}
+
+/* ===== МОБИЛЬНОЕ МЕНЮ НА ВЕСЬ ЭКРАН ===== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 998; /* Под хедером */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: 70px; /* Отступ сверху равный высоте хедера */
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 70px); /* Высота минус хедер */
+    background: var(--bg-secondary);
+    padding: 30px 20px 40px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-overlay.active .mobile-nav {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.mobile-nav li {
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-overlay.active .mobile-nav li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Задержка для анимации пунктов меню */
+.mobile-nav-overlay.active .mobile-nav li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(4) { transition-delay: 0.25s; }
+
+.mobile-nav a {
+    display: block;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-nav a:hover {
+    color: var(--primary-color);
+    padding-left: 15px;
+}
+
+/* Темы для мобильных */
+.mobile-themes {
+    margin-top: auto;
+}
+
+.mobile-themes .theme-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.mobile-nav-overlay.active .mobile-themes .theme-options {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-themes .theme-option {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px;
+    border: 1px solid var(--border-medium);
+    background: var(--bg-primary);
+}
+
+.mobile-themes .theme-option span {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-left: 10px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+/* Десктопные элементы */
+.desktop-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+    .desktop-nav ul {
         gap: 15px;
-        padding: 20px 0;
-    }
-    
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
     }
     
     .search-box input {
         width: 120px;
     }
-    
-    .theme-dropdown {
-        right: -50px;
-    }
 }
 
-@media (max-width: 480px) {
+/* Мобильные */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: flex !important;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: flex;
+    }
+    
     .header-content {
-        padding: 15px 0;
+        padding: 12px 0;
     }
     
-    nav ul {
-        gap: 10px;
-    }
-    
-    nav a {
-        font-size: 0.9rem;
-    }
-    
-    .search-box {
-        padding: 6px 12px;
-    }
-    
-    .search-box input {
-        width: 100px;
-    }
-    
-    .logo {
+    .logo-text {
         font-size: 20px;
     }
     
@@ -456,14 +677,48 @@ nav a:hover::after {
         height: 25px;
     }
     
-    .theme-options {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
+    .header-actions {
+        gap: 10px;
     }
     
-    .theme-preview {
-        width: 20px;
-        height: 20px;
+    .cart-icon {
+        padding: 6px;
+    }
+    
+    .cart-count {
+        top: 1px;
+        right: 1px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+    
+    /* Корректируем отступы для мобильного меню под хедер */
+    .mobile-nav {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .mobile-themes .theme-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .mobile-nav {
+        padding: 20px 15px 30px;
+        top: 55px;
+        height: calc(100vh - 55px);
+    }
+    
+    .mobile-nav a {
+        font-size: 1.1rem;
+        padding: 14px 0;
     }
 }
 
@@ -540,7 +795,10 @@ nav a:hover::after {
     document.addEventListener('DOMContentLoaded', function() {
         const themeOptions = document.querySelectorAll('.theme-option');
         const root = document.documentElement;
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
 
+        // Переключение тем
         themeOptions.forEach(option => {
             option.addEventListener('click', function() {
                 const themeName = this.dataset.theme;
@@ -553,6 +811,34 @@ nav a:hover::after {
             });
         });
 
+        // Бургер-меню
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Закрытие меню при клике на оверлей
+        mobileNavOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileNavOverlay) {
+                closeMobileMenu();
+            }
+        });
+
+        // Закрытие меню при клике на ссылку
+        const mobileLinks = document.querySelectorAll('.mobile-nav a, .mobile-themes .theme-option');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+
+        function closeMobileMenu() {
+            burgerMenu.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         function applyTheme(themeName) {
             const theme = themes[themeName];
             for (const [property, value] of Object.entries(theme)) {
@@ -560,6 +846,7 @@ nav a:hover::after {
             }
         }
 
+        // Восстановление темы
         const savedTheme = localStorage.getItem('selectedTheme') || 'classic';
         const savedOption = document.querySelector(`[data-theme="${savedTheme}"]`);
         if (savedOption) {
@@ -567,11 +854,6 @@ nav a:hover::after {
         }
     });
 </script>
-
-
-
-
-
 
 
 
