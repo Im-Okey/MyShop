@@ -2221,7 +2221,6 @@ header {
             -ms-overflow-style: none;
             padding-bottom: 10px;
             cursor: grab;
-            scroll-snap-type: x mandatory;
         }
 
         .brands-grid:active {
@@ -2616,10 +2615,40 @@ header {
             font-size: 0.9rem;
             z-index: 2;
             box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
-            /* Добавляем контрастные стили */
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 1024px) {
+            .discount-badge {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+                top: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Уменьшаем бейдж на мобильных */
+        @media (max-width: 768px) {
+            .discount-badge {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                top: 12px;
+                right: 12px;
+                border-radius: 15px;
+            }
+        }
+
+        /* Еще меньше на очень маленьких экранах */
+        @media (max-width: 480px) {
+            .discount-badge {
+                padding: 4px 8px;
+                font-size: 0.75rem;
+                top: 10px;
+                right: 10px;
+                border-radius: 12px;
+            }
         }
 
         .kit-header {
