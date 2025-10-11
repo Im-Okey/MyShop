@@ -10,18 +10,18 @@
         /* ===== CSS ПЕРЕМЕННЫЕ ===== */
         :root {
             /* Основные цвета */
-             --primary-color: #689550;
-    --primary-dark: #4f7340;
-    --primary-light: #84b36d;
-    --primary-rgb: 104, 149, 80;
-    
-    --bg-primary: #f7faf5;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #edf4e8;
-    --bg-dark: #364f2a;
-    
-    --accent-color: #e97c1f;
-    --accent-rgb: 233, 124, 31;
+            --primary-color: #689550;
+            --primary-dark: #4f7340;
+            --primary-light: #84b36d;
+            --primary-rgb: 104, 149, 80;
+            
+            --bg-primary: #f7faf5;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #edf4e8;
+            --bg-dark: #364f2a;
+            
+            --accent-color: #e97c1f;
+            --accent-rgb: 233, 124, 31;
             
             /* Текстовые цвета */
             --text-primary: #333;
@@ -326,17 +326,24 @@ header {
 .search-box {
     display: flex;
     align-items: center;
-    background: var(--bg-light);
+    background: var(--bg-secondary);
     border-radius: 20px;
     padding: 8px 15px;
     transition: var(--transition);
+    border: 1.5px solid var(--border-medium);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .search-box:focus-within {
-    background: var(--bg-secondary);
-    box-shadow: 0 0 0 2px var(--primary-light);
+    background: var(--bg-primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    border-color: var(--primary-color);
 }
 
+.search-box:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
 .search-box input {
     border: none;
     background: transparent;
@@ -345,6 +352,8 @@ header {
     width: 150px;
     color: var(--text-primary);
 }
+
+
 
 .search-box input::placeholder {
     color: var(--text-light);
@@ -891,12 +900,12 @@ header {
                     <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
                     <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary">
-                            <span class="material-icons btn-icon">local_offer</span>
+                        <button class="action-btn action-btn--primary">
+                            <span class="material-icons action-btn__icon">local_offer</span>
                             <span>Смотреть бренды</span>
                         </button>
-                        <button class="btn btn-secondary">
-                            <span class="material-icons btn-icon">question_answer</span>
+                        <button class="action-btn action-btn--secondary">
+                            <span class="material-icons action-btn__icon">question_answer</span>
                             <span>Задать вопрос в Telegram</span>
                         </button>
                     </div>
@@ -913,12 +922,12 @@ header {
                     <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
                     <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary">
-                            <span class="material-icons btn-icon">local_offer</span>
+                        <button class="action-btn action-btn--primary">
+                            <span class="material-icons action-btn__icon">local_offer</span>
                             <span>Смотреть бренды</span>
                         </button>
-                        <button class="btn btn-secondary">
-                            <span class="material-icons btn-icon">question_answer</span>
+                        <button class="action-btn action-btn--secondary">
+                            <span class="material-icons action-btn__icon">question_answer</span>
                             <span>Задать вопрос в Telegram</span>
                         </button>
                     </div>
@@ -935,12 +944,12 @@ header {
                     <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
                     <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary">
-                            <span class="material-icons btn-icon">local_offer</span>
+                        <button class="action-btn action-btn--primary">
+                            <span class="material-icons action-btn__icon">local_offer</span>
                             <span>Смотреть бренды</span>
                         </button>
-                        <button class="btn btn-secondary">
-                            <span class="material-icons btn-icon">question_answer</span>
+                        <button class="action-btn action-btn--secondary">
+                            <span class="material-icons action-btn__icon">question_answer</span>
                             <span>Задать вопрос в Telegram</span>
                         </button>
                     </div>
@@ -973,20 +982,25 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.slide:not(.active) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Отключаем события для неактивных слайдов */
 }
 
 .slide.active {
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Включаем события для активного слайда */
 }
-
-/* Убрал background-image из CSS - теперь они в HTML */
 
 /* БАЗОВЫЕ ОТСТУПЫ ДЛЯ ВСЕХ УСТРОЙСТВ */
 .slide-content {
@@ -1057,6 +1071,50 @@ header {
     margin-bottom: 40px;
 }
 
+/* ===== НОВЫЕ КНОПКИ С ПРИНУДИТЕЛЬНЫМИ СТИЛЯМИ ===== */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    position: relative;
+    z-index: 100;
+}
+
+.action-btn--primary {
+    background: var(--primary-color) !important;
+    color: var(--text-white) !important;
+}
+
+.action-btn--primary:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.action-btn--secondary {
+    background: transparent !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--text-white) !important;
+}
+
+.action-btn--secondary:hover {
+    background: var(--text-white) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.action-btn__icon {
+    font-size: 1.2rem;
+}
+
 /* Индикаторы - фиксированная позиция */
 .slider-indicators {
     position: absolute;
@@ -1083,6 +1141,63 @@ header {
     background: var(--text-white);
     transform: scale(1.2);
 }
+
+.indicator.active {
+    background: var(--text-white);
+    transform: scale(1.2);
+}
+
+/* ===== НОВЫЕ СТИЛИ ДЛЯ КНОПОК СЛАЙДЕРА ===== */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    position: relative;
+    z-index: 5; /* Повышаем z-index чтобы кнопки были выше */
+}
+
+.hero-btn--primary {
+    background: var(--primary-color);
+    color: var(--text-white);
+}
+
+.hero-btn--primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.hero-btn--secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--text-white);
+}
+
+.hero-btn--secondary:hover {
+    background: var(--text-white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.hero-btn__icon {
+    font-size: 1.2rem;
+}
+
+/* Форсируем отображение кнопок во всех слайдах */
+.fullscreen-slider .hero-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
 
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1400px) {
@@ -1557,500 +1672,527 @@ header {
 
 <style>
     /* ===== СТИЛИ БЛОКА НОВИНКИ ===== */
-    .new-products-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-        overflow: hidden;
+.new-products-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    overflow: hidden;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    white-space: nowrap;
+    margin: 0;
+}
+
+.section-header-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+/* Ссылка "Все новинки" */
+.view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    padding: 8px 0;
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.view-all-link:hover {
+    gap: 12px;
+    transform: translateY(-1px);
+}
+
+.view-all-link:hover .material-icons {
+    transform: translateX(2px);
+}
+
+.view-all-link .material-icons {
+    transition: transform 0.3s ease;
+}
+
+/* Навигация слайдера - стрелочки */
+.slider-nav {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.slider-nav:hover {
+    color: var(--primary-dark);
+    background: rgba(0,0,0,0.05);
+}
+
+.slider-nav:active {
+    background: transparent;
+    transform: scale(0.95);
+}
+
+.new-products-slider {
+    position: relative;
+    overflow: visible; /* Меняем на visible чтобы не обрезало */
+}
+
+.products-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 10px 30px; /* Добавляем отступы сверху и снизу */
+    margin: -20px -10px; /* Компенсируем отступы */
+    cursor: grab;
+}
+
+.products-container:active {
+    cursor: grabbing;
+}
+
+.products-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: calc(25% - 15px);
+    min-width: 280px;
+}
+
+.product-card-inner {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+/* Улучшенные ховер-эффекты */
+@media (hover: hover) and (pointer: fine) {
+    .product-card-inner:hover {
+        transform: translateY(-5px); /* Уменьшаем подъем */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Более мягкая тень */
     }
 
-    .container {
-        max-width: 1400px;
-        overflow: hidden;
+    .product-card-inner:hover .product-image {
+        transform: scale(1.02); /* Уменьшаем масштаб изображения */
+    }
+    
+    /* Плавное появление кнопки избранного при ховере */
+    .product-card-inner:hover .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-image {
+    height: 200px;
+    background-color: var(--bg-light);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-brand {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.current-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.old-price {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-add-to-cart {
+    flex: 1;
+    background: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-add-to-cart:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Показываем кнопку избранного на мобильных и при ховере */
+@media (max-width: 969px) {
+    .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-favorite:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+    transform: scale(1.1);
+}
+
+.btn-favorite .material-icons {
+    font-size: 20px;
+}
+
+/* Стили для карточки "Все новинки" */
+.view-all-card .product-card-inner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-white);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.view-all-card {
+    text-decoration: none;
+}
+
+.view-all-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.view-all-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.view-all-card:hover .view-all-icon {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.3);
+}
+
+.view-all-icon .material-icons {
+    font-size: 2rem;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.view-all-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.view-all-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin: 0;
+    text-decoration: none;
+}
+
+.view-all-cta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.view-all-card:hover .view-all-cta {
+    gap: 8px;
+}
+
+.view-all-cta span {
+    text-decoration: none;
+}
+
+.view-all-cta .material-icons {
+    text-decoration: none;
+}
+
+/* Классы для скрытия/показа элементов */
+.desktop-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* ===== АДАПТИВНОСТЬ БЛОКА НОВИНКИ ===== */
+
+/* На ПК с кнопками - адаптивные карточки */
+@media (min-width: 970px) {
+    .product-card {
+        width: calc(25% - 15px);
+    }
+    
+    /* Если не хватает места для 4 карточек - показываем 3 */
+    @media (max-width: 1200px) {
+        .product-card {
+            width: calc(33.333% - 14px);
+        }
     }
 
+    /* Оставляем горизонтальный скролл на ПК */
+    .products-container {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+/* На планшетах и меньше - фиксированная ширина карточек и скролл */
+@media (max-width: 969px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: flex !important;
+    }
+    
+    .products-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 20px;
+    }
+    
+    .product-card {
+        width: 280px;
+    }
+    
+    .product-card {
+        width: 280px !important;
+        flex: 0 0 280px !important;
+    }
+}
+
+@media (max-width: 579px) {
     .section-header {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 40px;
-        flex-wrap: nowrap;
-        gap: 20px;
     }
-
+    
     .section-title {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--primary-color);
-        white-space: nowrap;
-        margin: 0;
+        font-size: 1.6rem;
     }
-
-    .section-header-nav {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 5px;
-    }
-
-    /* Ссылка "Все новинки" - убрали подчеркивание и синие линии */
-    .view-all-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--primary-color);
-        text-decoration: none; /* Убрали подчеркивание */
-        font-weight: 600;
-        transition: var(--transition);
-        padding: 8px 0;
-        border-radius: var(--border-radius);
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-
-    .view-all-link:hover {
-        gap: 12px;
-        transform: translateY(-1px);
-    }
-
-    .view-all-link:hover .material-icons {
-        transform: translateX(2px);
-    }
-
-    .view-all-link .material-icons {
-        transition: transform 0.3s ease;
-    }
-
-    /* Навигация слайдера - стрелочки */
-    .slider-nav {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        color: var(--primary-color);
-        font-size: 1.8rem;
-        padding: 5px;
-        border-radius: 4px;
-    }
-
-    .slider-nav:hover {
-        color: var(--primary-dark);
-        background: rgba(0,0,0,0.05);
-    }
-
-    .slider-nav:active {
-        background: transparent;
-        transform: scale(0.95);
-    }
-
-    .new-products-slider {
-        position: relative;
-        overflow: visible; /* Меняем hidden на visible */
-        margin: 15px 0; /* Добавляем отступы для ховер-эффекта */
-    }
-
-    .products-container {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 15px 0; /* Добавляем отступы сверху и снизу */
-        cursor: grab;
-    }
-
-
-    .products-container:active {
-        cursor: grabbing;
-    }
-
-    .products-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .product-card {
-        flex: 0 0 auto;
-        width: calc(25% - 15px);
-        min-width: 280px;
-    }
-
-    .product-card-inner {
-        background: var(--bg-secondary);
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: var(--shadow-light);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .product-card-inner:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .product-card-inner:hover .product-image {
-            transform: scale(1.05);
-        }
-    }
-
+    
     .product-image {
-        height: 200px;
-        background-color: var(--bg-light);
-        background-size: cover;
-        background-position: center;
-        transition: var(--transition);
-    }
-
-    .product-info {
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .product-brand {
-        font-size: 0.9rem;
-        color: var(--text-light);
-        margin-bottom: 5px;
-        font-weight: 500;
-    }
-
-    .product-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: var(--text-primary);
-        line-height: 1.3;
-    }
-
-    .product-description {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        margin-bottom: 15px;
-        flex-grow: 1;
-        line-height: 1.5;
-    }
-
-    .product-price {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .current-price {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--primary-color);
-    }
-
-    .old-price {
-        font-size: 1rem;
-        color: var(--text-light);
-        text-decoration: line-through;
-    }
-
-    .product-actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .btn-add-to-cart {
-        flex: 1;
-        background: var(--primary-color);
-        color: var(--text-white);
-        border: none;
-        padding: 12px;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .btn-add-to-cart:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-    }
-
-    .btn-favorite {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: var(--transition);
-        border: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        z-index: 2;
-    }
-
-    .btn-favorite:hover {
-        background: var(--primary-color);
-        color: var(--text-white);
-        transform: scale(1.1);
-    }
-
-    .btn-favorite .material-icons {
-        font-size: 20px;
-    }
-
-    /* Стили для карточки "Все новинки" */
-    .view-all-card .product-card-inner {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--text-white);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-        /* Убираем подчеркивание у ссылки */
-        text-decoration: none;
-    }
-
-    .view-all-card {
-        text-decoration: none; /* Убираем подчеркивание у всей карточки */
+        height: 180px;
     }
 
     .view-all-content {
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        text-decoration: none; /* Убираем подчеркивание у контента */
+        padding: 20px;
+        gap: 12px;
     }
 
     .view-all-icon {
-        width: 60px;
-        height: 60px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px;
+        width: 45px;
+        height: 45px;
+        margin-bottom: 5px;
     }
 
     .view-all-icon .material-icons {
-        font-size: 2rem;
-        color: var(--text-white);
-        text-decoration: none; /* Убираем подчеркивание у иконки */
+        font-size: 1.5rem;
     }
 
     .view-all-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin: 0;
-        color: var(--text-white);
-        text-decoration: none; /* Убираем подчеркивание у заголовка */
+        font-size: 1.1rem;
     }
 
     .view-all-description {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        opacity: 0.9;
-        margin: 0;
-        text-decoration: none; /* Убираем подчеркивание у описания */
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header {
+        gap: 15px;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .btn-add-to-cart {
+        width: 100%;
     }
 
-    .view-all-cta {
-        display: flex;
-        align-items: center;
+    .view-all-content {
+        padding: 15px;
+    }
+}
+
+/* Отключаем hover-эффекты на тач-устройствах */
+@media (hover: none) and (pointer: coarse) {
+    .product-card-inner:hover {
+        transform: none;
+        box-shadow: var(--shadow-light);
+        border-color: transparent;
+    }
+    
+    .product-card-inner:hover .product-image {
+        transform: none;
+    }
+    
+    .btn-add-to-cart:hover {
+        transform: none;
+        background: var(--primary-color);
+    }
+    
+    .btn-favorite:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.9);
+        color: inherit;
+    }
+    
+    .slider-nav:hover {
+        background: transparent;
+        color: var(--primary-color);
+    }
+    
+    .view-all-card:hover .product-card-inner {
+        transform: none;
+        border-color: transparent;
+        box-shadow: var(--shadow-light);
+    }
+    
+    .view-all-card:hover .view-all-cta {
+        transform: none;
         gap: 5px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        margin-top: 10px;
-        transition: var(--transition);
-        text-decoration: none; /* Убираем подчеркивание у CTA */
-    }
-
-    .view-all-cta span {
-        text-decoration: none; /* Убираем подчеркивание у текста CTA */
-    }
-
-    .view-all-cta .material-icons {
-        text-decoration: none; /* Убираем подчеркивание у иконки CTA */
-    }
-
-    /* Классы для скрытия/показа элементов */
-    .desktop-only {
-        display: flex;
-    }
-
-    .mobile-only {
-        display: none;
-    }
-
-    /* ===== АДАПТИВНОСТЬ БЛОКА НОВИНКИ ===== */
-    
-    /* На ПК с кнопками - адаптивные карточки */
-    @media (min-width: 970px) {
-        .product-card {
-            width: calc(25% - 15px);
-        }
-        
-        /* Если не хватает места для 4 карточек - показываем 3 */
-        @media (max-width: 1200px) {
-            .product-card {
-                width: calc(33.333% - 14px);
-            }
-        }
-
-        /* Оставляем горизонтальный скролл на ПК */
-        .products-container {
-            overflow-x: auto;
-            flex-wrap: nowrap;
-        }
-    }
-
-    /* На планшетах и меньше - фиксированная ширина карточек и скролл */
-    @media (max-width: 969px) {
-        .desktop-only {
-            display: none !important;
-        }
-        
-        .mobile-only {
-            display: flex !important;
-        }
-        
-        .products-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding-right: 20px;
-        }
-        
-        .product-card {
-            width: 280px;
-        }
-        
-        .product-card {
-            width: 280px !important;
-            flex: 0 0 280px !important;
-        }
-    }
-
-    @media (max-width: 579px) {
-        .section-header {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .section-title {
-            font-size: 1.6rem;
-        }
-        
-        .product-image {
-            height: 180px;
-        }
-
-        .view-all-content {
-            padding: 20px;
-            gap: 12px;
-        }
-
-        .view-all-icon {
-            width: 45px;
-            height: 45px;
-            margin-bottom: 5px;
-        }
-
-        .view-all-icon .material-icons {
-            font-size: 1.5rem;
-        }
-
-        .view-all-title {
-            font-size: 1.1rem;
-        }
-
-        .view-all-description {
-            font-size: 0.85rem;
-        }
     }
     
-    @media (max-width: 480px) {
-        .section-header {
-            gap: 15px;
-        }
-        
-        .section-title {
-            font-size: 1.4rem;
-        }
-        
-        .product-actions {
-            flex-direction: column;
-        }
-        
-        .btn-add-to-cart {
-            width: 100%;
-        }
-
-        .view-all-content {
-            padding: 15px;
-        }
+    .view-all-link:hover {
+        transform: none;
+        gap: 8px;
     }
-
-    /* Отключаем hover-эффекты на тач-устройствах */
-    @media (hover: none) and (pointer: coarse) {
-        .product-card-inner:hover {
-            transform: none;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .product-card-inner:hover .product-image {
-            transform: none;
-        }
-        
-        .btn-add-to-cart:hover {
-            transform: none;
-            background: var(--primary-color);
-        }
-        
-        .btn-favorite:hover {
-            transform: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: inherit;
-        }
-        
-        .slider-nav:hover {
-            background: transparent;
-            color: var(--primary-color);
-        }
-        
-        .view-all-card:hover .product-card-inner {
-            transform: none;
-            border-color: transparent;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .view-all-card:hover .view-all-cta {
-            transform: none;
-            gap: 5px;
-        }
-        
-        .view-all-link:hover {
-            transform: none;
-            gap: 8px;
-        }
-    }
+}
 </style>
 
 <script>
@@ -2279,7 +2421,7 @@ header {
 
     .brand-tile:hover {
         transform: translateY(-8px);
-        box-shadow: var(--shadow-heavy);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .brand-image {
@@ -2428,7 +2570,6 @@ header {
         }
     }
 </style>
-
 
 
 
@@ -3088,8 +3229,6 @@ header {
 
 
 
-
-<!-- Блок Акции и скидки -->
 <section class="promo-banners-section">
     <div class="container">
         <!-- Заголовок и навигация -->
@@ -3099,11 +3238,11 @@ header {
                     <h2 class="section-title">Специальные предложения</h2>
                     <p class="section-subtitle">Эксклюзивные условия для вашей красоты</p>
                 </div>
-                <div class="promo-header-nav">
-                    <button class="promo-nav-btn promo-prev">
+                <div class="promo-controls-wrapper">
+                    <button class="promo-arrow promo-arrow-left">
                         <span class="material-icons">arrow_back_ios</span>
                     </button>
-                    <button class="promo-nav-btn promo-next">
+                    <button class="promo-arrow promo-arrow-right">
                         <span class="material-icons">arrow_forward_ios</span>
                     </button>
                 </div>
@@ -3214,8 +3353,10 @@ header {
         --text-white: #FFFFFF;
         --bg-primary: #FFFFFF;
         --bg-secondary: #F8F9FA;
+        --bg-tertiary: #F0F2F5;
         --bg-light: #F0F0F0;
         --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.12);
         --shadow-heavy: 0 12px 28px rgba(0, 0, 0, 0.15);
         --transition: all 0.3s ease;
     }
@@ -3223,7 +3364,7 @@ header {
     /* ===== СТИЛИ БЛОКА АКЦИЙ ===== */
     .promo-banners-section {
         padding: 80px 0;
-        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        background: var(--bg-tertiary);
         overflow: hidden;
     }
 
@@ -3237,43 +3378,29 @@ header {
         margin-bottom: 40px;
     }
 
+    /* ПОЛНОСТЬЮ ПЕРЕПИСАННАЯ СТРУКТУРА ЗАГОЛОВКА */
     .section-header-content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
-        gap: 30px;
-        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
     }
 
     .section-header-text {
         flex: 1;
+        min-width: 0;
     }
 
-    /* Уникальные классы для навигации акций - ВЫРАВНИВАЕМ СПРАВА */
-    .promo-header-nav {
+    /* НОВЫЕ КЛАССЫ ДЛЯ КНОПОК - ВСЕГДА СПРАВА */
+    .promo-controls-wrapper {
         display: flex;
-        gap: 10px;
-        margin-bottom: 5px;
-        margin-left: auto; /* Это выравнивает стрелки справа */
+        gap: 8px;
+        flex-shrink: 0;
+        margin-left: auto; /* ВЫТАЛКИВАЕМ ВПРАВО */
     }
 
-    .section-title {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--primary-color);
-        margin-bottom: 10px;
-        white-space: nowrap;
-    }
-
-    .section-subtitle {
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-        line-height: 1.6;
-        max-width: 600px;
-    }
-
-    /* Уникальные классы для кнопок навигации акций */
-    .promo-nav-btn {
+    .promo-arrow {
         background: transparent;
         border: none;
         cursor: pointer;
@@ -3283,18 +3410,33 @@ header {
         transition: var(--transition);
         color: var(--primary-color);
         font-size: 1.8rem;
-        padding: 5px;
-        border-radius: 4px;
+        padding: 8px;
+        border-radius: 6px;
+        width: 44px;
+        height: 44px;
     }
 
-    .promo-nav-btn:hover {
+    .promo-arrow:hover {
         color: var(--primary-dark);
         background: rgba(0,0,0,0.05);
     }
 
-    .promo-nav-btn:active {
-        background: transparent;
-        transform: scale(0.95);
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        white-space: normal;
+        word-wrap: break-word;
+        line-height: 1.2;
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        max-width: 600px;
+        white-space: normal;
     }
 
     /* Слайдер */
@@ -3313,8 +3455,6 @@ header {
         -ms-overflow-style: none;
         padding: 15px 0;
         cursor: grab;
-        /* Добавляем отступ справа для показа части следующего слайда */
-        padding-right: 60px;
     }
 
     .promo-slider-container:active {
@@ -3327,18 +3467,14 @@ header {
 
     .promo-banner {
         flex: 0 0 auto;
-        width: calc(33.333% - 14px);
-        min-width: 400px;
         text-decoration: none;
         color: inherit;
         margin: 8px 0;
     }
 
     .promo-banner-inner {
-        background: var(--bg-secondary);
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: var(--shadow-light);
         transition: var(--transition);
         height: 100%;
         display: flex;
@@ -3347,17 +3483,8 @@ header {
 
     @media (hover: hover) and (pointer: fine) {
         .promo-banner-inner:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .promo-banner-inner:hover .banner-image {
-            transform: scale(1.05);
-        }
-
-        .promo-banner-inner:hover .banner-cta {
-            transform: translateX(5px);
-            gap: 8px;
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
         }
     }
 
@@ -3416,6 +3543,7 @@ header {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        background: var(--bg-secondary);
     }
 
     .banner-header {
@@ -3463,65 +3591,54 @@ header {
         transition: var(--transition);
     }
 
-    /* ===== АДАПТИВНОСТЬ БЛОКА АКЦИЙ ===== */
+    /* ===== АДАПТИВНОСТЬ ===== */
     
-    /* На ПК с кнопками - адаптивные баннеры */
+    /* НА ПК - 1 БАННЕР НА ВЕСЬ ЭКРАН */
     @media (min-width: 1025px) {
         .promo-banner {
-            width: calc(33.333% - 14px);
+            width: 100%;
+            flex: 0 0 100%;
         }
         
-        /* Если не хватает места для 3 баннеров - показываем 2 */
-        @media (max-width: 1200px) {
-            .promo-banner {
-                width: calc(50% - 10px);
-            }
-        }
-
-        /* Оставляем горизонтальный скролл на ПК */
         .promo-slider-container {
-            overflow-x: auto;
+            overflow: hidden;
             flex-wrap: nowrap;
-            padding: 15px 10px;
-        }
-        
-        .promo-banner {
-            margin: 8px 0;
         }
     }
 
-    /* На планшетах и меньше - фиксированная ширина баннеров и скролл */
+    /* НА ПЛАНШЕТАХ И ТЕЛЕФОНАХ - СКРОЛЛ */
     @media (max-width: 1024px) {
-        .promo-header-nav {
+        .promo-controls-wrapper {
             display: none;
         }
         
         .promo-slider-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-right: 40px;
-            padding: 10px 0;
+            padding-right: 0; /* УБИРАЕМ padding-right */
+        }
+        
+        /* Добавляем небольшой отступ после последнего слайда */
+        .promo-slider-container::after {
+            content: '';
+            flex: 0 0 20px;
         }
         
         .promo-banner {
-            width: 380px; /* Уменьшил для планшетов */
-        }
-        
-        .promo-banner {
-            width: 380px !important;
-            flex: 0 0 380px !important;
-            margin: 5px 0;
+            width: 360px !important;
+            flex: 0 0 360px !important;
         }
 
         .banner-image {
-            height: 200px; /* Уменьшил высоту изображения */
+            height: 200px;
         }
 
         .banner-content {
-            padding: 20px; /* Уменьшил отступы */
+            padding: 20px;
         }
     }
 
+    /* ТЕЛЕФОНЫ */
     @media (max-width: 768px) {
         .promo-banners-section {
             padding: 60px 0;
@@ -3539,6 +3656,7 @@ header {
 
         .section-title {
             font-size: 1.8rem;
+            line-height: 1.3;
         }
 
         .section-subtitle {
@@ -3548,22 +3666,24 @@ header {
         .promo-slider-container {
             margin: 0 -16px;
             padding-left: 16px;
-            padding-right: 16px;
-            /* УВЕЛИЧИВАЕМ отступ справа для лучшего показа части следующего слайда */
-            padding-right: 80px;
+            padding-right: 0; /* УБИРАЕМ padding-right */
+        }
+        
+        .promo-slider-container::after {
+            flex: 0 0 16px;
         }
 
         .promo-banner {
-            width: 300px !important; /* УМЕНЬШИЛ для телефонов */
-            flex: 0 0 300px !important;
+            width: 320px !important;
+            flex: 0 0 320px !important;
         }
 
         .banner-image {
-            height: 180px; /* Уменьшил высоту изображения */
+            height: 180px;
         }
 
         .banner-content {
-            padding: 18px; /* Уменьшил отступы */
+            padding: 18px;
         }
 
         .banner-title {
@@ -3572,13 +3692,6 @@ header {
 
         .banner-description {
             font-size: 0.9rem;
-        }
-
-        .banner-badge {
-            top: 15px;
-            left: 15px;
-            padding: 8px 16px;
-            font-size: 0.8rem;
         }
     }
 
@@ -3592,16 +3705,20 @@ header {
         }
         
         .promo-slider-container {
-            padding-right: 60px; /* УВЕЛИЧИВАЕМ отступ */
+            padding-right: 0; /* УБИРАЕМ padding-right */
+        }
+        
+        .promo-slider-container::after {
+            flex: 0 0 12px;
         }
         
         .promo-banner {
-            width: 260px !important; /* ЕЩЕ УМЕНЬШИЛ для маленьких телефонов */
-            flex: 0 0 260px !important;
+            width: 300px !important;
+            flex: 0 0 300px !important;
         }
 
         .banner-image {
-            height: 160px; /* Еще уменьшил высоту */
+            height: 160px;
         }
 
         .banner-content {
@@ -3619,16 +3736,7 @@ header {
         }
 
         .banner-date {
-            align-self: flex-start;
             font-size: 0.8rem;
-        }
-
-        .banner-description {
-            font-size: 0.85rem;
-        }
-
-        .banner-cta {
-            font-size: 0.9rem;
         }
     }
 
@@ -3636,21 +3744,7 @@ header {
     @media (hover: none) and (pointer: coarse) {
         .promo-banner-inner:hover {
             transform: none;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .promo-banner-inner:hover .banner-image {
-            transform: none;
-        }
-        
-        .promo-banner-inner:hover .banner-cta {
-            transform: none;
-            gap: 5px;
-        }
-        
-        .promo-nav-btn:hover {
-            background: transparent;
-            color: var(--primary-color);
+            box-shadow: none;
         }
     }
 </style>
@@ -3658,59 +3752,85 @@ header {
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const promoContainer = document.querySelector('.promo-slider-container');
-        const prevBtn = document.querySelector('.promo-prev');
-        const nextBtn = document.querySelector('.promo-next');
+        const prevBtn = document.querySelector('.promo-arrow-left');
+        const nextBtn = document.querySelector('.promo-arrow-right');
+        const banners = document.querySelectorAll('.promo-banner');
         
-        // Функции для кнопок на десктопе
-        function scrollPromo(direction) {
-            const bannerWidth = document.querySelector('.promo-banner').offsetWidth + 20;
-            const scrollAmount = bannerWidth * direction;
-            promoContainer.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        let currentIndex = 0;
         
-        // Обработчики для кнопок (работают только на десктопе)
-        if (window.innerWidth > 1024) {
-            if (prevBtn && nextBtn) {
-                prevBtn.addEventListener('click', () => scrollPromo(-1));
-                nextBtn.addEventListener('click', () => scrollPromo(1));
-                
-                // Убираем фон при нажатии
-                prevBtn.addEventListener('mousedown', function() {
-                    this.style.backgroundColor = 'transparent';
+        // Функция для скролла к конкретному слайду
+        function scrollToSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= banners.length) index = banners.length - 1;
+            
+            currentIndex = index;
+            
+            if (window.innerWidth > 1024) {
+                // На ПК - скроллим к началу слайда
+                const slidePosition = banners[index].offsetLeft;
+                promoContainer.scrollTo({
+                    left: slidePosition,
+                    behavior: 'smooth'
                 });
-
-                nextBtn.addEventListener('mousedown', function() {
-                    this.style.backgroundColor = 'transparent';
-                });
-
-                prevBtn.addEventListener('mouseup', function() {
-                    this.style.backgroundColor = '';
-                });
-
-                nextBtn.addEventListener('mouseup', function() {
-                    this.style.backgroundColor = '';
+            } else {
+                // На мобильных - обычный скролл
+                const bannerWidth = banners[0].offsetWidth + 20;
+                const scrollAmount = bannerWidth * index;
+                promoContainer.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
                 });
             }
         }
+        
+        // Обработчики для кнопок
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                scrollToSlide(currentIndex - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                scrollToSlide(currentIndex + 1);
+            });
+        }
+
+        // Обновляем текущий индекс при скролле
+        promoContainer.addEventListener('scroll', function() {
+            if (window.innerWidth > 1024) {
+                // На ПК определяем текущий слайд по позиции скролла
+                const scrollPosition = promoContainer.scrollLeft;
+                const containerWidth = promoContainer.offsetWidth;
+                
+                for (let i = 0; i < banners.length; i++) {
+                    const slidePosition = banners[i].offsetLeft;
+                    if (scrollPosition >= slidePosition - containerWidth / 2) {
+                        currentIndex = i;
+                    }
+                }
+            }
+        });
 
         // Скрываем кнопки на планшетах и мобильных
         function handleResize() {
-            const promoHeaderNav = document.querySelector('.promo-header-nav');
+            const controlsWrapper = document.querySelector('.promo-controls-wrapper');
             if (window.innerWidth <= 1024) {
-                if (promoHeaderNav) promoHeaderNav.style.display = 'none';
+                if (controlsWrapper) controlsWrapper.style.display = 'none';
             } else {
-                if (promoHeaderNav) promoHeaderNav.style.display = 'flex';
+                if (controlsWrapper) controlsWrapper.style.display = 'flex';
             }
         }
         
-        // Проверяем при загрузке и изменении размера
         window.addEventListener('resize', handleResize);
         handleResize();
     });
 </script>
+
+
+
+
+
+
+
 
 
 
