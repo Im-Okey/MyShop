@@ -170,22 +170,16 @@
 
 
 
-
-
-
-
-
-
-
-
 <header>
     <div class="container">
         <div class="header-content">
             <!-- Логотип -->
-            <div class="logo">
-                <div class="logo-icon">H</div>
-                <span class="logo-text">Название</span>
-            </div>
+            <a href="/" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-icon">H</div>
+                    <span class="logo-text">Название</span>
+                </div>
+            </a>
             
             <!-- Навигация для десктопа -->
             <nav class="desktop-nav">
@@ -234,7 +228,7 @@
                 <!-- Корзина -->
                 <div class="cart-icon" id="cartTrigger">
                     <span class="material-icons">shopping_bag</span>
-                    <div class="cart-count">3</div>
+                    <div class="cart-count">4</div>
                 </div>
                 
                 <!-- Бургер-меню для мобильных -->
@@ -289,10 +283,7 @@
     </div>
 </header>
 
-<!-- Оверлей для корзины -->
 <div class="cart-overlay" id="cartOverlay"></div>
-
-<!-- Боковая панель корзины -->
 <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-header">
         <h2 class="cart-title">Корзина</h2>
@@ -309,8 +300,8 @@
                     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
-                    <h3 class="item-name">Органические помидоры1</h3>
-                    <p class="item-price">350 ₽/кг</p>
+                    <h3 class="item-name">Товар №1</h3>
+                    <p class="item-price">170 руб.</p>
                     <div class="item-quantity">
                         <button class="quantity-btn minus">-</button>
                         <span class="quantity">2</span>
@@ -318,7 +309,7 @@
                     </div>
                 </div>
                 <div class="item-total">
-                    <span class="total-price">700 ₽</span>
+                    <span class="total-price">340 руб.</span>
                     <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
@@ -331,8 +322,8 @@
                     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
-                    <h3 class="item-name">Свежие огурцы</h3>
-                    <p class="item-price">280 ₽/кг</p>
+                    <h3 class="item-name">Товар №2</h3>
+                    <p class="item-price">80 руб.</p>
                     <div class="item-quantity">
                         <button class="quantity-btn minus">-</button>
                         <span class="quantity">1</span>
@@ -340,7 +331,7 @@
                     </div>
                 </div>
                 <div class="item-total">
-                    <span class="total-price">280 ₽</span>
+                    <span class="total-price">80 руб.</span>
                     <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
@@ -353,16 +344,16 @@
                     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
-                    <h3 class="item-name">Авокадо Хасс</h3>
-                    <p class="item-price">120 ₽/шт</p>
+                    <h3 class="item-name">Товар №3</h3>
+                    <p class="item-price">45 руб.</p>
                     <div class="item-quantity">
                         <button class="quantity-btn minus">-</button>
-                        <span class="quantity">3</span>
+                        <span class="quantity">4</span>
                         <button class="quantity-btn plus">+</button>
                     </div>
                 </div>
                 <div class="item-total">
-                    <span class="total-price">360 ₽</span>
+                    <span class="total-price">180 руб.</span>
                     <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
@@ -374,16 +365,16 @@
                     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
-                    <h3 class="item-name">Авокадо Хасс1</h3>
-                    <p class="item-price">1201 ₽/шт</p>
+                    <h3 class="item-name">Товар №4</h3>
+                    <p class="item-price">70 руб.</p>
                     <div class="item-quantity">
                         <button class="quantity-btn minus">-</button>
-                        <span class="quantity">31</span>
+                        <span class="quantity">2</span>
                         <button class="quantity-btn plus">+</button>
                     </div>
                 </div>
                 <div class="item-total">
-                    <span class="total-price">3601 ₽</span>
+                    <span class="total-price">140 руб.</span>
                     <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
@@ -401,8 +392,8 @@
     <div class="cart-footer">
         <div class="cart-summary">
             <div class="summary-row">
-                <span>Товары (3)</span>
-                <span>1 340 ₽</span>
+                <span>Товары (9)</span>
+                <span>740 руб.</span>
             </div>
             <div class="summary-row">
                 <span>Доставка</span>
@@ -410,12 +401,14 @@
             </div>
             <div class="summary-total">
                 <span>Итого</span>
-                <span>1 340 ₽</span>
+                <span>740 руб.</span>
             </div>
         </div>
         <button class="checkout-btn">Оформить заказ</button>
     </div>
 </div>
+
+
 
 <style>
     /* Решение для скролла без смещения контента */
@@ -2251,6 +2244,8 @@ body.cart-mobile-open {
                             <span class="material-icons">favorite_border</span>
                         </button>
                         <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж СКИДКА -->
+                        <div class="product-badge sale">-20%</div>
                         <div class="product-info">
                             <div class="product-brand">MONNALI</div>
                             <h3 class="product-name">Шампунь с экстрактом шелка</h3>
@@ -2268,7 +2263,7 @@ body.cart-mobile-open {
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Продукт 2 -->
                 <div class="product-card">
                     <div class="product-card-inner">
@@ -2276,61 +2271,14 @@ body.cart-mobile-open {
                             <span class="material-icons">favorite_border</span>
                         </button>
                         <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж NEW -->
+                        <div class="product-badge new">NEW</div>
                         <div class="product-info">
                             <div class="product-brand">DSD de Luxe</div>
                             <h3 class="product-name">Сыворотка для роста волос</h3>
                             <p class="product-description">Активирует рост и укрепляет волосяные фолликулы</p>
                             <div class="product-price">
                                 <span class="current-price">68.00 руб.</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Продукт 3 -->
-                <div class="product-card">
-                    <div class="product-card-inner">
-                        <button class="btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
-                        <div class="product-info">
-                            <div class="product-brand">OPTIMA</div>
-                            <h3 class="product-name">Маска для объема</h3>
-                            <p class="product-description">Создает естественный объем и упругость</p>
-                            <div class="product-price">
-                                <span class="current-price">38.00 руб.</span>
-                                <span class="old-price">45.00 руб.</span>
-                            </div>
-                            <div class="product-actions">
-                                <button class="btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Продукт 4 -->
-                <div class="product-card">
-                    <div class="product-card-inner">
-                        <button class="btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
-                        <div class="product-info">
-                            <div class="product-brand">FABAO</div>
-                            <h3 class="product-name">Лосьон против перхоти</h3>
-                            <p class="product-description">Эффективно борется с перхотью и зудом</p>
-                            <div class="product-price">
-                                <span class="current-price">52.00 руб.</span>
                             </div>
                             <div class="product-actions">
                                 <button class="btn-add-to-cart">
@@ -2349,6 +2297,8 @@ body.cart-mobile-open {
                             <span class="material-icons">favorite_border</span>
                         </button>
                         <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж ХИТ -->
+                        <div class="product-badge hit">ХИТ</div>
                         <div class="product-info">
                             <div class="product-brand">OPTIMA</div>
                             <h3 class="product-name">Маска для объема</h3>
@@ -2374,6 +2324,8 @@ body.cart-mobile-open {
                             <span class="material-icons">favorite_border</span>
                         </button>
                         <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж АКЦИЯ -->
+                        <div class="product-badge promotion">АКЦИЯ</div>
                         <div class="product-info">
                             <div class="product-brand">MONNALI</div>
                             <h3 class="product-name">Шампунь с экстрактом шелка</h3>
@@ -2381,6 +2333,59 @@ body.cart-mobile-open {
                             <div class="product-price">
                                 <span class="current-price">45.00 руб.</span>
                                 <span class="old-price">52.00 руб.</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-add-to-cart">
+                                    <span class="material-icons">shopping_cart</span>
+                                    <span>В корзину</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Продукт 3 -->
+                <div class="product-card">
+                    <div class="product-card-inner">
+                        <button class="btn-favorite">
+                            <span class="material-icons">favorite_border</span>
+                        </button>
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж СКИДКА -->
+                        <div class="product-badge sale">-15%</div>
+                        <div class="product-info">
+                            <div class="product-brand">OPTIMA</div>
+                            <h3 class="product-name">Маска для объема</h3>
+                            <p class="product-description">Создает естественный объем и упругость</p>
+                            <div class="product-price">
+                                <span class="current-price">38.00 руб.</span>
+                                <span class="old-price">45.00 руб.</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-add-to-cart">
+                                    <span class="material-icons">shopping_cart</span>
+                                    <span>В корзину</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Продукт 4 -->
+                <div class="product-card">
+                    <div class="product-card-inner">
+                        <button class="btn-favorite">
+                            <span class="material-icons">favorite_border</span>
+                        </button>
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                        <!-- Бейдж NEW -->
+                        <div class="product-badge new">NEW</div>
+                        <div class="product-info">
+                            <div class="product-brand">FABAO</div>
+                            <h3 class="product-name">Лосьон против перхоти</h3>
+                            <p class="product-description">Эффективно борется с перхотью и зудом</p>
+                            <div class="product-price">
+                                <span class="current-price">52.00 руб.</span>
                             </div>
                             <div class="product-actions">
                                 <button class="btn-add-to-cart">
@@ -2693,13 +2698,18 @@ body.cart-mobile-open {
         cursor: pointer;
         transition: all 0.3s ease;
         border: none;
-        box-shadow: var(--shadow-medium); /* Используем ту же тень */
+        box-shadow: var(--shadow-medium);
         z-index: 2;
-        opacity: 0;
+        opacity: 0; /* По умолчанию скрыто */
         transform: translateY(-10px);
     }
 
-    /* Показываем кнопку избранного на мобильных и при ховере */
+    .btn-favorite.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* На мобильных всегда показываем */
     @media (max-width: 969px) {
         .btn-favorite {
             opacity: 1;
@@ -3028,6 +3038,58 @@ body.cart-mobile-open {
         transform: none !important;
     }
 }
+/* На десктопе показываем при наведении на карточку */
+@media (hover: hover) and (pointer: fine) {
+    .product-card-inner:hover .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* И всегда показываем активные */
+    .product-card-inner:hover .btn-favorite.active,
+    .btn-favorite.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Бейджи для продуктов в блоке новинок */
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.product-badge.sale {
+    background: var(--accent-color);
+    color: var(--text-white);
+}
+
+.product-badge.new {
+    background: var(--success-color);
+    color: var(--text-white);
+}
+
+.product-badge.hit {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: var(--text-white);
+}
+
+.product-badge.promotion {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: var(--text-white);
+}
+
+/* Для карточки "Все новинки" убираем бейджи */
+.view-all-card .product-badge {
+    display: none;
+}
 </style>
 
 <script>
@@ -3095,6 +3157,26 @@ body.cart-mobile-open {
         // Проверяем при загрузке и изменении размера
         window.addEventListener('resize', handleResize);
         handleResize();
+
+        // Избранное для блока новинок
+        const newProductsFavoriteBtns = document.querySelectorAll('.new-products-section .btn-favorite');
+        newProductsFavoriteBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); // Предотвращаем возможные конфликты
+                e.stopPropagation(); // Останавливаем всплытие
+                
+                const icon = this.querySelector('.material-icons');
+                if (icon.textContent === 'favorite_border') {
+                    icon.textContent = 'favorite';
+                    icon.style.color = '#ef4444';
+                    this.classList.add('active'); // Добавляем класс активного состояния
+                } else {
+                    icon.textContent = 'favorite_border';
+                    icon.style.color = '';
+                    this.classList.remove('active'); // Убираем класс активного состояния
+                }
+            });
+        });
     });
 </script>
 
@@ -4144,7 +4226,7 @@ body.cart-mobile-open {
                                 <h3 class="banner-title">DSD de Luxe - Скидки на всю линейку</h3>
                                 <div class="banner-date">15.11 - 30.11.2024</div>
                             </div>
-                            <p class="banner-description">Профессиональная косметика премиум-класса со скидкой 25%. Идеальное решение для проблемных волос</p>
+                            <p class="banner-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eveniet soluta minus quasi nam tempore.</p>
                             <div class="banner-cta">
                                 <span>Смотреть товары</span>
                                 <span class="material-icons">arrow_forward</span>
@@ -4165,7 +4247,7 @@ body.cart-mobile-open {
                                 <h3 class="banner-title">Готовые наборы для ухода</h3>
                                 <div class="banner-date">до 31.12.2024</div>
                             </div>
-                            <p class="banner-description">Комплексные наборы для полноценного ухода с максимальной экономией. Все необходимое в одной коробке</p>
+                            <p class="banner-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis vero sunt magni commodi adipisci, minima nisi dolores enim culpa perspiciatis.</p>
                             <div class="banner-cta">
                                 <span>Выбрать набор</span>
                                 <span class="material-icons">arrow_forward</span>
@@ -4186,7 +4268,7 @@ body.cart-mobile-open {
                                 <h3 class="banner-title">Летняя коллекция 2024</h3>
                                 <div class="banner-date">до 31.08.2024</div>
                             </div>
-                            <p class="banner-description">Специальные средства для ухода за волосами в летний период</p>
+                            <p class="banner-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam!</p>
                             <div class="banner-cta">
                                 <span>Смотреть коллекцию</span>
                                 <span class="material-icons">arrow_forward</span>
