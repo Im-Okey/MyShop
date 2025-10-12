@@ -1,0 +1,3657 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* ===== CSS ПЕРЕМЕННЫЕ ===== */
+        :root {
+            /* Основные цвета */
+            --primary-color: #689550;
+            --primary-dark: #4f7340;
+            --primary-light: #84b36d;
+            --primary-rgb: 104, 149, 80;
+            
+            --bg-primary: #f7faf5;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #edf4e8;
+            --bg-dark: #364f2a;
+            
+            --accent-color: #e97c1f;
+            --accent-rgb: 233, 124, 31;
+            
+            /* Текстовые цвета */
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-light: #888;
+            --text-white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+
+            /* Дополнительные цвета */
+            --accent-color: #f59e0b;
+            --error-color: #ff6b6b;
+            --success-color: #10b981;
+
+
+            
+            /* Дополнительные градиенты */
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), #fbbf24);
+            
+            /* Границы */
+            --border-light: #f0f7f3;
+            --border-medium: #e2e8f0;
+            
+            /* Прозрачности */
+            --overlay-primary: rgba(var(--primary-rgb), 0.95);
+            --overlay-light: rgba(var(--primary-rgb), 0.05);
+            
+            /* Градиенты */
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-dark: linear-gradient(135deg, var(--bg-dark), #2d2d2d);
+            
+            /* Тени */
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 30px rgba(var(--primary-rgb), 0.1);
+            --shadow-heavy: 0 15px 35px rgba(var(--primary-rgb), 0.3);
+            
+            /* Разное */
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== БАЗОВЫЕ СТИЛИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+
+        /* ===== КНОПКИ ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--text-white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--text-white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        
+        html {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE и Edge */
+        }
+
+
+        html::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        body {
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Для отключения скролла при открытых меню */
+        body.no-scroll {
+            overflow: hidden;
+        }
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <!-- Логотип -->
+            <div class="logo">
+                <div class="logo-icon">H</div>
+                <span class="logo-text">Название</span>
+            </div>
+            
+            <!-- Навигация для десктопа -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/catalog.html">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Правая часть -->
+            <div class="header-actions">
+                <!-- Поиск (только на десктопе) -->
+                <div class="search-box desktop-only">
+                    <span class="material-icons">search</span>
+                    <input type="text" placeholder="Поиск...">
+                </div>
+                
+                <!-- Переключатель тем (только на десктопе) -->
+                <div class="theme-switcher-compact desktop-only">
+                    <button class="theme-trigger">
+                        <span class="material-icons">palette</span>
+                    </button>
+                    <div class="theme-dropdown">
+                        <div class="theme-options">
+                            <button class="theme-option active" data-theme="classic" title="Классика">
+                                <div class="theme-preview classic"></div>
+                            </button>
+                            <button class="theme-option" data-theme="fresh" title="Свежая">
+                                <div class="theme-preview fresh"></div>
+                            </button>
+                            <button class="theme-option" data-theme="olive" title="Оливковая">
+                                <div class="theme-preview olive"></div>
+                            </button>
+                            <button class="theme-option" data-theme="turquoise" title="Бирюза">
+                                <div class="theme-preview turquoise"></div>
+                            </button>
+                            <button class="theme-option" data-theme="pistachio" title="Фисташка">
+                                <div class="theme-preview pistachio"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Корзина -->
+                <div class="cart-icon" id="cartTrigger">
+                    <span class="material-icons">shopping_bag</span>
+                    <div class="cart-count">3</div>
+                </div>
+                
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu mobile-only">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Мобильное меню на весь экран -->
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav">
+            <!-- Контент меню начинается ПОД хедером -->
+            <nav>
+                <ul>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                </ul>
+                
+                <!-- Переключатель тем для мобильных -->
+                <div class="mobile-themes">
+                    <div class="theme-options">
+                        <button class="theme-option active" data-theme="classic" title="Классика">
+                            <div class="theme-preview classic"></div>
+                            <span>Классика</span>
+                        </button>
+                        <button class="theme-option" data-theme="fresh" title="Свежая">
+                            <div class="theme-preview fresh"></div>
+                            <span>Свежая</span>
+                        </button>
+                        <button class="theme-option" data-theme="olive" title="Оливковая">
+                            <div class="theme-preview olive"></div>
+                            <span>Оливковая</span>
+                        </button>
+                        <button class="theme-option" data-theme="turquoise" title="Бирюза">
+                            <div class="theme-preview turquoise"></div>
+                            <span>Бирюза</span>
+                        </button>
+                        <button class="theme-option" data-theme="pistachio" title="Фисташка">
+                            <div class="theme-preview pistachio"></div>
+                            <span>Фисташка</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Оверлей для корзины -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Боковая панель корзины -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2 class="cart-title">Корзина</h2>
+        <button class="cart-close" id="cartClose">
+            <span class="material-icons">close</span>
+        </button>
+    </div>
+    
+    <div class="cart-content">
+        <div class="cart-items">
+            <!-- Товар 1 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Органические помидоры1</h3>
+                    <p class="item-price">350 ₽/кг</p>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">2</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-total">
+                    <span class="total-price">700 ₽</span>
+                    <button class="item-remove" style="margin-top: 20px;">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Товар 2 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Свежие огурцы</h3>
+                    <p class="item-price">280 ₽/кг</p>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-total">
+                    <span class="total-price">280 ₽</span>
+                    <button class="item-remove" style="margin-top: 20px;">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Товар 3 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Авокадо Хасс</h3>
+                    <p class="item-price">120 ₽/шт</p>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">3</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-total">
+                    <span class="total-price">360 ₽</span>
+                    <button class="item-remove" style="margin-top: 20px;">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Товар 4 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Авокадо Хасс1</h3>
+                    <p class="item-price">1201 ₽/шт</p>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">31</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-total">
+                    <span class="total-price">3601 ₽</span>
+                    <button class="item-remove" style="margin-top: 20px;">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="cart-empty">
+            <span class="material-icons">shopping_bag</span>
+            <p>Ваша корзина пуста</p>
+        </div>
+    </div>
+    
+    <div class="cart-footer">
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Товары (3)</span>
+                <span>1 340 ₽</span>
+            </div>
+            <div class="summary-row">
+                <span>Доставка</span>
+                <span>Бесплатно</span>
+            </div>
+            <div class="summary-total">
+                <span>Итого</span>
+                <span>1 340 ₽</span>
+            </div>
+        </div>
+        <button class="checkout-btn">Оформить заказ</button>
+    </div>
+</div>
+
+<style>
+    /* Решение для скролла без смещения контента */
+html {
+    overflow-y: scroll;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== СТИЛИ ХЕДЕРА ===== */
+header {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-weight: bold;
+}
+
+/* Навигация для десктопа */
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 8px 0;
+    position: relative;
+}
+
+.desktop-nav a:hover {
+    color: var(--primary-color);
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+/* Правая часть хедера */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Поиск */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: var(--transition);
+    border: 1.5px solid var(--border-medium);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.search-box:focus-within {
+    background: var(--bg-primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    border-color: var(--primary-color);
+}
+
+.search-box:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    margin-left: 5px;
+    width: 150px;
+    color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+    color: var(--text-light);
+}
+
+/* Корзина */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon:hover {
+    background: var(--bg-light);
+}
+
+.cart-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* ===== КОМПАКТНЫЙ ПЕРЕКЛЮЧАТЕЛЬ ТЕМ ===== */
+.theme-switcher-compact {
+    position: relative;
+}
+
+.theme-trigger {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-trigger:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-heavy);
+    padding: 15px;
+    margin-top: -50px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-medium);
+    z-index: 1000;
+}
+
+.theme-switcher-compact:hover .theme-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.theme-option {
+    background: none;
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.theme-option:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.theme-option.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.theme-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.theme-preview.classic { background: #2a7a4c; }
+.theme-preview.fresh { background: #93c572; }
+.theme-preview.olive { background: #556b2f; }
+.theme-preview.turquoise { background: #2c7a78; }
+.theme-preview.pistachio { background: #689550; }
+
+/* ===== БУРГЕР-МЕНЮ ===== */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.burger-line {
+    width: 20px;
+    height: 2px;
+    background: var(--text-secondary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+}
+
+.burger-menu:hover .burger-line {
+    background: var(--primary-color);
+}
+
+/* ===== МОБИЛЬНОЕ МЕНЮ НА ВЕСЬ ЭКРАН ===== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--bg-secondary);
+    padding: 30px 20px 40px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-medium);
+}
+
+.mobile-nav-overlay.active .mobile-nav {
+    transform: translateX(0);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.mobile-nav li {
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-overlay.active .mobile-nav li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav-overlay.active .mobile-nav li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-overlay.active .mobile-nav li:nth-child(4) { transition-delay: 0.25s; }
+
+.mobile-nav a {
+    display: block;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-nav a:hover {
+    color: var(--primary-color);
+    padding-left: 15px;
+}
+
+/* Темы для мобильных */
+.mobile-themes {
+    margin-top: auto;
+}
+
+.mobile-themes .theme-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.mobile-nav-overlay.active .mobile-themes .theme-options {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-themes .theme-option {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px;
+    border: 1px solid var(--border-medium);
+    background: var(--bg-primary);
+}
+
+.mobile-themes .theme-option span {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-left: 10px;
+}
+
+/* ===== КОРЗИНА ===== */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    background: var(--bg-secondary);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1101;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.cart-sidebar.active {
+    transform: translateX(0);
+}
+
+/* Анимация для элементов корзины */
+.cart-header,
+.cart-item,
+.cart-summary,
+.checkout-btn {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-sidebar.active .cart-header,
+.cart-sidebar.active .cart-item,
+.cart-sidebar.active .cart-summary,
+.cart-sidebar.active .checkout-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cart-sidebar.active .cart-header { transition-delay: 0.1s; }
+.cart-sidebar.active .cart-item { transition-delay: 0.2s; }
+.cart-sidebar.active .cart-summary { transition-delay: 0.3s; }
+.cart-sidebar.active .checkout-btn { transition-delay: 0.4s; }
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-primary);
+}
+
+.cart-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-close:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.cart-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+}
+
+.cart-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.item-image {
+    flex-shrink: 0;
+}
+
+.item-image img {
+    width: 85px;
+    height: 85px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.item-price {
+    margin: 0 0 8px 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border-medium);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.quantity-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.quantity {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 20px;
+    text-align: center;
+}
+
+.item-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.total-price {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.item-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: var(--transition);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-remove:hover {
+    background: var(--error-light);
+    color: var(--error-color);
+}
+
+.cart-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.cart-empty .material-icons {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.cart-empty p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-primary);
+}
+
+.cart-summary {
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.checkout-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Анимация удаления товара */
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.cart-item.removing {
+    animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== КОРЗИНА ДЛЯ МОБИЛЬНЫХ (ВЕСЬ ЭКРАН) ===== */
+@media (max-width: 867px) {
+    .cart-sidebar {
+        width: 100% !important;
+        right: 0 !important;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cart-sidebar.active {
+        transform: translateX(0) !important;
+    }
+    
+    .cart-overlay {
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    .cart-header,
+    .cart-item,
+    .cart-summary,
+    .checkout-btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cart-header {
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        background: var(--bg-primary);
+        z-index: 10;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .cart-content {
+        padding: 15px;
+        flex: 1;
+        overflow-y: auto;
+    }
+    
+    .cart-item {
+        padding: 15px;
+        flex-direction: row;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .item-image img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .item-details {
+        flex: 1;
+    }
+    
+    .item-total {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+    
+    .item-remove {
+        margin-top: 0 !important;
+    }
+    
+    .cart-footer {
+        padding: 15px;
+        position: sticky;
+        bottom: 0;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-light);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .checkout-btn {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Для маленьких мобильных */
+@media (max-width: 480px) {
+    .cart-sidebar {
+        width: 100% !important;
+    }
+    
+    .cart-item {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .item-image img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .item-name {
+        font-size: 0.9rem;
+    }
+    
+    .item-price {
+        font-size: 0.8rem;
+    }
+    
+    .quantity-btn {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .quantity {
+        font-size: 0.85rem;
+    }
+    
+    .total-price {
+        font-size: 0.9rem;
+    }
+    
+    .cart-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Планшет */
+@media (max-width: 1024px) {
+    .desktop-nav ul {
+        gap: 15px;
+    }
+    
+    .search-box input {
+        width: 120px;
+    }
+    
+    .cart-sidebar {
+        width: 380px;
+    }
+}
+
+/* Мобильные */
+@media (max-width: 867px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: flex !important;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: flex;
+    }
+    
+    .header-content {
+        padding: 12px 0;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .header-actions {
+        gap: 10px;
+    }
+    
+    .cart-icon {
+        padding: 6px;
+    }
+    
+    .cart-count {
+        top: 1px;
+        right: 1px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+    
+    .mobile-nav {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .mobile-themes .theme-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .mobile-nav {
+        padding: 20px 15px 30px;
+        top: 55px;
+        height: calc(100vh - 55px);
+        border-top: 1px solid var(--border-medium);
+    }
+    
+    .mobile-nav a {
+        font-size: 1.1rem;
+        padding: 14px 0;
+    }
+}
+
+/* Убираем старый переключатель тем */
+.theme-switcher {
+    display: none;
+}
+
+/* Защита от горизонтального скролла */
+.cart-sidebar {
+    right: 0;
+    transform: translateX(100%);
+    position: fixed;
+    overflow: hidden;
+}
+
+.cart-overlay {
+    position: fixed;
+    overflow: hidden;
+}
+
+.cart-content {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+/* Дополнительные стили для body при открытой корзине на мобильных */
+body.cart-mobile-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 867px) {
+    body.cart-mobile-open {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+</style>
+
+<script>
+    const themes = {
+        classic: {
+            '--primary-color': '#2a7a4c',
+            '--primary-dark': '#1f5c38',
+            '--primary-light': '#3a9d69',
+            '--primary-rgb': '42, 122, 76',
+            '--bg-primary': '#f8fbf9',
+            '--bg-secondary': '#ffffff',
+            '--bg-tertiary': '#f0f7f3',
+            '--bg-dark': '#1a1a1a',
+            '--accent-color': '#f59e0b',
+            '--accent-rgb': '245, 158, 11',
+            '--error-color': '#dc2626',
+            '--error-light': '#fef2f2'
+        },
+        fresh: {
+            '--primary-color': '#93c572',
+            '--primary-dark': '#76a85a',
+            '--primary-light': '#b0d899',
+            '--primary-rgb': '147, 197, 114',
+            '--bg-primary': '#f7faf2',
+            '--bg-secondary': '#ffffff',
+            '--bg-tertiary': '#edf4e6',
+            '--bg-dark': '#364f2a',
+            '--accent-color': '#ffe08c',
+            '--accent-rgb': '255, 224, 140',
+            '--error-color': '#dc2626',
+            '--error-light': '#fef2f2'
+        },
+        olive: {
+            '--primary-color': '#556b2f',
+            '--primary-dark': '#3d4c21',
+            '--primary-light': '#6b8e23',
+            '--primary-rgb': '85, 107, 47',
+            '--bg-primary': '#f9faf5',
+            '--bg-secondary': '#ffffff',
+            '--bg-tertiary': '#f1f4e9',
+            '--bg-dark': '#2d3719',
+            '--accent-color': '#d4af37',
+            '--accent-rgb': '212, 175, 55',
+            '--error-color': '#dc2626',
+            '--error-light': '#fef2f2'
+        },
+        turquoise: {
+            '--primary-color': '#2c7a78',
+            '--primary-dark': '#1f5654',
+            '--primary-light': '#38b2ac',
+            '--primary-rgb': '44, 122, 120',
+            '--bg-primary': '#f0f9f9',
+            '--bg-secondary': '#ffffff',
+            '--bg-tertiary': '#e6f2f2',
+            '--bg-dark': '#1a4543',
+            '--accent-color': '#ed8936',
+            '--accent-rgb': '237, 137, 54',
+            '--error-color': '#dc2626',
+            '--error-light': '#fef2f2'
+        },
+        pistachio: {
+            '--primary-color': '#689550',
+            '--primary-dark': '#4f7340',
+            '--primary-light': '#84b36d',
+            '--primary-rgb': '104, 149, 80',
+            '--bg-primary': '#f7faf5',
+            '--bg-secondary': '#ffffff',
+            '--bg-tertiary': '#edf4e8',
+            '--bg-dark': '#364f2a',
+            '--accent-color': '#e97c1f',
+            '--accent-rgb': '233, 124, 31',
+            '--error-color': '#dc2626',
+            '--error-light': '#fef2f2'
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeOptions = document.querySelectorAll('.theme-option');
+        const root = document.documentElement;
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+        
+        // Элементы корзины
+        const cartTrigger = document.getElementById('cartTrigger');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartClose = document.getElementById('cartClose');
+
+        // Переключение тем
+        themeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const themeName = this.dataset.theme;
+                
+                themeOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                applyTheme(themeName);
+                localStorage.setItem('selectedTheme', themeName);
+            });
+        });
+
+        // Бургер-меню
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Корзина - открытие
+        cartTrigger.addEventListener('click', function() {
+            console.log('Открытие корзины'); // Для отладки
+            // Сначала активируем оверлей
+            cartOverlay.classList.add('active');
+            
+            // Небольшая задержка для плавности
+            setTimeout(() => {
+                cartSidebar.classList.add('active');
+                document.body.classList.add('no-scroll');
+            }, 50);
+        });
+
+        // Корзина - закрытие
+        function closeCart() {
+            console.log('Закрытие корзины'); // Для отладки
+            cartSidebar.classList.remove('active');
+            
+            // Задержка перед скрытием оверлея
+            setTimeout(() => {
+                cartOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }, 400);
+        }
+
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // Закрытие меню при клике на оверлей
+        mobileNavOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileNavOverlay) {
+                closeMobileMenu();
+            }
+        });
+
+        // Закрытие меню при клике на ссылку
+        const mobileLinks = document.querySelectorAll('.mobile-nav a, .mobile-themes .theme-option');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+
+        function closeMobileMenu() {
+            burgerMenu.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+
+        function applyTheme(themeName) {
+            const theme = themes[themeName];
+            for (const [property, value] of Object.entries(theme)) {
+                root.style.setProperty(property, value);
+            }
+        }
+
+        // Восстановление темы
+        const savedTheme = localStorage.getItem('selectedTheme') || 'classic';
+        const savedOption = document.querySelector(`[data-theme="${savedTheme}"]`);
+        if (savedOption) {
+            savedOption.click();
+        }
+
+        // Обработчики для кнопок количества в корзине
+        const quantityBtns = document.querySelectorAll('.quantity-btn');
+        quantityBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                const quantityEl = item.querySelector('.quantity');
+                let quantity = parseInt(quantityEl.textContent);
+                
+                if (this.classList.contains('plus')) {
+                    quantity++;
+                } else if (this.classList.contains('minus') && quantity > 1) {
+                    quantity--;
+                }
+                
+                quantityEl.textContent = quantity;
+                updateCartTotal();
+            });
+        });
+
+        // Удаление товаров из корзины
+        const removeBtns = document.querySelectorAll('.item-remove');
+        removeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                item.classList.add('removing');
+                
+                setTimeout(() => {
+                    item.remove();
+                    updateCartTotal();
+                    checkEmptyCart();
+                }, 300);
+            });
+        });
+
+        function updateCartTotal() {
+            // Здесь можно добавить логику пересчета общей суммы
+            console.log('Обновление суммы корзины');
+        }
+
+        function checkEmptyCart() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            const cartEmpty = document.querySelector('.cart-empty');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            
+            if (cartItems.length === 0) {
+                cartEmpty.style.display = 'flex';
+                cartItemsContainer.style.display = 'none';
+            } else {
+                cartEmpty.style.display = 'none';
+                cartItemsContainer.style.display = 'flex';
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<div class="catalog-hero-banner">
+    <div class="hero-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+        <div class="banner-content">
+            <div class="container">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">Каталог (возможно стоит еще какой-нибудь текст сюда)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ===== ГЕРОЙ БАННЕР ДЛЯ КАТАЛОГА ===== */
+.catalog-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Уменьшенная высота для каталога */
+    overflow: hidden;
+}
+
+.hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* БАЗОВЫЕ ОТСТУПЫ ДЛЯ ВСЕХ УСТРОЙСТВ */
+.banner-content {
+    width: 100%;
+    color: var(--text-white);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.hero-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* БОЛЬШОЙ ОТСТУП ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ */
+@media (min-width: 625px) {
+    .banner-content {
+        padding-top: 120px; /* Уменьшенный отступ сверху */
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    max-width: 1000px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-emphasis {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+    padding-left: 20px;
+    max-width: 800px;
+}
+
+.hero-emphasis::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 80%;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* ===== КНОПКИ С ПРИНУДИТЕЛЬНЫМИ СТИЛЯМИ ===== */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    position: relative;
+    z-index: 100;
+}
+
+.action-btn--primary {
+    background: var(--primary-color) !important;
+    color: var(--text-white) !important;
+}
+
+.action-btn--primary:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.action-btn--secondary {
+    background: transparent !important;
+    color: var(--text-white) !important;
+    border: 2px solid var(--text-white) !important;
+}
+
+.action-btn--secondary:hover {
+    background: var(--text-white) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.action-btn__icon {
+    font-size: 1.2rem;
+}
+
+/* Форсируем отображение кнопок */
+.catalog-hero-banner .action-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1400px) {
+    .hero-content-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-title {
+        max-width: 900px;
+        font-size: 3.2rem;
+    }
+    
+    .hero-subtitle,
+    .hero-emphasis {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .catalog-hero-banner {
+        height: 450px; /* Уменьшаем высоту на планшетах */
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+        max-width: 800px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 600px;
+    }
+    
+    .banner-content {
+        padding-bottom: 40px;
+    }
+}
+
+/* МОБИЛЬНЫЕ УСТРОЙСТВА */
+@media (max-width: 768px) {
+    .catalog-hero-banner {
+        height: 400px; /* Уменьшенная высота на мобильных */
+    }
+    
+    .banner-content {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    
+    .hero-emphasis {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .hero-content-wrapper {
+        padding: 0 20px;
+    }
+}
+
+/* МАЛЕНЬКИЕ МОБИЛЬНЫЕ */
+@media (max-width: 540px) {
+    .catalog-hero-banner {
+        height: 380px;
+    }
+    
+    .banner-content {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-emphasis {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        margin-bottom: 20px;
+        gap: 0.6rem;
+    }
+    
+    .action-btn {
+        padding: 9px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .hero-content-wrapper {
+        padding: 0 15px;
+    }
+}
+
+/* ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ */
+@media (max-width: 480px) {
+    .catalog-hero-banner {
+        height: 350px;
+    }
+    
+    .banner-content {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .hero-buttons {
+        margin-bottom: 15px;
+    }
+}
+
+/* Анимация появления контента */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-banner .hero-content-wrapper > * {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.hero-banner .hero-title {
+    animation-delay: 0.2s;
+}
+
+.hero-banner .hero-subtitle {
+    animation-delay: 0.4s;
+}
+
+.hero-banner .hero-emphasis {
+    animation-delay: 0.6s;
+}
+
+.hero-banner .hero-buttons {
+    animation-delay: 0.8s;
+}
+
+.hero-banner .hero-content-wrapper > * {
+    opacity: 0;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Основной контент -->
+<div class="catalog-section">
+    <div class="container">
+        <div class="catalog-content">
+            <!-- Переработанный сайдбар с фильтрами -->
+            <aside class="filters-sidebar">
+                <!-- Поиск вынесен выше -->
+                <div class="search-filter">
+                    <input type="text" placeholder="Поиск в каталоге...">
+                    <span class="material-icons search-icon">search</span>
+                </div>
+
+                <!-- Переключатель Все/Товары/Наборы - ИСПРАВЛЕННЫЙ -->
+                <div class="product-type-switcher">
+                    <div class="switcher-buttons">
+                        <button class="type-btn active" data-type="all">
+                            <span class="material-icons">apps</span>
+                            <span class="btn-text">Все</span>
+                        </button>
+                        <button class="type-btn" data-type="products">
+                            <span class="material-icons">style</span>
+                            <span class="btn-text">Товары</span>
+                        </button>
+                        <button class="type-btn" data-type="bundles">
+                            <span class="material-icons">inventory_2</span>
+                            <span class="btn-text">Наборы</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filters-header">
+                    <h3 class="filters-title">Фильтры</h3>
+                    <button class="clear-filters-btn">Сбросить все</button>
+                </div>
+
+                <!-- Фильтр по брендам -->
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <span class="filter-name">Бренды</span>
+                        <span class="material-icons filter-arrow">expand_more</span>
+                    </div>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="optima">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Optima</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="dsd">
+                            <span class="checkmark"></span>
+                            <span class="option-text">DSD de Luxe</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="monnali">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Monnali</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="fabao">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Fabao</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="kudzhu">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Кудзю</span>
+                        </label>
+                        <!-- Одинаковый отступ после последнего элемента -->
+                        <div class="filter-options-spacer"></div>
+                    </div>
+                </div>
+
+                <!-- Фильтр по категориям -->
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <span class="filter-name">Категории</span>
+                        <span class="material-icons filter-arrow">expand_more</span>
+                    </div>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="shampoo">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Шампуни</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="mask">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Маски</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="serum">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Сыворотки</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="balm">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Бальзамы</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="lotion">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Лосьоны</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="spray">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Спреи</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="oil">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Масла</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="tonic">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Тоники</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="peeling">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Пилинги</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="accessories">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Аксессуары</span>
+                        </label>
+                        <!-- Одинаковый отступ после последнего элемента -->
+                        <div class="filter-options-spacer"></div>
+                    </div>
+                </div>
+
+                <!-- Фильтр по назначению -->
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <span class="filter-name">Назначение</span>
+                        <span class="material-icons filter-arrow">expand_more</span>
+                    </div>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="growth">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для стимуляции роста</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="loss">
+                            <span class="checkmark"></span>
+                            <span class="option-text">От выпадения волос</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="dandruff">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Против перхоти</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="volume">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для объема волос</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="dry">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для сухих волос</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="oily">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для жирных волос</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="colored">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для окрашенных волос</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="purpose" value="restoration">
+                            <span class="checkmark"></span>
+                            <span class="option-text">Для восстановления</span>
+                        </label>
+                        <!-- Одинаковый отступ после последнего элемента -->
+                        <div class="filter-options-spacer"></div>
+                    </div>
+                </div>
+
+                <!-- Фильтр по цене -->
+                <div class="filter-group">
+                    <div class="filter-header">
+                        <span class="filter-name">Цена</span>
+                        <span class="material-icons filter-arrow">expand_more</span>
+                    </div>
+                    <div class="filter-options">
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <input type="number" placeholder="0" class="price-input min-price">
+                                <span class="price-separator">-</span>
+                                <input type="number" placeholder="10000" class="price-input max-price">
+                            </div>
+                        </div>
+                        <!-- Одинаковый отступ после последнего элемента -->
+                        <div class="filter-options-spacer"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Сетка товаров с точным соответствием карточкам новинок -->
+            <main class="catalog-main">
+                <div class="catalog-grid">
+                    <!-- Карточка товара 1 -->
+                    <div class="product-card" data-product-type="products">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                                <div class="product-badge sale">-20%</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">Optima</div>
+                                <h3 class="product-name">Шампунь для стимуляции роста волос</h3>
+                                <p class="product-description">Стимулирует рост и укрепляет волосяные фолликулы</p>
+                                <div class="product-price">
+                                    <span class="current-price">2 400 ₽</span>
+                                    <span class="old-price">3 000 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка товара 2 -->
+                    <div class="product-card" data-product-type="products">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                                <div class="product-badge new">NEW</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">DSD de Luxe</div>
+                                <h3 class="product-name">Восстанавливающая маска для волос</h3>
+                                <p class="product-description">Глубокое восстановление поврежденных волос</p>
+                                <div class="product-price">
+                                    <span class="current-price">3 800 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка товара 3 -->
+                    <div class="product-card" data-product-type="products">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">Monnali</div>
+                                <h3 class="product-name">Сыворотка против выпадения волос</h3>
+                                <p class="product-description">Эффективная защита от выпадения и ломкости</p>
+                                <div class="product-price">
+                                    <span class="current-price">4 200 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка товара 4 -->
+                    <div class="product-card" data-product-type="products">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                                <div class="product-badge sale">-15%</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">Fabao</div>
+                                <h3 class="product-name">Бальзам для объема и блеска</h3>
+                                <p class="product-description">Создает естественный объем и здоровый блеск</p>
+                                <div class="product-price">
+                                    <span class="current-price">2 100 ₽</span>
+                                    <span class="old-price">2 500 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка товара 5 -->
+                    <div class="product-card" data-product-type="products">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">Кудзю</div>
+                                <h3 class="product-name">Питательное масло для волос</h3>
+                                <p class="product-description">Интенсивное питание и увлажнение</p>
+                                <div class="product-price">
+                                    <span class="current-price">3 500 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка товара 6 -->
+                    <div class="product-card" data-product-type="bundles">
+                        <div class="product-card-inner">
+                            <div class="product-image-container">
+                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <button class="btn-favorite">
+                                    <span class="material-icons">favorite_border</span>
+                                </button>
+                                <div class="product-badge new">NEW</div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-brand">Optima</div>
+                                <h3 class="product-name">Термозащитный спрей для укладки</h3>
+                                <p class="product-description">Надежная защита от высоких температур</p>
+                                <div class="product-price">
+                                    <span class="current-price">1 800 ₽</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Пагинация -->
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn pagination-next">
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+ </div>
+
+<style>
+:root {
+    /* Цвета */
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --text-white: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-light: #f3f4f6;
+    --bg-tertiary: #f8fffb;
+    --border-light: #e5e7eb;
+    --border-color: #d1d5db;
+    
+    /* Тени */
+    --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    /* Переходы */
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ КАТАЛОГА ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.catalog-section {
+    background: var(--bg-tertiary);
+    width: 100%;
+    min-height: 100vh;
+}
+.catalog-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* ===== ПЕРЕРАБОТАННЫЙ САЙДБАР ФИЛЬТРОВ ===== */
+.filters-sidebar {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    overflow: hidden;
+}
+
+/* Поиск */
+.search-filter {
+    position: relative;
+    padding: 15px 25px 15px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.search-filter input {
+    width: 100%;
+    padding: 14px 16px 14px 45px;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.search-filter input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-white);
+}
+
+.filters-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.clear-filters-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.clear-filters-btn:hover {
+    color: var(--primary-color);
+    background: var(--bg-light);
+}
+
+/* Группы фильтров */
+.filter-group {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-header:hover {
+    background: var(--bg-light);
+}
+
+.filter-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.filter-arrow {
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.filter-group.active .filter-arrow {
+    transform: rotate(180deg);
+}
+
+/* Скрываем опции фильтров по умолчанию */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.filter-group.active .filter-options {
+    max-height: 500px; /* Увеличена максимальная высота */
+    padding: 0 25px 15px; /* Одинаковый отступ снизу для всех фильтров */
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.filter-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* УЛУЧШЕННЫЕ ЧЕКБОКСЫ - МЕНЬШЕ И АКЦЕНТНЫЕ */
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--text-light);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    background: var(--bg-white);
+}
+
+.filter-option input:checked ~ .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-option input:checked ~ .checkmark:after {
+    opacity: 1;
+}
+
+.option-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.filter-option:hover .option-text {
+    color: var(--primary-color);
+}
+
+.filter-option:hover .checkmark {
+    border-color: var(--primary-color);
+}
+
+/* Фильтр по цене */
+.price-range {
+    padding: 8px 0;
+}
+
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price-input {
+    width: 100px;
+    padding: 10px 12px;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+    background: var(--bg-light);
+}
+
+.price-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--bg-white);
+}
+
+.price-separator {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* ===== ИСПРАВЛЕННЫЙ ПЕРЕКЛЮЧАТЕЛЬ ВСЕ/ТОВАРЫ/НАБОРЫ ===== */
+.product-type-switcher {
+    padding: 18px 25px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-white);
+}
+
+.switcher-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 4px;
+    position: relative;
+}
+
+.type-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    width: 100%;
+    min-height: 40px;
+}
+
+.type-btn.active {
+    background: var(--bg-white);
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.type-btn:hover:not(.active) {
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.type-btn .material-icons {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.btn-text {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ===== ОДИНАКОВЫЙ ОТСТУП ДЛЯ ВСЕХ ФИЛЬТРОВ ===== */
+.filter-options-spacer {
+    height: 0; /* Отступ теперь задается через padding-bottom в .filter-options */
+    width: 100%;
+}
+
+/* ===== КАРТОЧКИ ТОВАРОВ ===== */
+.catalog-main {
+    min-height: 600px;
+    background: transparent;
+}
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.product-card-inner {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .product-card-inner:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.03);
+    }
+
+    .product-card-inner:hover .product-image {
+        transform: scale(1.02);
+    }
+    
+    .product-card-inner:hover .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-image-container {
+    position: relative;
+    height: 200px;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: var(--shadow-medium);
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Показываем кнопку избранного на мобильных */
+@media (max-width: 969px) {
+    .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-favorite:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+    transform: scale(1.1);
+}
+
+.btn-favorite .material-icons {
+    font-size: 20px;
+}
+
+/* Бейджи */
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.product-badge.sale {
+    background: var(--accent-color);
+    color: var(--text-white);
+}
+
+.product-badge.new {
+    background: var(--success-color);
+    color: var(--text-white);
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-brand {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.current-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.old-price {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-add-to-cart {
+    flex: 1;
+    background: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-add-to-cart:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== ПАГИНАЦИЯ ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+.pagination-btn {
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--border-light);
+    background: var(--bg-white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: var(--text-secondary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-white);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.pagination-next {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--bg-white);
+}
+
+.pagination-next:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .catalog-content {
+        grid-template-columns: 280px 1fr;
+        gap: 25px;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .catalog-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .filters-sidebar {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+/* МОБИЛЬНЫЕ УСТРОЙСТВА */
+@media (max-width: 768px) {
+    .catalog-content {
+        padding: 20px 0;
+    }
+    
+    .search-filter {
+        padding: 20px 20px 15px;
+    }
+    
+    .filters-header {
+        padding: 15px 20px;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .filter-header {
+        padding: 15px 20px;
+    }
+    
+    .filter-options {
+        padding: 0 20px;
+    }
+    
+    .filter-group.active .filter-options {
+        padding: 0 20px 15px; /* Одинаковый отступ на мобильных */
+        max-height: 600px; /* Увеличена максимальная высота на мобильных */
+    }
+    
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+    }
+    
+    .product-image-container {
+        height: 180px;
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-name {
+        font-size: 1rem;
+    }
+    
+    .current-price {
+        font-size: 1.1rem;
+    }
+    
+    /* ПЕРЕКЛЮЧАТЕЛЬ НА МОБИЛЬНЫХ */
+    .product-type-switcher {
+        padding: 15px 20px;
+        background: transparent;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .switcher-buttons {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+        background: var(--bg-light);
+        border-radius: 12px;
+        padding: 4px;
+    }
+    
+    .type-btn {
+        padding: 12px 6px;
+        font-size: 0.8rem;
+        justify-content: center;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        transition: all 0.3s ease;
+        width: 100%;
+        min-height: 40px;
+    }
+    
+    .type-btn.active {
+        background: var(--bg-white);
+        color: var(--primary-color);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .type-btn:hover:not(.active) {
+        color: var(--primary-color);
+        background: rgba(59, 130, 246, 0.05);
+    }
+    
+    .type-btn .material-icons {
+        font-size: 16px;
+        margin-right: 4px;
+    }
+    
+    .btn-text {
+        text-align: center;
+        flex: 1;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-image-container {
+        height: 160px;
+    }
+    
+    .type-btn .btn-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .filters-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+    
+    .filters-title {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin: 0;
+    }
+    
+    .clear-filters-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        margin-left: auto;
+        white-space: nowrap;
+    }
+    
+    .product-image-container {
+        height: 200px;
+    }
+    
+    .pagination-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* На очень маленьких экранах скрываем иконки в переключателе */
+    @media (max-width: 360px) {
+        .type-btn .material-icons {
+            display: none;
+        }
+        
+        .type-btn {
+            padding: 10px 4px;
+        }
+        
+        .btn-text {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+    .filters-header {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    .filters-title {
+        width: auto;
+        margin-bottom: 0;
+    }
+    
+    .clear-filters-btn {
+        margin-left: 0;
+    }
+}
+
+/* Отключаем hover-эффекты на тач-устройствах */
+@media (hover: none) and (pointer: coarse) {
+    .product-card-inner:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .product-card-inner:hover .product-image {
+        transform: none;
+    }
+    
+    .product-card-inner:hover .btn-favorite {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .btn-add-to-cart:hover {
+        transform: none;
+        background: var(--primary-color);
+    }
+    
+    .pagination-btn:hover {
+        transform: none;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Аккордеон фильтров - закрыты по умолчанию
+    const filterGroups = document.querySelectorAll('.filter-group');
+    filterGroups.forEach(group => {
+        // Закрываем все группы по умолчанию
+        group.classList.remove('active');
+        
+        const header = group.querySelector('.filter-header');
+        header.addEventListener('click', function() {
+            group.classList.toggle('active');
+        });
+    });
+
+    // Очистка фильтров
+    const clearFiltersBtn = document.querySelector('.clear-filters-btn');
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', function() {
+            const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+            const priceInputs = document.querySelectorAll('.price-input');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            priceInputs.forEach(input => {
+                input.value = '';
+            });
+        });
+    }
+
+    // Пагинация
+    const paginationBtns = document.querySelectorAll('.pagination-btn');
+    paginationBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (!this.classList.contains('pagination-next')) {
+                paginationBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+
+    // Избранное
+    const favoriteBtns = document.querySelectorAll('.btn-favorite');
+    favoriteBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const icon = this.querySelector('.material-icons');
+            if (icon.textContent === 'favorite_border') {
+                icon.textContent = 'favorite';
+                icon.style.color = '#ef4444';
+            } else {
+                icon.textContent = 'favorite_border';
+                icon.style.color = '';
+            }
+        });
+    });
+
+    // Переключатель Все/Товары/Наборы - ИСПРАВЛЕННЫЙ
+    const typeBtns = document.querySelectorAll('.type-btn');
+    
+    typeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const type = this.dataset.type;
+            
+            // Обновляем активное состояние
+            typeBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Логика фильтрации
+            console.log('Выбран тип:', type);
+            filterProductsByType(type);
+        });
+    });
+    
+    function filterProductsByType(type) {
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            const cardType = card.dataset.productType;
+            
+            if (type === 'all' || cardType === type) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Инициализация
+    filterProductsByType('all');
+});
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Футер -->
+<footer>
+    <div class="container">
+        <!-- Верхняя часть футера -->
+        <div class="footer-main">
+            <!-- Колонка 1: О компании и контакты -->
+            <div class="footer-column">
+                <div class="logo">
+                    <div class="logo-icon">H</div>
+                    <span>Название</span>
+                </div>
+                
+                <p class="footer-description">
+                    Профессиональная лечебная косметика для здоровья ваших волос. 
+                    Мы работаем только с проверенными мировыми брендами.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="material-icons">phone</span>
+                        <span>+375 (XX) XXX-XX-XX</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="material-icons">email</span>
+                        <span>info@example.by</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="material-icons">schedule</span>
+                        <span>Пн-Пт: 9:00-18:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Колонка 2: Навигация -->
+            <div class="footer-column">
+                <h4>Навигация</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 3: Бренды -->
+            <div class="footer-column">
+                <h4>Бренды</h4>
+                <ul class="footer-links">
+                    <li><a href="/brands/optima">Optima</a></li>
+                    <li><a href="/brands/dsd">DSD de Luxe</a></li>
+                    <li><a href="/brands/monnali">Monnali</a></li>
+                    <li><a href="/brands/fabao">Fabao</a></li>
+                    <li><a href="/brands/kudzhu">Кудзю</a></li>
+                    <li><a href="/brands" class="all-brands">Все бренды →</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 4: Покупателям -->
+            <div class="footer-column">
+                <h4>Покупателям</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Гарантия</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 5: Социальные сети -->
+            <div class="footer-column">
+                <h4>Свяжитесь с нами</h4>
+                
+                <!-- Социальные сети -->
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <span class="material-icons">telegram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">instagram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">facebook</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <span class="material-icons">whatsapp</span>
+                    </a>
+                </div>
+
+                <!-- Правовые ссылки -->
+                <div class="legal-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                    <a href="#">Карта сайта</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Юридическая информация -->
+        <div class="legal-info">
+            <div class="legal-content">
+                <span>ИП Иванов И.И., УНП 123456789</span>
+                <span class="divider"></span>
+                <span>Свидетельство о госрегистрации №12345678912345 от 01.01.2025</span>
+                <span class="divider"></span>
+                <span>Регистрационный номер в Торговом реестре: 123456789</span>
+            </div>
+        </div>
+
+        <!-- Нижняя часть футера -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 Название. Все права защищены.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* ===== СТИЛИ ФУТЕРА ===== */
+    footer {
+        background: var(--gradient-dark);
+        color: var(--text-white);
+        padding: 60px 0 0;
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer-column:first-child {
+        max-width: 300px;
+    }
+
+    .footer-column .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+        color: var(--text-white);
+    }
+
+    .footer-description {
+        color: rgba(255,255,255,0.7);
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255,255,255,0.9);
+    }
+
+    .contact-item .material-icons {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+    }
+
+    .footer-column h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-white);
+    }
+
+    .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: var(--transition);
+        font-size: 0.95rem;
+        position: relative;
+        padding: 4px 0;
+    }
+
+    .footer-links a:hover {
+        color: var(--primary-color);
+        transform: translateX(5px);
+    }
+
+    .footer-links a.all-brands {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        transition: var(--transition);
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        background: var(--primary-color);
+        transform: translateY(-2px);
+    }
+
+    .social-link .material-icons {
+        color: var(--primary-color);
+        transition: var(--transition);
+    }
+
+    .social-link:hover .material-icons {
+        color: var(--text-white);
+    }
+
+    .legal-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .legal-links a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        padding: 4px 0;
+        position: relative;
+    }
+
+    .legal-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .legal-links a:hover::after {
+        width: 100%;
+    }
+
+    .legal-info {
+        padding: 15px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .legal-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.85rem;
+    }
+
+    .legal-content .divider {
+        width: 1px;
+        height: 12px;
+        background: rgba(255,255,255,0.3);
+    }
+
+    .footer-bottom {
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .copyright {
+        color: rgba(255,255,255,0.6);
+        font-size: 0.9rem;
+    }
+
+    /* ===== АДАПТИВНОСТЬ ФУТЕРА ===== */
+    @media (max-width: 1200px) {
+        .footer-main {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-main {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .legal-content {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .legal-content .divider {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        footer {
+            padding: 40px 0 0;
+        }
+
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .footer-column:first-child {
+            max-width: 100%;
+        }
+
+        .social-links {
+            justify-content: center;
+        }
+
+        .legal-content span {
+            text-align: center;
+            display: block;
+        }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
