@@ -128,6 +128,7 @@
             -ms-overflow-style: none; /* IE и Edge */
         }
 
+
         html::-webkit-scrollbar {
             display: none; /* Chrome, Safari, Opera */
         }
@@ -146,12 +147,25 @@
         body.no-scroll {
             overflow: hidden;
         }
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
     </style>
 </head>
 
 
 
 <body>
+
+
+
 
 
 
@@ -292,10 +306,10 @@
             <!-- Товар 1 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://via.placeholder.com/80x80/2a7a4c/ffffff?text=Товар" alt="Товар">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
-                    <h3 class="item-name">Органические помидоры</h3>
+                    <h3 class="item-name">Органические помидоры1</h3>
                     <p class="item-price">350 ₽/кг</p>
                     <div class="item-quantity">
                         <button class="quantity-btn minus">-</button>
@@ -305,7 +319,7 @@
                 </div>
                 <div class="item-total">
                     <span class="total-price">700 ₽</span>
-                    <button class="item-remove">
+                    <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
                 </div>
@@ -314,7 +328,7 @@
             <!-- Товар 2 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://via.placeholder.com/80x80/93c572/ffffff?text=Товар" alt="Товар">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
                     <h3 class="item-name">Свежие огурцы</h3>
@@ -327,7 +341,7 @@
                 </div>
                 <div class="item-total">
                     <span class="total-price">280 ₽</span>
-                    <button class="item-remove">
+                    <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
                 </div>
@@ -336,7 +350,7 @@
             <!-- Товар 3 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://via.placeholder.com/80x80/556b2f/ffffff?text=Товар" alt="Товар">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
                 </div>
                 <div class="item-details">
                     <h3 class="item-name">Авокадо Хасс</h3>
@@ -349,11 +363,33 @@
                 </div>
                 <div class="item-total">
                     <span class="total-price">360 ₽</span>
-                    <button class="item-remove">
+                    <button class="item-remove" style="margin-top: 20px;">
                         <span class="material-icons">delete</span>
                     </button>
                 </div>
             </div>
+            <!-- Товар 4 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Товар">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Авокадо Хасс1</h3>
+                    <p class="item-price">1201 ₽/шт</p>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">31</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+                <div class="item-total">
+                    <span class="total-price">3601 ₽</span>
+                    <button class="item-remove" style="margin-top: 20px;">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+            </div>
+            
         </div>
         
         <div class="cart-empty">
@@ -382,6 +418,18 @@
 </div>
 
 <style>
+/* Решение для скролла без смещения контента */
+html {
+    overflow-y: scroll;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 /* ===== СТИЛИ ХЕДЕРА ===== */
 header {
     background-color: var(--bg-secondary);
@@ -493,8 +541,6 @@ header {
     width: 150px;
     color: var(--text-primary);
 }
-
-
 
 .search-box input::placeholder {
     color: var(--text-light);
@@ -635,7 +681,7 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1001; /* Повышаем z-index чтобы был над меню */
+    z-index: 1001;
 }
 
 .burger-line {
@@ -646,7 +692,6 @@ header {
     transform-origin: center;
 }
 
-/* Правильная анимация бургера в крестик */
 .burger-menu.active .burger-line:nth-child(1) {
     transform: rotate(45deg);
     position: relative;
@@ -675,8 +720,8 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: transparent; /* Убираем затемнение */
-    z-index: 998; /* Под хедером */
+    background: transparent;
+    z-index: 998;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -689,10 +734,10 @@ header {
 
 .mobile-nav {
     position: absolute;
-    top: 70px; /* Отступ сверху равный высоте хедера */
+    top: 70px;
     right: 0;
     width: 100%;
-    height: calc(100vh - 70px); /* Высота минус хедер */
+    height: calc(100vh - 70px);
     background: var(--bg-secondary);
     padding: 30px 20px 40px;
     transform: translateX(100%);
@@ -700,7 +745,7 @@ header {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--border-medium); /* Разделительная полоска */
+    border-top: 1px solid var(--border-medium);
 }
 
 .mobile-nav-overlay.active .mobile-nav {
@@ -724,7 +769,6 @@ header {
     transform: translateX(0);
 }
 
-/* Задержка для анимации пунктов меню */
 .mobile-nav-overlay.active .mobile-nav li:nth-child(1) { transition-delay: 0.1s; }
 .mobile-nav-overlay.active .mobile-nav li:nth-child(2) { transition-delay: 0.15s; }
 .mobile-nav-overlay.active .mobile-nav li:nth-child(3) { transition-delay: 0.2s; }
@@ -790,8 +834,7 @@ header {
     z-index: 1100;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: opacity, background;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cart-overlay.active {
@@ -803,24 +846,45 @@ header {
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 400px;
+    right: 0;
+    width: 500px;
     height: 100%;
     background: var(--bg-secondary);
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
     z-index: 1101;
     display: flex;
     flex-direction: column;
-    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: right;
-    transform: translateZ(0); /* Аппаратное ускорение */
-    backface-visibility: hidden;
-    perspective: 1000;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
 }
 
 .cart-sidebar.active {
-    right: 0;
+    transform: translateX(0);
 }
+
+/* Анимация для элементов корзины */
+.cart-header,
+.cart-item,
+.cart-summary,
+.checkout-btn {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-sidebar.active .cart-header,
+.cart-sidebar.active .cart-item,
+.cart-sidebar.active .cart-summary,
+.cart-sidebar.active .checkout-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cart-sidebar.active .cart-header { transition-delay: 0.1s; }
+.cart-sidebar.active .cart-item { transition-delay: 0.2s; }
+.cart-sidebar.active .cart-summary { transition-delay: 0.3s; }
+.cart-sidebar.active .checkout-btn { transition-delay: 0.4s; }
 
 .cart-header {
     display: flex;
@@ -879,7 +943,6 @@ header {
 }
 
 .cart-item:hover {
-    border-color: var(--primary-light);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -888,8 +951,8 @@ header {
 }
 
 .item-image img {
-    width: 60px;
-    height: 60px;
+    width: 85px;
+    height: 85px;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -1048,27 +1111,57 @@ header {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
 }
-/* Для мобильных - более быстрая анимация */
-@media (max-width: 867px) {
-    .cart-sidebar {
-        transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        width: 100%;
+
+/* Анимация удаления товара */
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
     }
 }
 
-/* Отключаем любые transition при изменении темы чтобы не было конфликтов */
-.theme-switcher-compact * {
-    transition: none !important;
+.cart-item.removing {
+    animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
-/* Десктопные элементы */
-.desktop-only {
-    display: flex;
-}
-
-.mobile-only {
-    display: none;
+/* Для мобильных - более быстрая анимация */
+@media (max-width: 867px) {
+    .cart-sidebar {
+        width: 100%;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cart-header,
+    .cart-item,
+    .cart-summary,
+    .checkout-btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cart-header {
+        padding: 15px;
+    }
+    
+    .cart-content {
+        padding: 15px;
+    }
+    
+    .cart-item {
+        padding: 12px;
+    }
+    
+    .item-image img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .cart-footer {
+        padding: 15px;
+    }
 }
 
 /* Планшет */
@@ -1133,16 +1226,9 @@ header {
         font-size: 10px;
     }
     
-    /* Корректируем отступы для мобильного меню под хедер */
     .mobile-nav {
         top: 60px;
         height: calc(100vh - 60px);
-    }
-    
-    /* Корзина на весь экран для мобильных */
-    .cart-sidebar {
-        width: 100%;
-        right: -100%;
     }
 }
 
@@ -1160,39 +1246,44 @@ header {
         padding: 20px 15px 30px;
         top: 55px;
         height: calc(100vh - 55px);
-        border-top: 1px solid var(--border-medium); /* Полоска для маленьких экранов */
+        border-top: 1px solid var(--border-medium);
     }
     
     .mobile-nav a {
         font-size: 1.1rem;
         padding: 14px 0;
     }
-    
-    .cart-header {
-        padding: 15px;
-    }
-    
-    .cart-content {
-        padding: 15px;
-    }
-    
-    .cart-item {
-        padding: 12px;
-    }
-    
-    .item-image img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .cart-footer {
-        padding: 15px;
-    }
 }
 
 /* Убираем старый переключатель тем */
 .theme-switcher {
     display: none;
+}
+.cart-sidebar {
+    right: 0;
+    transform: translateX(100%);
+    /* Гарантируем что корзина не вызовет горизонтальный скролл */
+    position: fixed;
+    overflow: hidden;
+}
+
+.cart-overlay {
+    position: fixed;
+    overflow: hidden;
+}
+
+/* Убедимся что контент корзины не вызывает скролл */
+.cart-content {
+    overflow-x: hidden;
+}
+
+/* Дополнительная защита - скрываем горизонтальный скролл глобально */
+body {
+    overflow-x: hidden !important;
+}
+
+html {
+    overflow-x: hidden !important;
 }
 </style>
 
@@ -1299,25 +1390,36 @@ header {
         burgerMenu.addEventListener('click', function() {
             this.classList.toggle('active');
             mobileNavOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? 'hidden' : '';
+            document.body.classList.toggle('no-scroll');
         });
 
         // Корзина - открытие
         cartTrigger.addEventListener('click', function() {
+            console.log('Открытие корзины'); // Для отладки
+            // Сначала активируем оверлей
             cartOverlay.classList.add('active');
-            cartSidebar.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            
+            // Небольшая задержка для плавности
+            setTimeout(() => {
+                cartSidebar.classList.add('active');
+                document.body.classList.add('no-scroll');
+            }, 50);
         });
 
         // Корзина - закрытие
+        function closeCart() {
+            console.log('Закрытие корзины'); // Для отладки
+            cartSidebar.classList.remove('active');
+            
+            // Задержка перед скрытием оверлея
+            setTimeout(() => {
+                cartOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }, 400);
+        }
+
         cartClose.addEventListener('click', closeCart);
         cartOverlay.addEventListener('click', closeCart);
-
-        function closeCart() {
-            cartOverlay.classList.remove('active');
-            cartSidebar.classList.remove('active');
-            document.body.style.overflow = '';
-        }
 
         // Закрытие меню при клике на оверлей
         mobileNavOverlay.addEventListener('click', function(e) {
@@ -1337,7 +1439,7 @@ header {
         function closeMobileMenu() {
             burgerMenu.classList.remove('active');
             mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
         }
 
         function applyTheme(themeName) {
@@ -1378,7 +1480,8 @@ header {
         removeBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const item = this.closest('.cart-item');
-                item.style.animation = 'slideOut 0.3s ease forwards';
+                item.classList.add('removing');
+                
                 setTimeout(() => {
                     item.remove();
                     updateCartTotal();
@@ -1405,26 +1508,8 @@ header {
                 cartItemsContainer.style.display = 'flex';
             }
         }
-
-        // Добавляем CSS анимацию для удаления товаров
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideOut {
-                from {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-                to {
-                    opacity: 0;
-                    transform: translateX(100%);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     });
 </script>
-
-
 
 
 
