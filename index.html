@@ -2500,6 +2500,12 @@ header {
             transform: translateY(0);
         }
     }
+    /* На мобильных всегда черная иконка */
+    @media (max-width: 969px) {
+        .btn-favorite .material-icons {
+            color: #333333; /* Черный цвет на мобильных */
+        }
+    }
 
     .btn-favorite:hover {
         background: var(--primary-color);
