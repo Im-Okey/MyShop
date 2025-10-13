@@ -1625,11 +1625,12 @@ body.cart-mobile-open {
     
 
 <div class="catalog-hero-banner">
-    <div class="hero-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+    <div class="hero-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241')">
         <div class="banner-content">
             <div class="container">
                 <div class="hero-content-wrapper">
-                    <h1 class="hero-title">Каталог (возможно стоит еще какой-нибудь текст сюда)</h1>
+                    <h1 class="hero-title">Каталог профессиональной косметики для здоровья волос</h1>
+                    <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами.</p>
                 </div>
             </div>
         </div>
@@ -1988,216 +1989,183 @@ body.cart-mobile-open {
 <div class="catalog-section">
     <div class="container">
         <div class="catalog-content">
-            <!-- Переработанный сайдбар с фильтрами -->
-            <aside class="filters-sidebar">
-                <!-- Поиск вынесен выше -->
-                <div class="search-filter">
-                    <input type="text" placeholder="Поиск в каталоге...">
-                    <span class="material-icons search-icon">search</span>
-                </div>
+            <!-- Переработанный блок с фильтрами сверху -->
+            <div class="filters-container">
+                <div class="filters-top">
+                    <div class="filters-header">
+                        <h3 class="filters-title">Фильтры</h3>
+                        <button class="clear-filters-btn">Сбросить все</button>
+                    </div>
 
-                <!-- Переключатель Все/Товары/Наборы - ИСПРАВЛЕННЫЙ -->
-                <div class="product-type-switcher">
-                    <div class="switcher-buttons">
-                        <button class="type-btn active" data-type="all">
-                            <span class="material-icons">apps</span>
-                            <span class="btn-text">Все</span>
-                        </button>
-                        <button class="type-btn" data-type="products">
-                            <span class="material-icons">style</span>
-                            <span class="btn-text">Товары</span>
-                        </button>
-                        <button class="type-btn" data-type="bundles">
-                            <span class="material-icons">inventory_2</span>
-                            <span class="btn-text">Наборы</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="filters-header">
-                    <h3 class="filters-title">Фильтры</h3>
-                    <button class="clear-filters-btn">Сбросить все</button>
-                </div>
-
-                <!-- Фильтр по брендам -->
-                <div class="filter-group">
-                    <div class="filter-header">
-                        <span class="filter-name">Бренды</span>
-                        <span class="material-icons filter-arrow">expand_more</span>
-                    </div>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox" name="brand" value="optima">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Optima</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="brand" value="dsd">
-                            <span class="checkmark"></span>
-                            <span class="option-text">DSD de Luxe</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="brand" value="monnali">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Monnali</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="brand" value="fabao">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Fabao</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="brand" value="kudzhu">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Кудзю</span>
-                        </label>
-                        <!-- Одинаковый отступ после последнего элемента -->
-                        <div class="filter-options-spacer"></div>
-                    </div>
-                </div>
-
-                <!-- Фильтр по категориям -->
-                <div class="filter-group">
-                    <div class="filter-header">
-                        <span class="filter-name">Категории</span>
-                        <span class="material-icons filter-arrow">expand_more</span>
-                    </div>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="shampoo">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Шампуни</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="mask">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Маски</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="serum">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Сыворотки</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="balm">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Бальзамы</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="lotion">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Лосьоны</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="spray">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Спреи</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="oil">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Масла</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="tonic">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Тоники</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="peeling">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Пилинги</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="category" value="accessories">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Аксессуары</span>
-                        </label>
-                        <!-- Одинаковый отступ после последнего элемента -->
-                        <div class="filter-options-spacer"></div>
-                    </div>
-                </div>
-
-                <!-- Фильтр по назначению -->
-                <div class="filter-group">
-                    <div class="filter-header">
-                        <span class="filter-name">Назначение</span>
-                        <span class="material-icons filter-arrow">expand_more</span>
-                    </div>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="growth">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для стимуляции роста</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="loss">
-                            <span class="checkmark"></span>
-                            <span class="option-text">От выпадения волос</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="dandruff">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Против перхоти</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="volume">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для объема волос</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="dry">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для сухих волос</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="oily">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для жирных волос</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="colored">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для окрашенных волос</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" name="purpose" value="restoration">
-                            <span class="checkmark"></span>
-                            <span class="option-text">Для восстановления</span>
-                        </label>
-                        <!-- Одинаковый отступ после последнего элемента -->
-                        <div class="filter-options-spacer"></div>
-                    </div>
-                </div>
-
-                <!-- Фильтр по цене -->
-                <div class="filter-group">
-                    <div class="filter-header">
-                        <span class="filter-name">Цена</span>
-                        <span class="material-icons filter-arrow">expand_more</span>
-                    </div>
-                    <div class="filter-options">
-                        <div class="price-range">
-                            <div class="price-inputs">
-                                <input type="number" placeholder="0" class="price-input min-price">
-                                <span class="price-separator">-</span>
-                                <input type="number" placeholder="10000" class="price-input max-price">
+                    <div class="filters-grid">
+                        <!-- Первый ряд: Бренды и Категории -->
+                        <div class="filter-group">
+                            <div class="filter-trigger">
+                                <span class="filter-name">Бренды</span>
+                                <span class="material-icons filter-arrow">expand_more</span>
+                            </div>
+                            <div class="filter-dropdown">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="optima">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Optima</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="dsd">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">DSD de Luxe</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="monnali">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Monnali</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="fabao">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Fabao</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="kudzhu">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Кудзю</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <!-- Одинаковый отступ после последнего элемента -->
-                        <div class="filter-options-spacer"></div>
+
+                        <div class="filter-group">
+                            <div class="filter-trigger">
+                                <span class="filter-name">Категории</span>
+                                <span class="material-icons filter-arrow">expand_more</span>
+                            </div>
+                            <div class="filter-dropdown">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="shampoo">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Шампуни</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="mask">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Маски</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="serum">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Сыворотки</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="balm">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Бальзамы</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="lotion">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Лосьоны</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Второй ряд: Назначение и Сортировка -->
+                        <div class="filter-group">
+                            <div class="filter-trigger">
+                                <span class="filter-name">Назначение</span>
+                                <span class="material-icons filter-arrow">expand_more</span>
+                            </div>
+                            <div class="filter-dropdown">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="purpose" value="growth">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Для стимуляции роста</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="purpose" value="loss">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">От выпадения волос</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="purpose" value="dandruff">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Против перхоти</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="purpose" value="volume">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Для объема волос</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="purpose" value="dry">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Для сухих волос</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <div class="filter-trigger">
+                                <span class="filter-name">Сортировка</span>
+                                <span class="material-icons filter-arrow">expand_more</span>
+                            </div>
+                            <div class="filter-dropdown">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="radio" name="sort" value="date">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">По дате</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="radio" name="sort" value="price-desc">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Цена по убыванию</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="radio" name="sort" value="price-asc">
+                                        <span class="checkmark"></span>
+                                        <span class="option-text">Цена по возрастанию</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Блок активных фильтров -->
+                    <div class="active-filters">
+                        <div class="active-filters-header">
+                            <span class="active-filters-title">Активные фильтры:</span>
+                            <span class="active-filters-count">0</span>
+                        </div>
+                        <div class="active-filters-list">
+                            <!-- Активные фильтры будут добавляться сюда динамически -->
+                        </div>
                     </div>
                 </div>
-            </aside>
 
-            <!-- Сетка товаров с точным соответствием карточкам новинок -->
+                <!-- Баннер с наборами -->
+                <div class="promo-banner">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-content">
+                        <h3 class="promo-title">Не знаете, с чего начать?</h3>
+                        <p class="promo-text">Попробуйте готовые наборы для комплексного ухода — эффективное сочетание шампуня, бальзама и лосьона для максимального результата.</p>
+                        <button class="promo-btn">Посмотреть наборы</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сетка товаров с двумя рядами по 3 карточки -->
             <main class="catalog-main">
                 <div class="catalog-grid">
                     <!-- Карточка товара 1 -->
                     <div class="product-card" data-product-type="products">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2207,6 +2175,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">Optima</div>
                                 <h3 class="product-name">Шампунь для стимуляции роста волос</h3>
                                 <p class="product-description">Стимулирует рост и укрепляет волосяные фолликулы</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Шампунь</span>
+                                    <span class="feature-tag">250 мл</span>
+                                    <span class="feature-tag">Для роста</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">45.00 руб.</span>
                                     <span class="old-price">52.00 руб.</span>
@@ -2225,7 +2198,7 @@ body.cart-mobile-open {
                     <div class="product-card" data-product-type="products">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2235,6 +2208,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">DSD de Luxe</div>
                                 <h3 class="product-name">Восстанавливающая маска для волос</h3>
                                 <p class="product-description">Глубокое восстановление поврежденных волос</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Маска</span>
+                                    <span class="feature-tag">200 мл</span>
+                                    <span class="feature-tag">Восстановление</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">68.00 руб.</span>
                                 </div>
@@ -2252,7 +2230,7 @@ body.cart-mobile-open {
                     <div class="product-card" data-product-type="products">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2262,6 +2240,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">Monnali</div>
                                 <h3 class="product-name">Сыворотка против выпадения волос</h3>
                                 <p class="product-description">Эффективная защита от выпадения и ломкости</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Сыворотка</span>
+                                    <span class="feature-tag">30 мл</span>
+                                    <span class="feature-tag">От выпадения</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">85.00 руб.</span>
                                 </div>
@@ -2279,7 +2262,7 @@ body.cart-mobile-open {
                     <div class="product-card" data-product-type="products">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2289,6 +2272,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">Fabao</div>
                                 <h3 class="product-name">Бальзам для объема и блеска</h3>
                                 <p class="product-description">Создает естественный объем и здоровый блеск</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Бальзам</span>
+                                    <span class="feature-tag">250 мл</span>
+                                    <span class="feature-tag">Для объема</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">32.00 руб.</span>
                                     <span class="old-price">38.00 руб.</span>
@@ -2307,7 +2295,7 @@ body.cart-mobile-open {
                     <div class="product-card" data-product-type="products">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2317,6 +2305,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">Кудзю</div>
                                 <h3 class="product-name">Питательное масло для волос</h3>
                                 <p class="product-description">Интенсивное питание и увлажнение</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Масло</span>
+                                    <span class="feature-tag">100 мл</span>
+                                    <span class="feature-tag">Питание</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">55.00 руб.</span>
                                 </div>
@@ -2334,7 +2327,7 @@ body.cart-mobile-open {
                     <div class="product-card" data-product-type="bundles">
                         <div class="product-card-inner">
                             <div class="product-image-container">
-                                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                                <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
                                 <button class="btn-favorite">
                                     <span class="material-icons">favorite_border</span>
                                 </button>
@@ -2344,6 +2337,11 @@ body.cart-mobile-open {
                                 <div class="product-brand">Optima</div>
                                 <h3 class="product-name">Термозащитный спрей для укладки</h3>
                                 <p class="product-description">Надежная защита от высоких температур</p>
+                                <div class="product-features">
+                                    <span class="feature-tag">Спрей</span>
+                                    <span class="feature-tag">200 мл</span>
+                                    <span class="feature-tag">Термозащита</span>
+                                </div>
                                 <div class="product-price">
                                     <span class="current-price">28.00 руб.</span>
                                 </div>
@@ -2370,7 +2368,7 @@ body.cart-mobile-open {
             </main>
         </div>
     </div>
- </div>
+</div>
 
 <style>
 :root {
@@ -2393,94 +2391,61 @@ body.cart-mobile-open {
     /* Тени */
     --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     
     /* Переходы */
-    --transition: all 0.3s ease;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --border-radius: 12px;
 }
 
-/* ===== ОСНОВНЫЕ СТИЛИ КАТАЛОГА ===== */
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* ===== ОСНОВНЫЕ СТИЛИ КАТАЛОГА ===== */
 .catalog-section {
     background: var(--bg-tertiary);
     width: 100%;
     min-height: auto;
-}
-.catalog-content {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 30px;
     padding: 40px 0;
-    align-items: start; /* Важно: выравнивание по верху */
 }
 
-/* ===== ПЕРЕРАБОТАННЫЙ САЙДБАР ФИЛЬТРОВ ===== */
-.filters-sidebar {
-    background: var(--bg-secondary);
-    border-radius: 20px;
-    padding: 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    height: fit-content;
-    position: sticky;
-    top: 100px;
-    overflow: hidden;
-    /* Фиксируем высоту сайдбара */
+.catalog-content {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
-/* Поиск */
-.search-filter {
+/* ===== ПЕРЕРАБОТАННЫЕ ФИЛЬТРЫ СВЕРХУ ===== */
+.filters-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.filters-top {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     position: relative;
-    padding: 15px 25px 15px;
-    border-bottom: 1px solid var(--border-light);
-    flex-shrink: 0; /* Не сжимается */
-}
-
-.search-filter input {
-    width: 100%;
-    padding: 14px 16px 14px 45px;
-    border: 2px solid var(--border-light);
-    border-radius: 12px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.search-filter input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background: var(--bg-white);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.search-icon {
-    position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-light);
-    font-size: 1.2rem;
+    z-index: 10;
 }
 
 .filters-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px;
-    border-bottom: 1px solid var(--border-light);
-    background: var(--bg-white);
-    flex-shrink: 0; /* Не сжимается */
+    margin-bottom: 25px;
 }
 
 .filters-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 0;
 }
 
 .clear-filters-btn {
@@ -2490,7 +2455,7 @@ body.cart-mobile-open {
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: var(--transition);
     padding: 8px 16px;
     border-radius: 8px;
 }
@@ -2500,26 +2465,34 @@ body.cart-mobile-open {
     background: var(--bg-light);
 }
 
-/* Группы фильтров */
+.filters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    position: relative;
+}
+
+/* ===== УЛУЧШЕННЫЕ ФИЛЬТРЫ ===== */
 .filter-group {
-    border-bottom: 1px solid var(--border-light);
-    flex-shrink: 0; /* Не сжимаются */
+    position: relative;
 }
 
-.filter-group:last-child {
-    border-bottom: none;
-}
-
-.filter-header {
+.filter-trigger {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
     cursor: pointer;
-    padding: 20px 25px;
-    transition: background-color 0.3s ease;
+    transition: var(--transition);
+    user-select: none;
+    height: 52px;
 }
 
-.filter-header:hover {
+.filter-trigger:hover {
+    border-color: var(--primary-color);
     background: var(--bg-light);
 }
 
@@ -2531,7 +2504,7 @@ body.cart-mobile-open {
 
 .filter-arrow {
     color: var(--text-light);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 1.2rem;
 }
 
@@ -2539,20 +2512,58 @@ body.cart-mobile-open {
     transform: rotate(180deg);
 }
 
-/* Скрываем опции фильтров по умолчанию */
-.filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 0 25px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow-large);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: var(--transition);
+    margin-top: -1px;
 }
 
-.filter-group.active .filter-options {
-    max-height: 500px; /* Увеличена максимальная высота */
-    padding: 0 25px 15px; /* Одинаковый отступ снизу для всех фильтров */
+.filter-group.active .filter-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.filter-group.active .filter-trigger {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.filter-options {
+    padding: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Кастомный скроллбар */
+.filter-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.filter-options::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 3px;
+}
+
+.filter-options::-webkit-scrollbar-thumb {
+    background: var(--text-light);
+    border-radius: 3px;
+}
+
+.filter-options::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
 }
 
 .filter-option {
@@ -2560,9 +2571,15 @@ body.cart-mobile-open {
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    padding: 8px 0;
-    transition: color 0.3s ease;
+    padding: 10px 0;
+    transition: var(--transition);
     position: relative;
+    border-radius: 6px;
+}
+
+.filter-option:hover {
+    background: var(--bg-light);
+    transform: translateX(4px);
 }
 
 .filter-option input {
@@ -2571,7 +2588,6 @@ body.cart-mobile-open {
     cursor: pointer;
 }
 
-/* УЛУЧШЕННЫЕ ЧЕКБОКСЫ - МЕНЬШЕ И АКЦЕНТНЫЕ */
 .checkmark {
     width: 18px;
     height: 18px;
@@ -2580,9 +2596,9 @@ body.cart-mobile-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     flex-shrink: 0;
-    background: var(--bg-white);
+    background: var(--bg-primary);
 }
 
 .filter-option input:checked ~ .checkmark {
@@ -2596,7 +2612,7 @@ body.cart-mobile-open {
     font-size: 12px;
     font-weight: bold;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .filter-option input:checked ~ .checkmark:after {
@@ -2606,7 +2622,7 @@ body.cart-mobile-open {
 .option-text {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
 .filter-option:hover .option-text {
@@ -2617,119 +2633,180 @@ body.cart-mobile-open {
     border-color: var(--primary-color);
 }
 
-/* Фильтр по цене */
-.price-range {
-    padding: 8px 0;
+/* ===== АКТИВНЫЕ ФИЛЬТРЫ ===== */
+.active-filters {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    display: none;
 }
 
-.price-inputs {
+.active-filters.has-filters {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.active-filters-header {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
-.price-input {
-    width: 100px;
-    padding: 10px 12px;
-    border: 2px solid var(--border-light);
-    border-radius: 8px;
+.active-filters-title {
     font-size: 0.95rem;
-    transition: border-color 0.3s ease;
-    background: var(--bg-light);
-}
-
-.price-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background: var(--bg-white);
-}
-
-.price-separator {
-    color: var(--text-light);
     font-weight: 600;
+    color: var(--text-primary);
 }
 
-/* ===== ИСПРАВЛЕННЫЙ ПЕРЕКЛЮЧАТЕЛЬ ВСЕ/ТОВАРЫ/НАБОРЫ ===== */
-.product-type-switcher {
-    padding: 17px 25px;
-    border-bottom: 1px solid var(--border-light);
-    background: var(--bg-white);
-    flex-shrink: 0; /* Не сжимается */
-}
-
-.switcher-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4px;
-    background: var(--bg-light);
+.active-filters-count {
+    background: var(--primary-color);
+    color: white;
     border-radius: 12px;
-    padding: 4px;
-    position: relative;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
 }
 
-.type-btn {
+.active-filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.active-filter-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.active-filter-tag:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.active-filter-remove {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 10px 8px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: var(--transition);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.active-filter-remove:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== БАННЕР С НАБОРАМИ ===== */
+.promo-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    z-index: 1;
-    white-space: nowrap;
-    width: 100%;
-    min-height: 40px;
-}
-
-.type-btn.active {
-    background: var(--bg-white);
-    color: var(--primary-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.type-btn:hover:not(.active) {
-    color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.05);
-}
-
-.type-btn .material-icons {
-    font-size: 16px;
-    flex-shrink: 0;
-}
-
-.btn-text {
-    text-align: center;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    min-height: 200px;
 }
 
-/* ===== ОДИНАКОВЫЙ ОТСТУП ДЛЯ ВСЕХ ФИЛЬТРОВ ===== */
-.filter-options-spacer {
-    height: 0; /* Отступ теперь задается через padding-bottom в .filter-options */
-    width: 100%;
+.promo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.promo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.promo-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+}
+
+.promo-btn {
+    background: white;
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.promo-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== КАРТОЧКИ ТОВАРОВ ===== */
 .catalog-main {
-    min-height: 635px; /* Фиксированная минимальная высота */
+    min-height: 635px;
     background: transparent;
     display: flex;
     flex-direction: column;
 }
+
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-bottom: 40px;
-    flex-grow: 1; /* Занимает доступное пространство */
+    flex-grow: 1;
 }
 
 .product-card {
@@ -2767,7 +2844,7 @@ body.cart-mobile-open {
 
 .product-image-container {
     position: relative;
-    height: 200px;
+    height: 280px;
     background-color: var(--bg-light);
     overflow: hidden;
 }
@@ -2792,20 +2869,19 @@ body.cart-mobile-open {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border: none;
     box-shadow: var(--shadow-medium);
     z-index: 2;
-    opacity: 0; /* По умолчанию скрыто */
+    opacity: 0;
     transform: translateY(-10px);
 }
-/* Когда товар в избранном - показываем сердечко */
+
 .btn-favorite.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Показываем кнопку избранного на мобильных */
 @media (max-width: 969px) {
     .btn-favorite {
         opacity: 1;
@@ -2847,6 +2923,16 @@ body.cart-mobile-open {
     color: var(--text-white);
 }
 
+.product-badge.hit {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: var(--text-white);
+}
+
+.product-badge.promotion {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: var(--text-white);
+}
+
 .product-info {
     padding: 20px;
     flex-grow: 1;
@@ -2876,6 +2962,24 @@ body.cart-mobile-open {
     margin-bottom: 15px;
     flex-grow: 1;
     line-height: 1.5;
+}
+
+/* Теги особенностей */
+.product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.feature-tag {
+    padding: 4px 10px;
+    background: var(--bg-light);
+    color: var(--text-secondary);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--border-light);
 }
 
 .product-price {
@@ -2913,7 +3017,7 @@ body.cart-mobile-open {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2932,7 +3036,7 @@ body.cart-mobile-open {
     align-items: center;
     gap: 8px;
     padding: 20px 0;
-    flex-shrink: 0; /* Не сжимается */
+    flex-shrink: 0;
 }
 
 .pagination-btn {
@@ -2945,7 +3049,7 @@ body.cart-mobile-open {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-weight: 600;
     color: var(--text-secondary);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -2976,73 +3080,85 @@ body.cart-mobile-open {
     color: var(--text-white);
 }
 
+/* Анимация для бейджа ХИТ */
+@keyframes pulse-hit {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.product-badge.hit {
+    animation: pulse-hit 1.5s ease-in-out infinite;
+}
+
+/* Анимация для бейджа АКЦИЯ */
+@keyframes pulse-promotion {
+    0% {
+        box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(155, 89, 182, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(155, 89, 182, 0);
+    }
+}
+
+.product-badge.promotion {
+    animation: pulse-promotion 2s infinite;
+}
+
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1200px) {
-    .catalog-content {
-        grid-template-columns: 280px 1fr;
-        gap: 25px;
+    .filters-container {
+        grid-template-columns: 1fr;
     }
     
     .catalog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 }
 
 @media (max-width: 1024px) {
-    .catalog-content {
+    .filters-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .filters-sidebar {
-        position: static;
-        margin-bottom: 20px;
-        min-height: auto; /* На мобильных убираем фиксированную высоту */
-    }
-    
-    .catalog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 }
 
 /* МОБИЛЬНЫЕ УСТРОЙСТВА */
 @media (max-width: 768px) {
-    .catalog-content {
+    .catalog-section {
         padding: 20px 0;
     }
     
-    .search-filter {
-        padding: 20px 20px 15px;
+    .filters-top {
+        padding: 20px;
     }
     
     .filters-header {
-        padding: 15px 20px;
         flex-direction: row;
         align-items: center;
         gap: 15px;
     }
     
-    .filter-header {
-        padding: 15px 20px;
-    }
-    
-    .filter-options {
-        padding: 0 20px;
-    }
-    
-    .filter-group.active .filter-options {
-        padding: 0 20px 15px; /* Одинаковый отступ на мобильных */
-        max-height: 600px; /* Увеличена максимальная высота на мобильных */
+    .filters-grid {
+        grid-template-columns: 1fr;
     }
     
     .catalog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: 1fr;
         gap: 15px;
     }
     
     .product-image-container {
-        height: 180px;
+        height: 220px;
     }
     
     .product-info {
@@ -3057,67 +3173,18 @@ body.cart-mobile-open {
         font-size: 1.1rem;
     }
     
-    /* ПЕРЕКЛЮЧАТЕЛЬ НА МОБИЛЬНЫХ */
-    .product-type-switcher {
-        padding: 15px 20px;
-        background: transparent;
-        border-bottom: 1px solid var(--border-light);
+    .pagination-btn {
+        width: 40px;
+        height: 40px;
     }
     
-    .switcher-buttons {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 4px;
-        background: var(--bg-light);
-        border-radius: 12px;
-        padding: 4px;
+    .active-filters-list {
+        gap: 6px;
     }
     
-    .type-btn {
-        padding: 12px 6px;
+    .active-filter-tag {
         font-size: 0.8rem;
-        justify-content: center;
-        border: none;
-        border-radius: 8px;
-        background: transparent;
-        transition: all 0.3s ease;
-        width: 100%;
-        min-height: 40px;
-    }
-    
-    .type-btn.active {
-        background: var(--bg-white);
-        color: var(--primary-color);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .type-btn:hover:not(.active) {
-        color: var(--primary-color);
-        background: rgba(59, 130, 246, 0.05);
-    }
-    
-    .type-btn .material-icons {
-        font-size: 16px;
-        margin-right: 4px;
-    }
-    
-    .btn-text {
-        text-align: center;
-        flex: 1;
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .catalog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .product-image-container {
-        height: 160px;
-    }
-    
-    .type-btn .btn-text {
-        font-size: 0.7rem;
+        padding: 5px 10px;
     }
 }
 
@@ -3131,7 +3198,6 @@ body.cart-mobile-open {
         flex-direction: row;
         align-items: center;
         gap: 10px;
-        padding: 15px 20px;
     }
     
     .filters-title {
@@ -3149,26 +3215,6 @@ body.cart-mobile-open {
     
     .product-image-container {
         height: 200px;
-    }
-    
-    .pagination-btn {
-        width: 40px;
-        height: 40px;
-    }
-    
-    /* На очень маленьких экранах скрываем иконки в переключателе */
-    @media (max-width: 360px) {
-        .type-btn .material-icons {
-            display: none;
-        }
-        
-        .type-btn {
-            padding: 10px 4px;
-        }
-        
-        .btn-text {
-            font-size: 0.7rem;
-        }
     }
 }
 
@@ -3213,7 +3259,24 @@ body.cart-mobile-open {
     .pagination-btn:hover {
         transform: none;
     }
+    
+    .promo-btn:hover {
+        transform: none;
+        background: white;
+        color: var(--text-primary);
+    }
+    
+    .filter-option:hover {
+        transform: none;
+        background: none;
+    }
+    
+    .active-filter-tag:hover {
+        transform: none;
+        background: var(--primary-color);
+    }
 }
+
 /* На десктопе показываем при наведении на карточку */
 @media (hover: hover) and (pointer: fine) {
     .product-card-inner:hover .btn-favorite {
@@ -3221,71 +3284,50 @@ body.cart-mobile-open {
         transform: translateY(0);
     }
     
-    /* И всегда показываем активные */
     .product-card-inner:hover .btn-favorite.active,
     .btn-favorite.active {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-/* Бейджи для продуктов в каталоге */
-.product-badge.hit {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-    color: var(--text-white);
-}
-
-.product-badge.promotion {
-    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
-    color: var(--text-white);
-}
-
-/* Анимация для бейджа ХИТ */
-@keyframes pulse-hit {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.product-badge.hit {
-    animation: pulse-hit 1.5s ease-in-out infinite;
-}
-
-/* Анимация для бейджа АКЦИЯ */
-@keyframes pulse-promotion {
-    0% {
-        box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 8px rgba(155, 89, 182, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(155, 89, 182, 0);
-    }
-}
-
-.product-badge.promotion {
-    animation: pulse-promotion 2s infinite;
-}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Аккордеон фильтров - закрыты по умолчанию
+    // Улучшенная логика выпадающих списков
     const filterGroups = document.querySelectorAll('.filter-group');
+    let activeFilter = null;
+
     filterGroups.forEach(group => {
-        // Закрываем все группы по умолчанию
-        group.classList.remove('active');
+        const trigger = group.querySelector('.filter-trigger');
         
-        const header = group.querySelector('.filter-header');
-        header.addEventListener('click', function() {
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Закрываем предыдущий активный фильтр
+            if (activeFilter && activeFilter !== group) {
+                activeFilter.classList.remove('active');
+            }
+            
+            // Переключаем текущий фильтр
+            const isOpening = !group.classList.contains('active');
             group.classList.toggle('active');
+            activeFilter = isOpening ? group : null;
+        });
+    });
+
+    // Закрытие фильтров при клике вне
+    document.addEventListener('click', function(e) {
+        if (activeFilter && !activeFilter.contains(e.target)) {
+            activeFilter.classList.remove('active');
+            activeFilter = null;
+        }
+    });
+
+    // Предотвращаем закрытие при клике внутри фильтра
+    filterGroups.forEach(group => {
+        group.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     });
 
@@ -3293,16 +3335,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearFiltersBtn = document.querySelector('.clear-filters-btn');
     if (clearFiltersBtn) {
         clearFiltersBtn.addEventListener('click', function() {
-            const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
-            const priceInputs = document.querySelectorAll('.price-input');
+            const checkboxes = document.querySelectorAll('.filter-option input');
             
             checkboxes.forEach(checkbox => {
                 checkbox.checked = false;
             });
             
-            priceInputs.forEach(input => {
-                input.value = '';
-            });
+            // Обновляем активные фильтры
+            updateActiveFilters();
+            
+            // Закрываем все фильтры
+            if (activeFilter) {
+                activeFilter.classList.remove('active');
+                activeFilter = null;
+            }
         });
     }
 
@@ -3325,67 +3371,198 @@ document.addEventListener('DOMContentLoaded', function() {
             if (icon.textContent === 'favorite_border') {
                 icon.textContent = 'favorite';
                 icon.style.color = '#ef4444';
-                this.classList.add('active'); // Добавляем класс активного состояния
+                this.classList.add('active');
             } else {
                 icon.textContent = 'favorite_border';
                 icon.style.color = '';
-                this.classList.remove('active'); // Убираем класс активного состояния
+                this.classList.remove('active');
             }
         });
     });
-    // Переключатель Все/Товары/Наборы - ИСПРАВЛЕННЫЙ
-    const typeBtns = document.querySelectorAll('.type-btn');
 
-    typeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const type = this.dataset.type;
-            
-            // Обновляем активное состояние
-            typeBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Логика фильтрации
-            console.log('Выбран тип:', type);
-            filterProductsByType(type);
+    // Кнопка промо-баннера
+    const promoBtn = document.querySelector('.promo-btn');
+    if (promoBtn) {
+        promoBtn.addEventListener('click', function() {
+            console.log('Переход к наборам');
+            // Здесь можно добавить логику перехода к наборам
         });
-    });
-
-    function filterProductsByType(type) {
-        const productCards = document.querySelectorAll('.product-card');
-        
-        // Сначала плавно скрываем все карточки
-        productCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.4s ease';
-        });
-        
-        // Через небольшую задержку показываем нужные карточки
-        setTimeout(() => {
-            productCards.forEach(card => {
-                const cardType = card.dataset.productType;
-                
-                if (type === 'all' || cardType === type) {
-                    card.style.display = 'block';
-                    // Задержка для stagger-эффекта
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 100 * Array.from(productCards).indexOf(card));
-                } else {
-                    card.style.display = 'none';
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                }
-            });
-        }, 200);
     }
 
-    // Инициализация
-    filterProductsByType('all');
+    // Кнопка "В корзину"
+    const addToCartBtns = document.querySelectorAll('.btn-add-to-cart');
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('.product-name').textContent;
+            console.log('Товар добавлен в корзину:', productName);
+            
+            // Временная анимация
+            this.style.backgroundColor = 'var(--success-color)';
+            this.innerHTML = '<span class="material-icons">check</span><span>Добавлено</span>';
+            
+            setTimeout(() => {
+                this.style.backgroundColor = '';
+                this.innerHTML = '<span class="material-icons">shopping_cart</span><span>В корзину</span>';
+            }, 2000);
+        });
     });
-</script>
 
+    // ===== УПРАВЛЕНИЕ АКТИВНЫМИ ФИЛЬТРАМИ =====
+    const activeFiltersContainer = document.querySelector('.active-filters');
+    const activeFiltersList = document.querySelector('.active-filters-list');
+    const activeFiltersCount = document.querySelector('.active-filters-count');
+    
+    // Объект для хранения активных фильтров
+    const activeFilters = {
+        brands: [],
+        categories: [],
+        purposes: [],
+        sort: null
+    };
+    
+    // Функция обновления активных фильтров
+    function updateActiveFilters() {
+        // Собираем все выбранные фильтры
+        const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]:checked');
+        const radios = document.querySelectorAll('.filter-option input[type="radio"]:checked');
+        
+        // Очищаем текущие активные фильтры
+        activeFilters.brands = [];
+        activeFilters.categories = [];
+        activeFilters.purposes = [];
+        activeFilters.sort = null;
+        
+        // Обрабатываем чекбоксы
+        checkboxes.forEach(checkbox => {
+            const name = checkbox.getAttribute('name');
+            const value = checkbox.value;
+            const text = checkbox.closest('.filter-option').querySelector('.option-text').textContent;
+            
+            if (name === 'brand') {
+                activeFilters.brands.push({ value, text });
+            } else if (name === 'category') {
+                activeFilters.categories.push({ value, text });
+            } else if (name === 'purpose') {
+                activeFilters.purposes.push({ value, text });
+            }
+        });
+        
+        // Обрабатываем радиокнопки
+        radios.forEach(radio => {
+            if (radio.getAttribute('name') === 'sort') {
+                const value = radio.value;
+                const text = radio.closest('.filter-option').querySelector('.option-text').textContent;
+                activeFilters.sort = { value, text };
+            }
+        });
+        
+        // Обновляем отображение
+        renderActiveFilters();
+    }
+    
+    // Функция отрисовки активных фильтров
+    function renderActiveFilters() {
+        // Очищаем список
+        activeFiltersList.innerHTML = '';
+        
+        let totalCount = 0;
+        
+        // Добавляем бренды
+        activeFilters.brands.forEach(filter => {
+            createActiveFilterTag('brand', filter.value, filter.text);
+            totalCount++;
+        });
+        
+        // Добавляем категории
+        activeFilters.categories.forEach(filter => {
+            createActiveFilterTag('category', filter.value, filter.text);
+            totalCount++;
+        });
+        
+        // Добавляем назначения
+        activeFilters.purposes.forEach(filter => {
+            createActiveFilterTag('purpose', filter.value, filter.text);
+            totalCount++;
+        });
+        
+        // Добавляем сортировку
+        if (activeFilters.sort) {
+            createActiveFilterTag('sort', activeFilters.sort.value, activeFilters.sort.text);
+            totalCount++;
+        }
+        
+        // Обновляем счетчик
+        activeFiltersCount.textContent = totalCount;
+        
+        // Показываем/скрываем контейнер
+        if (totalCount > 0) {
+            activeFiltersContainer.classList.add('has-filters');
+        } else {
+            activeFiltersContainer.classList.remove('has-filters');
+        }
+    }
+    
+    // Функция создания тега активного фильтра
+    function createActiveFilterTag(type, value, text) {
+        const tag = document.createElement('div');
+        tag.className = 'active-filter-tag';
+        tag.innerHTML = `
+            <span>${text}</span>
+            <button class="active-filter-remove" data-type="${type}" data-value="${value}">
+                ×
+            </button>
+        `;
+        
+        activeFiltersList.appendChild(tag);
+        
+        // Добавляем обработчик удаления
+        const removeBtn = tag.querySelector('.active-filter-remove');
+        removeBtn.addEventListener('click', function() {
+            removeActiveFilter(type, value);
+        });
+    }
+    
+    // Функция удаления активного фильтра
+    function removeActiveFilter(type, value) {
+        if (type === 'sort') {
+            // Для радиокнопок сбрасываем выбор
+            const radio = document.querySelector(`input[name="sort"][value="${value}"]`);
+            if (radio) {
+                radio.checked = false;
+            }
+            activeFilters.sort = null;
+        } else {
+            // Для чекбоксов снимаем галочку
+            const checkbox = document.querySelector(`input[name="${type}"][value="${value}"]`);
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+            
+            // Удаляем из массива
+            if (type === 'brand') {
+                activeFilters.brands = activeFilters.brands.filter(f => f.value !== value);
+            } else if (type === 'category') {
+                activeFilters.categories = activeFilters.categories.filter(f => f.value !== value);
+            } else if (type === 'purpose') {
+                activeFilters.purposes = activeFilters.purposes.filter(f => f.value !== value);
+            }
+        }
+        
+        // Обновляем отображение
+        renderActiveFilters();
+    }
+    
+    // Обработчики изменения фильтров
+    const filterInputs = document.querySelectorAll('.filter-option input');
+    filterInputs.forEach(input => {
+        input.addEventListener('change', updateActiveFilters);
+    });
+    
+    // Инициализация активных фильтров
+    updateActiveFilters();
+});
+</script>
 
 
 
