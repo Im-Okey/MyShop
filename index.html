@@ -22,7 +22,7 @@
             
             --accent-color: #e97c1f;
             --accent-rgb: 233, 124, 31;
-            
+
             /* Текстовые цвета */
             --text-primary: #333;
             --text-secondary: #666;
@@ -174,7 +174,7 @@
     <div class="container">
         <div class="header-content">
             <!-- Логотип -->
-            <a href="" style="text-decoration: none;">
+            <a href="index.html" style="text-decoration: none;">
                 <div class="logo">
                     <div class="logo-icon">H</div>
                     <span class="logo-text">Название</span>
@@ -197,32 +197,6 @@
                 <div class="search-box desktop-only">
                     <span class="material-icons">search</span>
                     <input type="text" placeholder="Поиск...">
-                </div>
-                
-                <!-- Переключатель тем (только на десктопе) -->
-                <div class="theme-switcher-compact desktop-only">
-                    <button class="theme-trigger">
-                        <span class="material-icons">palette</span>
-                    </button>
-                    <div class="theme-dropdown">
-                        <div class="theme-options">
-                            <button class="theme-option active" data-theme="classic" title="Классика">
-                                <div class="theme-preview classic"></div>
-                            </button>
-                            <button class="theme-option" data-theme="fresh" title="Свежая">
-                                <div class="theme-preview fresh"></div>
-                            </button>
-                            <button class="theme-option" data-theme="olive" title="Оливковая">
-                                <div class="theme-preview olive"></div>
-                            </button>
-                            <button class="theme-option" data-theme="turquoise" title="Бирюза">
-                                <div class="theme-preview turquoise"></div>
-                            </button>
-                            <button class="theme-option" data-theme="pistachio" title="Фисташка">
-                                <div class="theme-preview pistachio"></div>
-                            </button>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- Корзина -->
@@ -252,32 +226,6 @@
                     <li><a href="#">Доставка</a></li>
                     <li><a href="#">О компании</a></li>
                 </ul>
-                
-                <!-- Переключатель тем для мобильных -->
-                <div class="mobile-themes">
-                    <div class="theme-options">
-                        <button class="theme-option active" data-theme="classic" title="Классика">
-                            <div class="theme-preview classic"></div>
-                            <span>Классика</span>
-                        </button>
-                        <button class="theme-option" data-theme="fresh" title="Свежая">
-                            <div class="theme-preview fresh"></div>
-                            <span>Свежая</span>
-                        </button>
-                        <button class="theme-option" data-theme="olive" title="Оливковая">
-                            <div class="theme-preview olive"></div>
-                            <span>Оливковая</span>
-                        </button>
-                        <button class="theme-option" data-theme="turquoise" title="Бирюза">
-                            <div class="theme-preview turquoise"></div>
-                            <span>Бирюза</span>
-                        </button>
-                        <button class="theme-option" data-theme="pistachio" title="Фисташка">
-                            <div class="theme-preview pistachio"></div>
-                            <span>Фисташка</span>
-                        </button>
-                    </div>
-                </div>
             </nav>
         </div>
     </div>
@@ -1384,79 +1332,6 @@ body.cart-mobile-open {
 </style>
 
 <script>
-    const themes = {
-        classic: {
-            '--primary-color': '#2a7a4c',
-            '--primary-dark': '#1f5c38',
-            '--primary-light': '#3a9d69',
-            '--primary-rgb': '42, 122, 76',
-            '--bg-primary': '#f8fbf9',
-            '--bg-secondary': '#ffffff',
-            '--bg-tertiary': '#f0f7f3',
-            '--bg-dark': '#1a1a1a',
-            '--accent-color': '#f59e0b',
-            '--accent-rgb': '245, 158, 11',
-            '--error-color': '#dc2626',
-            '--error-light': '#fef2f2'
-        },
-        fresh: {
-            '--primary-color': '#93c572',
-            '--primary-dark': '#76a85a',
-            '--primary-light': '#b0d899',
-            '--primary-rgb': '147, 197, 114',
-            '--bg-primary': '#f7faf2',
-            '--bg-secondary': '#ffffff',
-            '--bg-tertiary': '#edf4e6',
-            '--bg-dark': '#364f2a',
-            '--accent-color': '#ffe08c',
-            '--accent-rgb': '255, 224, 140',
-            '--error-color': '#dc2626',
-            '--error-light': '#fef2f2'
-        },
-        olive: {
-            '--primary-color': '#556b2f',
-            '--primary-dark': '#3d4c21',
-            '--primary-light': '#6b8e23',
-            '--primary-rgb': '85, 107, 47',
-            '--bg-primary': '#f9faf5',
-            '--bg-secondary': '#ffffff',
-            '--bg-tertiary': '#f1f4e9',
-            '--bg-dark': '#2d3719',
-            '--accent-color': '#d4af37',
-            '--accent-rgb': '212, 175, 55',
-            '--error-color': '#dc2626',
-            '--error-light': '#fef2f2'
-        },
-        turquoise: {
-            '--primary-color': '#2c7a78',
-            '--primary-dark': '#1f5654',
-            '--primary-light': '#38b2ac',
-            '--primary-rgb': '44, 122, 120',
-            '--bg-primary': '#f0f9f9',
-            '--bg-secondary': '#ffffff',
-            '--bg-tertiary': '#e6f2f2',
-            '--bg-dark': '#1a4543',
-            '--accent-color': '#ed8936',
-            '--accent-rgb': '237, 137, 54',
-            '--error-color': '#dc2626',
-            '--error-light': '#fef2f2'
-        },
-        pistachio: {
-            '--primary-color': '#689550',
-            '--primary-dark': '#4f7340',
-            '--primary-light': '#84b36d',
-            '--primary-rgb': '104, 149, 80',
-            '--bg-primary': '#f7faf5',
-            '--bg-secondary': '#ffffff',
-            '--bg-tertiary': '#edf4e8',
-            '--bg-dark': '#364f2a',
-            '--accent-color': '#e97c1f',
-            '--accent-rgb': '233, 124, 31',
-            '--error-color': '#dc2626',
-            '--error-light': '#fef2f2'
-        }
-    };
-
     document.addEventListener('DOMContentLoaded', function() {
         const themeOptions = document.querySelectorAll('.theme-option');
         const root = document.documentElement;
@@ -1538,19 +1413,6 @@ body.cart-mobile-open {
             document.body.classList.remove('no-scroll');
         }
 
-        function applyTheme(themeName) {
-            const theme = themes[themeName];
-            for (const [property, value] of Object.entries(theme)) {
-                root.style.setProperty(property, value);
-            }
-        }
-
-        // Восстановление темы
-        const savedTheme = localStorage.getItem('selectedTheme') || 'classic';
-        const savedOption = document.querySelector(`[data-theme="${savedTheme}"]`);
-        if (savedOption) {
-            savedOption.click();
-        }
 
         // Обработчики для кнопок количества в корзине
         const quantityBtns = document.querySelectorAll('.quantity-btn');
@@ -1638,7 +1500,7 @@ body.cart-mobile-open {
                     <div class="hero-buttons">
                         <button class="action-btn action-btn--primary">
                             <span class="material-icons action-btn__icon">local_offer</span>
-                            <span>Смотреть бренды</span>
+                            <span>Перейти в каталог</span>
                         </button>
                         <button class="action-btn action-btn--secondary">
                             <span class="material-icons action-btn__icon">question_answer</span>
@@ -1660,7 +1522,7 @@ body.cart-mobile-open {
                     <div class="hero-buttons">
                         <button class="action-btn action-btn--primary">
                             <span class="material-icons action-btn__icon">local_offer</span>
-                            <span>Смотреть бренды</span>
+                            <span>Перейти в каталог</span>
                         </button>
                         <button class="action-btn action-btn--secondary">
                             <span class="material-icons action-btn__icon">question_answer</span>
@@ -1682,7 +1544,7 @@ body.cart-mobile-open {
                     <div class="hero-buttons">
                         <button class="action-btn action-btn--primary">
                             <span class="material-icons action-btn__icon">local_offer</span>
-                            <span>Смотреть бренды</span>
+                            <span>Перейти в каталог</span>
                         </button>
                         <button class="action-btn action-btn--secondary">
                             <span class="material-icons action-btn__icon">question_answer</span>
@@ -2419,37 +2281,6 @@ body.cart-mobile-open {
 </section>
 
 <style>
-    :root {
-        /* Цвета */
-        --primary-color: #3b82f6;
-        --primary-dark: #2563eb;
-        --accent-color: #f59e0b;
-        --success-color: #10b981;
-        --text-primary: #1f2937;
-        --text-secondary: #6b7280;
-        --text-light: #9ca3af;
-        --text-white: #ffffff;
-        --bg-primary: #ffffff;
-        --bg-secondary: #f9fafb;
-        --bg-light: #f3f4f6;
-        --border-light: #e5e7eb;
-        --overlay-light: rgba(59, 130, 246, 0.05);
-        
-        /* RGB значения для rgba */
-        --primary-rgb: 59, 130, 246;
-        --accent-rgb: 245, 158, 11;
-        
-        /* Тени как в блоке "Пакетные решения" */
-        --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        
-        /* Градиенты */
-        --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-        
-        /* Переходы */
-        --transition: all 0.3s ease;
-    }
-
     /* ===== СТИЛИ БЛОКА НОВИНКИ ===== */
     .new-products-section {
         padding: 80px 0;
@@ -4282,26 +4113,6 @@ body.cart-mobile-open {
 </section>
 
 <style>
-    /* CSS переменные */
-    :root {
-        --primary-color: #8B5FBF;
-        --primary-dark: #6B46A5;
-        --accent-color: #FF6B6B;
-        --success-color: #4CAF50;
-        --text-primary: #333333;
-        --text-secondary: #666666;
-        --text-light: #999999;
-        --text-white: #FFFFFF;
-        --bg-primary: #FFFFFF;
-        --bg-secondary: #F8F9FA;
-        --bg-tertiary: #F0F2F5;
-        --bg-light: #F0F0F0;
-        --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
-        --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.12);
-        --shadow-heavy: 0 12px 28px rgba(0, 0, 0, 0.15);
-        --transition: all 0.3s ease;
-    }
-
     /* ===== СТИЛИ БЛОКА АКЦИЙ ===== */
     .promo-banners-section {
         padding: 80px 0;
