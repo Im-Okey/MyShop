@@ -1441,7 +1441,7 @@ body.cart-mobile-open {
     /* Выпадающее меню профиля - ПК ВЕРСИЯ */
     .profile-dropdown {
         position: fixed;
-        top: 70px;
+        top: 80px;
         /* Выравниваем по правому краю контейнера, а не всего экрана */
         right: calc((100vw - min(1400px, 95vw)) / 2 + 20px);
         background: var(--bg-secondary);
@@ -1591,6 +1591,7 @@ body.cart-mobile-open {
         cursor: pointer;
         font-size: 0.95rem;
         font-weight: 500;
+        position: relative; /* Добавляем для позиционирования бейджа */
     }
 
     .menu-item:hover {
@@ -1615,9 +1616,10 @@ body.cart-mobile-open {
         padding: 4px 8px;
         font-size: 0.75rem;
         font-weight: 600;
-        margin-left: auto;
+        margin-left: auto; /* Автоматический отступ слева прижимает к правому краю */
         min-width: 20px;
         text-align: center;
+        position: static; /* Убираем абсолютное позиционирование */
     }
 
     .menu-divider {
@@ -1650,162 +1652,152 @@ body.cart-mobile-open {
     }
 
     /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
-    .mobile-main-nav {
-        margin-bottom: 0;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--border-light);
-    }
+.mobile-main-nav {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
 
-    .mobile-main-nav ul {
-        list-style: none;
-        margin-bottom: 0;
-    }
+.mobile-main-nav ul {
+    list-style: none;
+    margin-bottom: 0;
+}
 
-    .mobile-main-nav li {
-        margin-bottom: 8px;
-        opacity: 0;
-        transform: translateX(30px);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+.mobile-main-nav li {
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    .mobile-nav-overlay.active .mobile-main-nav li {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.mobile-nav-overlay.active .mobile-main-nav li {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-    .mobile-main-nav a {
-        display: block;
-        padding: 16px 0;
-        text-decoration: none;
-        color: var(--text-primary);
-        font-weight: 600;
-        font-size: 1.2rem;
-        transition: var(--transition);
-        border-bottom: 1px solid var(--border-light);
-    }
+.mobile-main-nav a {
+    display: block;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-light);
+}
 
-    .mobile-main-nav a:hover {
-        color: var(--primary-color);
-        padding-left: 15px;
-    }
+.mobile-main-nav a:hover {
+    color: var(--primary-color);
+    padding-left: 15px;
+}
 
-    .mobile-profile {
-        margin-top: 20px;
-        padding: 20px 0;
-    }
+.mobile-profile {
+    margin-top: 20px;
+    padding: 20px 0;
+}
 
-    .mobile-profile .dropdown-unauthorized,
-    .mobile-profile .dropdown-authorized {
-        display: none;
-    }
+.mobile-profile .dropdown-unauthorized,
+.mobile-profile .dropdown-authorized {
+    display: none;
+}
 
-    body.user-authorized .mobile-profile .dropdown-authorized {
-        display: block;
-    }
+body.user-authorized .mobile-profile .dropdown-authorized {
+    display: block;
+}
 
-    body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
-        display: block;
-    }
+body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
+    display: block;
+}
 
-    /* Мобильная версия выпадающего меню */
-    .mobile-profile .profile-dropdown {
-        position: static;
-        box-shadow: none;
-        border: none;
-        margin-top: 0;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        background: transparent;
-        min-width: auto;
-        max-height: none;
-        right: auto;
-    }
+/* Мобильная версия выпадающего меню */
+.mobile-profile .profile-dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    min-width: auto;
+    max-height: none;
+    right: auto;
+}
 
-    .mobile-profile .dropdown-header {
-        background: transparent;
-        border-radius: 0;
-        padding: 0 0 20px 0;
-        border-bottom: 1px solid var(--border-light);
-    }
+.mobile-profile .dropdown-header {
+    background: transparent;
+    border-radius: 0;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid var(--border-light);
+}
 
-    .mobile-profile .dropdown-actions {
-        padding: 20px 0;
-    }
+.mobile-profile .dropdown-actions {
+    padding: 20px 0;
+}
 
-    .mobile-profile .user-info-compact {
-        padding: 0;
-    }
+.mobile-profile .user-info-compact {
+    padding: 0;
+}
 
-    .mobile-profile .dropdown-menu {
-        padding: 0;
-    }
+.mobile-profile .dropdown-menu {
+    padding: 0;
+}
 
-    .mobile-profile .menu-item {
-        padding: 16px 0;
-        border-bottom: 1px solid var(--border-light);
-        font-size: 1.1rem;
-    }
+/* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ МОБИЛЬНОГО МЕНЮ */
+.mobile-profile .menu-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 1.1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* По умолчанию - выравнивание по левому краю */
+    justify-content: flex-start;
+    gap: 12px;
+}
 
-    .mobile-profile .menu-item:last-child {
-        border-bottom: none;
-    }
+/* ТОЛЬКО для пунктов с бейджами - выравнивание по краям */
+.mobile-profile .menu-item:has(.menu-badge) {
+    justify-content: space-between;
+}
 
-    .mobile-profile .menu-divider {
-        margin: 16px 0;
-    }
+/* Стили для бейджей в мобильном меню */
+.mobile-profile .menu-badge {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    flex-shrink: 0;
+}
 
-    /* Анимация для мобильного меню */
-    .mobile-profile .dropdown-unauthorized,
-    .mobile-profile .dropdown-authorized {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease 0.2s;
-    }
+/* Особый стиль для кнопки "Выйти" - центрирование */
+.mobile-profile .logout-btn {
+    justify-content: center;
+    text-align: center;
+    gap: 12px; /* Сохраняем отступ между иконкой и текстом */
+}
 
-    .mobile-nav-overlay.active .mobile-profile .dropdown-unauthorized,
-    .mobile-nav-overlay.active .mobile-profile .dropdown-authorized {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.mobile-profile .menu-item:last-child {
+    border-bottom: none;
+}
 
-    /* Адаптивность */
-    @media (max-width: 867px) {
-        .profile-icon-wrapper {
-            display: none;
-        }
-        
-        .profile-dropdown {
-            display: none;
-        }
-    }
+.mobile-profile .menu-divider {
+    margin: 16px 0;
+}
 
-    /* Для очень маленьких экранов */
-    @media (max-width: 480px) {
-        .profile-dropdown {
-            right: 10px;
-            left: 10px;
-            min-width: auto;
-            width: auto;
-        }
-        
-        .mobile-main-nav a {
-            font-size: 1.1rem;
-            padding: 14px 0;
-        }
-        
-        .mobile-profile .menu-item {
-            font-size: 1rem;
-            padding: 14px 0;
-        }
-    }
+/* Анимация для мобильного меню */
+.mobile-profile .dropdown-unauthorized,
+.mobile-profile .dropdown-authorized {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease 0.2s;
+}
 
-    /* Для средних экранов - корректируем позиционирование */
-    @media (max-width: 1400px) {
-        .profile-dropdown {
-            right: calc((100vw - 95vw) / 2 + 20px);
-        }
-    }
+.mobile-nav-overlay.active .mobile-profile .dropdown-unauthorized,
+.mobile-nav-overlay.active .mobile-profile .dropdown-authorized {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 
 <script>
