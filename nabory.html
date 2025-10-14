@@ -201,13 +201,83 @@
                     <span class="material-icons">search</span>
                     <input type="text" placeholder="Поиск...">
                 </div>
-                
+                 
                 <!-- Корзина -->
                 <div class="cart-icon" id="cartTrigger">
                     <span class="material-icons">shopping_bag</span>
                     <div class="cart-count">4</div>
                 </div>
                 
+                <!-- Иконка профиля -->
+                <div class="profile-icon-wrapper">
+                    <button class="profile-icon" id="profileTrigger">
+                        <span class="material-icons">person</span>
+                    </button>
+                    
+                    <!-- Выпадающее меню профиля -->
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <!-- Для неавторизованных пользователей -->
+                        <div class="dropdown-unauthorized">
+                            <div class="dropdown-header">
+                                <h3>Войдите в аккаунт</h3>
+                                <p>Чтобы получить доступ ко всем функциям</p>
+                            </div>
+                            <div class="dropdown-actions">
+                                <a href="login.html" class="btn-login">
+                                    Войти
+                                </a>
+                                <a href="register.html" class="btn-register">
+                                    Создать аккаунт
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- В выпадающем меню для авторизованных пользователей замени ссылки: -->
+                        <div class="dropdown-authorized">
+                            <div class="dropdown-header">
+                                <div class="user-info-compact">
+                                    <div class="user-avatar-small">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Профиль">
+                                    </div>
+                                    <div class="user-details">
+                                        <h4>Иван Иванов</h4>
+                                        <p>ivan@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-menu">
+                                <a href="profile.html?tab=info" class="menu-item" onclick="closeProfileDropdown()">
+                                    <span class="material-icons">person</span>
+                                    Личный кабинет
+                                </a>
+                                <a href="profile.html?tab=orders" class="menu-item" onclick="closeProfileDropdown()">
+                                    <span class="material-icons">shopping_bag</span>
+                                    Мои заказы
+                                    <span class="menu-badge">3</span>
+                                </a>
+                                <a href="profile.html?tab=favorites" class="menu-item" onclick="closeProfileDropdown()">
+                                    <span class="material-icons">favorite</span>
+                                    Избранное
+                                    <span class="menu-badge">8</span>
+                                </a>
+                                <a href="profile.html?tab=bonuses" class="menu-item" onclick="closeProfileDropdown()">
+                                    <span class="material-icons">card_giftcard</span>
+                                    Бонусы
+                                    <span class="menu-badge">2</span>
+                                </a>
+                                
+                                <div class="menu-divider"></div>
+                                
+                                <button class="menu-item logout-btn">
+                                    <span class="material-icons">logout</span>
+                                    Выйти
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Бургер-меню для мобильных -->
                 <button class="burger-menu mobile-only">
                     <span class="burger-line"></span>
@@ -221,8 +291,8 @@
     <!-- Мобильное меню на весь экран -->
     <div class="mobile-nav-overlay">
         <div class="mobile-nav">
-            <!-- Контент меню начинается ПОД хедером -->
-            <nav>
+            <!-- Основная навигация -->
+            <nav class="mobile-main-nav">
                 <ul>
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="#">Блог</a></li>
@@ -230,6 +300,11 @@
                     <li><a href="#">О компании</a></li>
                 </ul>
             </nav>
+            
+            <!-- Мобильная версия профиля -->
+            <div class="mobile-profile">
+                <!-- Контент подставляется динамически в зависимости от авторизации -->
+            </div>
         </div>
     </div>
 </header>
@@ -1332,6 +1407,408 @@ body.cart-mobile-open {
         height: 100%;
     }
 }
+
+      /* ===== СТИЛИ ИКОНКИ ПРОФИЛЯ ===== */
+    .profile-icon-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-icon {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--text-secondary);
+        border: 1px solid transparent;
+    }
+
+    .profile-icon:hover {
+        color: var(--primary-color);
+        background: var(--bg-primary);
+        border-color: var(--border-medium);
+    }
+
+    .profile-icon .material-icons {
+        font-size: 1.9rem;
+    }
+
+    /* Выпадающее меню профиля - ПК ВЕРСИЯ */
+    .profile-dropdown {
+        position: fixed;
+        top: 70px;
+        /* Выравниваем по правому краю контейнера, а не всего экрана */
+        right: calc((100vw - min(1400px, 95vw)) / 2 + 20px);
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        box-shadow: var(--shadow-heavy);
+        padding: 0;
+        min-width: 280px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        border: 1px solid var(--border-medium);
+        z-index: 9999;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    .profile-dropdown.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Общие стили для выпадающего меню */
+    .dropdown-header {
+        padding: 20px;
+        border-bottom: 1px solid var(--border-light);
+        background: var(--bg-primary);
+        border-radius: 12px 12px 0 0;
+    }
+
+    .dropdown-header h3 {
+        margin: 0 0 5px 0;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .dropdown-header p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.4;
+    }
+
+    /* Для неавторизованных пользователей */
+    .dropdown-unauthorized {
+        display: block;
+    }
+
+    .dropdown-authorized {
+        display: none;
+    }
+
+    .dropdown-actions {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-login, .btn-register {
+        padding: 12px 24px;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
+        display: block;
+    }
+
+    .btn-login {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn-login:hover {
+        background: var(--primary-dark);
+    }
+
+    .btn-register {
+        background: transparent;
+        color: var(--text-secondary);
+        border: 1px solid var(--border-medium);
+    }
+
+    .btn-register:hover {
+        background: var(--bg-primary);
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    /* Для авторизованных пользователей */
+    .user-info-compact {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .user-avatar-small {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 2px solid var(--border-light);
+    }
+
+    .user-avatar-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .user-details h4 {
+        margin: 0 0 4px 0;
+        font-size: 1rem;
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .user-details p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    .dropdown-menu {
+        padding: 8px 0;
+    }
+
+    .menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: var(--transition);
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+    .menu-item:hover {
+        background: var(--bg-primary);
+        color: var(--primary-color);
+    }
+
+    .menu-item .material-icons {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        width: 24px;
+    }
+
+    .menu-item:hover .material-icons {
+        color: var(--primary-color);
+    }
+
+    .menu-badge {
+        background: var(--primary-color);
+        color: white;
+        border-radius: 12px;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: auto;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .menu-divider {
+        height: 1px;
+        background: var(--border-light);
+        margin: 8px 0;
+    }
+
+    .logout-btn {
+        color: var(--error-color);
+        font-weight: 500;
+    }
+
+    .logout-btn:hover {
+        color: var(--error-color);
+        background: rgba(239, 68, 68, 0.05);
+    }
+
+    .logout-btn .material-icons {
+        color: var(--error-color);
+    }
+
+    /* Состояния для авторизованных пользователей */
+    body.user-authorized .dropdown-unauthorized {
+        display: none;
+    }
+
+    body.user-authorized .dropdown-authorized {
+        display: block;
+    }
+
+    /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+    .mobile-main-nav {
+        margin-bottom: 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .mobile-main-nav ul {
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    .mobile-main-nav li {
+        margin-bottom: 8px;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-nav-overlay.active .mobile-main-nav li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .mobile-main-nav a {
+        display: block;
+        padding: 16px 0;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: var(--transition);
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .mobile-main-nav a:hover {
+        color: var(--primary-color);
+        padding-left: 15px;
+    }
+
+    .mobile-profile {
+        margin-top: 20px;
+        padding: 20px 0;
+    }
+
+    .mobile-profile .dropdown-unauthorized,
+    .mobile-profile .dropdown-authorized {
+        display: none;
+    }
+
+    body.user-authorized .mobile-profile .dropdown-authorized {
+        display: block;
+    }
+
+    body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
+        display: block;
+    }
+
+    /* Мобильная версия выпадающего меню */
+    .mobile-profile .profile-dropdown {
+        position: static;
+        box-shadow: none;
+        border: none;
+        margin-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        min-width: auto;
+        max-height: none;
+        right: auto;
+    }
+
+    .mobile-profile .dropdown-header {
+        background: transparent;
+        border-radius: 0;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .mobile-profile .dropdown-actions {
+        padding: 20px 0;
+    }
+
+    .mobile-profile .user-info-compact {
+        padding: 0;
+    }
+
+    .mobile-profile .dropdown-menu {
+        padding: 0;
+    }
+
+    .mobile-profile .menu-item {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border-light);
+        font-size: 1.1rem;
+    }
+
+    .mobile-profile .menu-item:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-profile .menu-divider {
+        margin: 16px 0;
+    }
+
+    /* Анимация для мобильного меню */
+    .mobile-profile .dropdown-unauthorized,
+    .mobile-profile .dropdown-authorized {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease 0.2s;
+    }
+
+    .mobile-nav-overlay.active .mobile-profile .dropdown-unauthorized,
+    .mobile-nav-overlay.active .mobile-profile .dropdown-authorized {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 867px) {
+        .profile-icon-wrapper {
+            display: none;
+        }
+        
+        .profile-dropdown {
+            display: none;
+        }
+    }
+
+    /* Для очень маленьких экранов */
+    @media (max-width: 480px) {
+        .profile-dropdown {
+            right: 10px;
+            left: 10px;
+            min-width: auto;
+            width: auto;
+        }
+        
+        .mobile-main-nav a {
+            font-size: 1.1rem;
+            padding: 14px 0;
+        }
+        
+        .mobile-profile .menu-item {
+            font-size: 1rem;
+            padding: 14px 0;
+        }
+    }
+
+    /* Для средних экранов - корректируем позиционирование */
+    @media (max-width: 1400px) {
+        .profile-dropdown {
+            right: calc((100vw - 95vw) / 2 + 20px);
+        }
+    }
 </style>
 
 <script>
@@ -1470,7 +1947,108 @@ body.cart-mobile-open {
             }
         }
     });
+
+     document.addEventListener('DOMContentLoaded', function() {
+        const profileTrigger = document.getElementById('profileTrigger');
+        const profileDropdown = document.getElementById('profileDropdown');
+        const logoutBtns = document.querySelectorAll('.logout-btn');
+        const mobileProfile = document.querySelector('.mobile-profile');
+        
+        // Проверяем авторизацию
+        function checkAuthStatus() {
+            // В реальном приложении:
+            // const isAuthorized = localStorage.getItem('userToken') !== null;
+            
+            // Для демонстрации - случайный выбор
+            const isAuthorized = Math.random() > 0.5;
+            
+            if (isAuthorized) {
+                document.body.classList.add('user-authorized');
+            } else {
+                document.body.classList.remove('user-authorized');
+            }
+            
+            updateMobileProfile();
+            return isAuthorized;
+        }
+
+        // Обновляем мобильный профиль
+        function updateMobileProfile() {
+            if (!mobileProfile) return;
+            
+            const isAuthorized = document.body.classList.contains('user-authorized');
+            const unauthorizedContent = document.querySelector('.dropdown-unauthorized').cloneNode(true);
+            const authorizedContent = document.querySelector('.dropdown-authorized').cloneNode(true);
+            
+            mobileProfile.innerHTML = '';
+            
+            if (isAuthorized) {
+                mobileProfile.appendChild(authorizedContent);
+            } else {
+                mobileProfile.appendChild(unauthorizedContent);
+            }
+            
+            // Добавляем обработчики для мобильных кнопок
+            const mobileLogoutBtns = mobileProfile.querySelectorAll('.logout-btn');
+            mobileLogoutBtns.forEach(btn => {
+                btn.addEventListener('click', handleLogout);
+            });
+        }
+
+        // Открытие/закрытие выпадающего меню
+        if (profileTrigger && profileDropdown) {
+            profileTrigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                profileDropdown.classList.toggle('active');
+            });
+
+            // Закрытие при клике вне меню
+            document.addEventListener('click', function(e) {
+                if (!profileTrigger.contains(e.target) && !profileDropdown.contains(e.target)) {
+                    profileDropdown.classList.remove('active');
+                }
+            });
+
+            // Закрытие при нажатии Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    profileDropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Обработка выхода
+        function handleLogout() {
+            if (confirm('Вы уверены, что хотите выйти?')) {
+                // В реальном приложении:
+                // localStorage.removeItem('userToken');
+                // window.location.reload();
+                
+                document.body.classList.remove('user-authorized');
+                if (profileDropdown) {
+                    profileDropdown.classList.remove('active');
+                }
+                updateMobileProfile();
+                alert('Вы вышли из аккаунта');
+            }
+        }
+
+        logoutBtns.forEach(btn => {
+            btn.addEventListener('click', handleLogout);
+        });
+
+        // Инициализация
+        checkAuthStatus();
+
+        function closeProfileDropdown() {
+            const profileDropdown = document.getElementById('profileDropdown');
+            if (profileDropdown) {
+                profileDropdown.classList.remove('active');
+            }
+        }
+    });
 </script>
+
 
 
 
@@ -2799,7 +3377,7 @@ body.cart-mobile-open {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--primary-color);
     z-index: 1;
 }
 
