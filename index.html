@@ -7,6 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+
+        /* ===== ПОДКЛЮЧЕНИЕ ШРИФТА ===== */
+        @font-face {
+            font-family: 'FuturaDemiC';
+            src: url('../fonts/futurademic.woff2') format('woff2'),
+                url('../fonts/futurademic.woff') format('woff'),
+                url('../fonts/futurademic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
         /* ===== CSS ПЕРЕМЕННЫЕ ===== */
         :root {
             /* Основные цвета */
@@ -51,6 +62,8 @@
             /* Градиенты */
             --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
             --gradient-dark: linear-gradient(135deg, var(--bg-dark), #2d2d2d);
+
+            
             
             /* Тени */
             --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -155,6 +168,14 @@
 
         * {
             box-sizing: border-box;
+        }
+
+        .section-title {
+            font-family: 'FuturaDemiC', Arial, sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
     </style>
@@ -2646,199 +2667,214 @@ body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
 
 
 
-<!-- Блок "Может понравиться" -->
-<section class="favourite-products-section">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Блок "Хиты" -->
+<section class="hits-section">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Вам может понравиться</h2>
-            <!-- На мобильных показываем ссылку "Все товары" -->
-            <a href="/favourite-products" class="view-all-link mobile-only">
-                <span>Все товары</span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-            <!-- На десктопе показываем кнопки -->
-            <div class="section-header-nav desktop-only">
-                <button class="favourite-slider-nav favourite-slider-prev">
-                    <span class="material-icons">arrow_back_ios</span>
-                </button>
-                <button class="favourite-slider-nav favourite-slider-next">
-                    <span class="material-icons">arrow_forward_ios</span>
-                </button>
+        <!-- Истории (кружки) -->
+        <div class="hits-stories">
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Новинки</span>
+            </div>
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Скидки</span>
+            </div>
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Хиты</span>
+            </div>
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Бренды</span>
+            </div>
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Уход</span>
+            </div>
+            <div class="story-item">
+                <div class="story-circle" style="background-image: url('https://placehold.co/60x60');"></div>
+                <span class="story-label">Акции</span>
             </div>
         </div>
         
-        <div class="favourite-products-slider">
-            <div class="favourite-products-container">
+        <!-- Шапка блока -->
+        <div class="section-header">
+            <h2 class="section-title-hits">ХИТЫ</h2>
+            <div class="section-header-controls">
+                <a href="/all-hits" class="view-all-btn">
+                    <span>Смотреть все</span>
+                </a>
+                <div class="section-header-nav">
+                    <button class="hits-slider-nav hits-slider-prev">
+                        <span class="material-icons">arrow_back_ios</span>
+                    </button>
+                    <button class="hits-slider-nav hits-slider-next">
+                        <span class="material-icons">arrow_forward_ios</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Слайдер с товарами -->
+        <div class="hits-products-slider">
+            <div class="hits-products-container">
                 <!-- Продукт 1 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж СКИДКА -->
-                        <div class="favourite-product-badge sale">-20%</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">MONNALI</div>
-                            <h3 class="favourite-product-name">Шампунь с экстрактом шелка</h3>
-                            <p class="favourite-product-description">Восстанавливающий шампунь для поврежденных волос</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">45.00 руб.</span>
-                                <span class="favourite-old-price">52.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
+                <div class="hits-product-wrapper">
+                    <div class="corner-icon">
+                        <span class="material-icons">bolt</span>
+                    </div>
+                    
+                    <div class="hits-product-card">
+                        <div class="hits-product-card-inner">
+                            <div class="hits-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
+                            <div class="hits-product-info">
+                                <h3 class="hits-product-name">Шампунь от перхоти для длинных волос с усиленной формулой</h3>
+                                <p class="hits-product-description">DSD De Luxe Дискидокс Де Люкс №2.1 500 мл специальная серия для профессионального использования</p>
+                                <div class="hits-product-price">99,99 BYN</div>
+                                <div class="hits-product-actions">
+                                    <button class="hits-btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                    <button class="hits-btn-favorite">
+                                        <span class="material-icons">favorite_border</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Продукт 2 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж NEW -->
-                        <div class="favourite-product-badge new">NEW</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">DSD de Luxe</div>
-                            <h3 class="favourite-product-name">Сыворотка для роста волос</h3>
-                            <p class="favourite-product-description">Активирует рост и укрепляет волосяные фолликулы</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">68.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
+                <div class="hits-product-wrapper">
+                    <div class="corner-icon">
+                        <span class="material-icons">bolt</span>
+                    </div>
+                    <div class="hits-product-card">
+                        <div class="hits-product-card-inner">
+                            <div class="hits-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
+                            <div class="hits-product-info">
+                                <h3 class="hits-product-name">Маска для волос</h3>
+                                <p class="hits-product-description">MONNALI Восстанавливающая 250 мл</p>
+                                <div class="hits-product-price">87,50 BYN</div>
+                                <div class="hits-product-actions">
+                                    <button class="hits-btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                    <button class="hits-btn-favorite">
+                                        <span class="material-icons">favorite_border</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Продукт 3 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж ХИТ -->
-                        <div class="favourite-product-badge hit">ХИТ</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">OPTIMA</div>
-                            <h3 class="favourite-product-name">Маска для объема</h3>
-                            <p class="favourite-product-description">Создает естественный объем и упругость</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">38.00 руб.</span>
-                                <span class="favourite-old-price">45.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
+                <div class="hits-product-wrapper">
+                    <div class="corner-icon">
+                        <span class="material-icons">bolt</span>
+                    </div>
+                    <div class="hits-product-card">
+                        <div class="hits-product-card-inner">
+                            <div class="hits-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
+                            <div class="hits-product-info">
+                                <h3 class="hits-product-name">Сыворотка для роста</h3>
+                                <p class="hits-product-description">OPTIMA Активатор роста 100 мл</p>
+                                <div class="hits-product-price">124,99 BYN</div>
+                                <div class="hits-product-actions">
+                                    <button class="hits-btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                    <button class="hits-btn-favorite">
+                                        <span class="material-icons">favorite_border</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Продукт 4 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж АКЦИЯ -->
-                        <div class="favourite-product-badge promotion">АКЦИЯ</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">MONNALI</div>
-                            <h3 class="favourite-product-name">Шампунь с экстрактом шелка</h3>
-                            <p class="favourite-product-description">Восстанавливающий шампунь для поврежденных волос</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">45.00 руб.</span>
-                                <span class="favourite-old-price">52.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
+                <div class="hits-product-wrapper">
+                    <div class="corner-icon">
+                        <span class="material-icons">bolt</span>
+                    </div>
+                    <div class="hits-product-card">
+                        <div class="hits-product-card-inner">
+                            <div class="hits-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
+                            <div class="hits-product-info">
+                                <h3 class="hits-product-name">Кондиционер</h3>
+                                <p class="hits-product-description">FABAO Увлажняющий 400 мл</p>
+                                <div class="hits-product-price">76,80 BYN</div>
+                                <div class="hits-product-actions">
+                                    <button class="hits-btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                    <button class="hits-btn-favorite">
+                                        <span class="material-icons">favorite_border</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Продукт 5 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж СКИДКА -->
-                        <div class="favourite-product-badge sale">-15%</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">OPTIMA</div>
-                            <h3 class="favourite-product-name">Маска для объема</h3>
-                            <p class="favourite-product-description">Создает естественный объем и упругость</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">38.00 руб.</span>
-                                <span class="favourite-old-price">45.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
-                            </div>
-                        </div>
+                <div class="hits-product-wrapper">
+                    <div class="corner-icon">
+                        <span class="material-icons">bolt</span>
                     </div>
-                </div>
-
-                <!-- Продукт 6 -->
-                <div class="favourite-product-card">
-                    <div class="favourite-product-card-inner">
-                        <button class="favourite-btn-favorite">
-                            <span class="material-icons">favorite_border</span>
-                        </button>
-                        <div class="favourite-product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');"></div>
-                        <!-- Бейдж NEW -->
-                        <div class="favourite-product-badge new">NEW</div>
-                        <div class="favourite-product-info">
-                            <div class="favourite-product-brand">FABAO</div>
-                            <h3 class="favourite-product-name">Лосьон против перхоти</h3>
-                            <p class="favourite-product-description">Эффективно борется с перхотью и зудом</p>
-                            <div class="favourite-product-price">
-                                <span class="favourite-current-price">52.00 руб.</span>
-                            </div>
-                            <div class="favourite-product-actions">
-                                <button class="favourite-btn-add-to-cart">
-                                    <span class="material-icons">shopping_cart</span>
-                                    <span>В корзину</span>
-                                </button>
+                    <div class="hits-product-card">
+                        <div class="hits-product-card-inner">
+                            <div class="hits-product-image" style="background-image: url('https://placehold.co/300x320');"></div>
+                            <div class="hits-product-info">
+                                <h3 class="hits-product-name">Лосьон против выпадения</h3>
+                                <p class="hits-product-description">DSD De Luxe Фортификатор 150 мл</p>
+                                <div class="hits-product-price">145,00 BYN</div>
+                                <div class="hits-product-actions">
+                                    <button class="hits-btn-add-to-cart">
+                                        <span class="material-icons">shopping_cart</span>
+                                        <span>В корзину</span>
+                                    </button>
+                                    <button class="hits-btn-favorite">
+                                        <span class="material-icons">favorite_border</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Специальная карточка "Все товары" в конце (только для десктопа) -->
-                <a href="/favourite-products" class="favourite-product-card favourite-view-all-card desktop-only">
-                    <div class="favourite-product-card-inner">
-                        <div class="favourite-view-all-content">
-                            <div class="favourite-view-all-icon">
+                <a href="/all-hits" class="hits-product-card hits-view-all-card desktop-only">
+                    <div class="hits-product-card-inner">
+                        <div class="hits-view-all-content">
+                            <div class="hits-view-all-icon">
                                 <span class="material-icons">arrow_forward</span>
                             </div>
-                            <h3 class="favourite-view-all-title">Все товары</h3>
-                            <p class="favourite-view-all-description">Откройте для себя полную коллекцию наших товаров</p>
-                            <div class="favourite-view-all-cta">
+                            <h3 class="hits-view-all-title">Все товары</h3>
+                            <p class="hits-view-all-description">Откройте для себя полную коллекцию наших товаров</p>
+                            <div class="hits-view-all-cta">
                                 <span>Смотреть все</span>
                                 <span class="material-icons">chevron_right</span>
                             </div>
@@ -2851,248 +2887,415 @@ body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
 </section>
 
 <style>
-    /* ===== СТИЛИ БЛОКА "МОЖЕТ ПОНРАВИТЬСЯ" ===== */
-    .favourite-products-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    
+    /* ===== ПЕРЕМЕННЫЕ ДЛЯ БЛОКА ХИТЫ НА ОСНОВЕ ВАШИХ ЦВЕТОВ ===== */
+    .hits-section {
+        /* Основные цвета из вашего кода */
+        --hits-primary-color: #689550;
+        --hits-primary-dark: #4f7340;
+        --hits-primary-light: #84b36d;
+        --hits-primary-rgb: 104, 149, 80;
+        
+        /* Цвета фона */
+        --hits-bg-primary: #f7faf5;
+        --hits-bg-secondary: #ffffff;
+        --hits-bg-tertiary: #edf4e8;
+        --hits-bg-dark: #364f2a;
+        
+        /* Акцентные цвета */
+        --hits-accent-color: #e97c1f;
+        --hits-accent-rgb: 233, 124, 31;
+
+        /* Текстовые цвета из вашего кода */
+        --hits-text-primary: #2A7A4C;
+        --hits-text-secondary: #2A7A4C;
+        --hits-text-light: #2A7A4C;
+        --hits-text-white: #ffffff;
+        --hits-text-muted: rgba(41, 38, 38, 0.7);
+
+        /* Дополнительные цвета */
+        --hits-error-color: #ff6b6b;
+        --hits-success-color: #10b981;
+
+        /* Градиенты */
+        --hits-gradient-primary: linear-gradient(135deg, var(--hits-primary-color), var(--hits-primary-light));
+        --hits-gradient-dark: linear-gradient(135deg, var(--hits-bg-dark), #2d2d2d);
+        
+        /* Тени */
+        --hits-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+        --hits-shadow-medium: 0 10px 30px rgba(var(--hits-primary-rgb), 0.1);
+        --hits-shadow-heavy: 0 15px 35px rgba(var(--hits-primary-rgb), 0.3);
+        
+        /* Разное */
+        --hits-border-radius: 8px;
+        --hits-transition: all 0.3s ease;
+        --hits-corner-size: 70px;
+    }
+    
+    /* ===== СТИЛИ БЛОКА "ХИТЫ" ===== */
+    .hits-section {
+        padding: 80px 0 60px;
+        background: var(--hits-gradient-primary);
         overflow: hidden;
+        font-family: 'FuturaDemiC', Arial, sans-serif;
     }
-
-    .favourite-products-slider {
-        position: relative;
-        overflow: visible;
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
-
-    .favourite-products-container {
+    
+    /* Истории (кружки) */
+    .hits-stories {
         display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        padding: 20px 10px 30px;
-        margin: -20px -10px;
-        cursor: grab;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
     }
-
-    .favourite-products-container:active {
-        cursor: grabbing;
-    }
-
-    .favourite-products-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .favourite-product-card {
-        flex: 0 0 auto;
-        width: calc(25% - 15px);
-        min-width: 280px;
-    }
-
-    .favourite-product-card-inner {
-        background: var(--bg-secondary);
-        border-radius: 20px;
-        overflow: hidden;
-        transition: var(--transition);
-        height: 100%;
+    
+    .story-item {
         display: flex;
         flex-direction: column;
-        position: relative;
-        border: 1px solid transparent;
+        align-items: center;
+        gap: 10px;
     }
-
-    @media (hover: hover) and (pointer: fine) {
-        .favourite-product-card-inner:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.03);
-        }
-
-        .favourite-product-card-inner:hover .favourite-product-image {
-            transform: scale(1.02);
-        }
-        
-        .favourite-product-card-inner:hover .favourite-btn-favorite {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .favourite-product-image {
-        height: 200px;
-        background-color: var(--bg-light);
+    
+    .story-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--hits-bg-secondary);
         background-size: cover;
         background-position: center;
-        transition: transform 0.3s ease;
+        border: 2px solid var(--hits-text-white);
+        box-shadow: var(--hits-shadow-light);
     }
-
-    .favourite-product-info {
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .favourite-product-brand {
+    
+    .story-label {
         font-size: 0.9rem;
-        color: var(--text-light);
-        margin-bottom: 5px;
+        color: var(--hits-text-white);
         font-weight: 500;
     }
-
-    .favourite-product-name {
-        font-size: 1.1rem;
+    
+    /* Шапка блока - ОСНОВНАЯ РАСКЛАДКА */
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    
+    .section-title-hits {
+        font-size: 40px;
         font-weight: 600;
-        margin-bottom: 10px;
-        color: var(--text-primary);
-        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0;
+        color: white !important;
+        font-family: 'FuturaDemiC', Arial, sans-serif;
+        flex-shrink: 0;
     }
-
-    .favourite-product-description {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        margin-bottom: 15px;
-        flex-grow: 1;
-        line-height: 1.5;
-    }
-
-    .favourite-product-price {
+    
+    .section-header-controls {
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
+        gap: 20px;
+        flex-shrink: 0;
     }
-
-    .favourite-current-price {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--primary-color);
-    }
-
-    .favourite-old-price {
-        font-size: 1rem;
-        color: var(--text-light);
-        text-decoration: line-through;
-    }
-
-    .favourite-product-actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .favourite-btn-add-to-cart {
-        flex: 1;
-        background: var(--primary-color);
-        color: var(--text-white);
-        border: none;
-        padding: 12px;
-        border-radius: 8px;
+    
+    .view-all-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--hits-text-white);
+        color: var(--hits-text-white);
+        padding: 12px 24px;
+        border-radius: var(--hits-border-radius);
+        text-decoration: none;
         font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        transition: var(--hits-transition);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
-
-    .favourite-btn-add-to-cart:hover {
-        background: var(--primary-dark);
+    
+    .view-all-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
     }
-
-    .favourite-btn-favorite {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
+    
+    .section-header-nav {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: none;
-        box-shadow: var(--shadow-medium);
-        z-index: 2;
-        opacity: 0;
-        transform: translateY(-10px);
+        gap: 10px;
+        flex-shrink: 0;
     }
-
-    .favourite-btn-favorite.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* На мобильных всегда показываем */
-    @media (max-width: 969px) {
-        .favourite-btn-favorite {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .favourite-btn-favorite .material-icons {
-            color: #333333;
-        }
-    }
-
-    .favourite-btn-favorite:hover {
-        background: var(--primary-color);
-        color: var(--text-white);
-        transform: scale(1.1);
-    }
-
-    .favourite-btn-favorite .material-icons {
-        font-size: 20px;
-    }
-
-    /* Навигация слайдера - стрелочки */
-    .favourite-slider-nav {
+    
+    .hits-slider-nav {
         background: transparent;
         border: none;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: var(--transition);
-        color: var(--primary-color);
-        font-size: 1.8rem;
+        transition: var(--hits-transition);
+        color: var(--hits-text-white);
+        font-size: 1.5rem;
         padding: 8px;
-        border-radius: 8px;
+        border-radius: var(--hits-border-radius);
         width: 44px;
         height: 44px;
+        flex-shrink: 0;
     }
-
-    .favourite-slider-nav:hover {
-        color: var(--primary-dark);
-        background: rgba(0,0,0,0.05);
+    
+    .hits-slider-nav:hover {
+        background: rgba(255, 255, 255, 0.1);
         transform: scale(1.05);
     }
-
-    .favourite-slider-nav:active {
-        transform: scale(0.95);
+    
+    /* Слайдер с товарами */
+    .hits-products-slider {
+        position: relative;
+        overflow: visible;
     }
-
+    
+    .hits-products-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 10px 10px 30px;
+        margin: -10px -10px;
+        cursor: grab;
+    }
+    
+    .hits-products-container:active {
+        cursor: grabbing;
+    }
+    
+    .hits-products-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Обертка для карточки с вырезом */
+    .hits-product-wrapper {
+        flex: 0 0 auto;
+        width: calc(25% - 15px);
+        min-width: 280px;
+        height: 540px;
+        position: relative;
+    }
+    
+    .hits-product-card {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hits-product-card-inner {
+        background: var(--hits-bg-secondary);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: var(--hits-transition);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: var(--hits-shadow-light);
+        width: 100%;
+        
+        /* Основная карточка */
+        clip-path: polygon(
+            0 0,
+            calc(100% - var(--hits-corner-size)) 0,
+            calc(100% - var(--hits-corner-size)) var(--hits-corner-size),
+            100% var(--hits-corner-size),
+            100% 100%,
+            0 100%
+        );
+    }
+    
+    /* Иконка в вырезе */
+    .corner-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--hits-corner-size);
+        height: var(--hits-corner-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.95);
+        pointer-events: none;
+        z-index: 2;
+    }
+    
+    .corner-icon .material-icons {
+        font-size: 32px;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    /* Скругление левого нижнего угла выреза */
+    .hits-product-card-inner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--hits-corner-size);
+        height: var(--hits-corner-size);
+        background: var(--hits-gradient-primary);
+        
+        /* Скругляем только левый нижний угол выреза */
+        clip-path: xywh(0 0 100% 100% round 0 0 0 var(--hits-border-radius));
+        z-index: 1;
+    }
+    
+    @media (hover: hover) and (pointer: fine) {
+        .hits-product-card-inner:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hits-shadow-medium);
+        }
+    }
+    
+    .hits-product-image {
+        height: 300px;
+        background-color: var(--hits-bg-secondary);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hits-product-info {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hits-product-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--hits-text-primary);
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-family: 'FuturaDemiC', Arial, sans-serif;
+    }
+    
+    .hits-product-description {
+        font-size: 0.95rem;
+        color: var(--hits-text-secondary);
+        margin-bottom: 15px;
+        flex-grow: 1;
+        line-height: 1.4;
+        font-weight: 400;
+        opacity: 0.9;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 60px;
+    }
+    
+    .hits-product-price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--hits-text-primary);
+        margin-bottom: 15px;
+        flex-shrink: 0;
+        font-family: 'FuturaDemiC', Arial, sans-serif;
+    }
+    
+    .hits-product-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    
+    .hits-btn-add-to-cart {
+        flex: 1;
+        background: var(--hits-primary-color);
+        color: var(--hits-text-white);
+        border: none;
+        padding: 12px;
+        border-radius: var(--hits-border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--hits-transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-shrink: 0;
+        font-family: 'FuturaDemiC', Arial, sans-serif;
+    }
+    
+    .hits-btn-add-to-cart:hover {
+        background: var(--hits-primary-dark);
+    }
+    
+    .hits-btn-favorite {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--hits-border-radius);
+        background: transparent;
+        border: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--hits-transition);
+        flex-shrink: 0;
+    }
+    
+    .hits-btn-favorite:hover {
+        background: var(--hits-bg-primary);
+        border-color: var(--hits-primary-color);
+    }
+    
+    .hits-btn-favorite .material-icons {
+        font-size: 20px;
+        color: var(--hits-text-light);
+    }
+    
     /* Стили для карточки "Все товары" */
-    .favourite-view-all-card .favourite-product-card-inner {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    .hits-view-all-card .hits-product-card-inner {
+        background: var(--hits-gradient-primary);
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: var(--text-white);
-        border: 2px solid transparent;
-        transition: var(--transition);
+        color: var(--hits-text-white);
+        border: none;
+        transition: var(--hits-transition);
         text-decoration: none;
+        clip-path: none;
     }
-
-    .favourite-view-all-card {
+    
+    .hits-view-all-card .hits-product-card-inner::before {
+        display: none;
+    }
+    
+    .hits-view-all-card {
         text-decoration: none;
+        position: relative;
     }
-
-    .favourite-view-all-content {
+    
+    .hits-view-all-content {
         padding: 30px;
         display: flex;
         flex-direction: column;
@@ -3100,8 +3303,8 @@ body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
         gap: 15px;
         text-decoration: none;
     }
-
-    .favourite-view-all-icon {
+    
+    .hits-view-all-icon {
         width: 60px;
         height: 60px;
         background: rgba(255,255,255,0.2);
@@ -3110,310 +3313,413 @@ body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
         align-items: center;
         justify-content: center;
         margin-bottom: 10px;
-        transition: var(--transition);
+        transition: var(--hits-transition);
     }
-
-    .favourite-view-all-card:hover .favourite-view-all-icon {
+    
+    .hits-view-all-card:hover .hits-view-all-icon {
         transform: scale(1.05);
         background: rgba(255,255,255,0.3);
     }
-
-    .favourite-view-all-icon .material-icons {
+    
+    .hits-view-all-icon .material-icons {
         font-size: 2rem;
-        color: var(--text-white);
+        color: var(--hits-text-white);
     }
-
-    .favourite-view-all-title {
+    
+    .hits-view-all-title {
         font-size: 1.4rem;
         font-weight: 700;
         margin: 0;
-        color: var(--text-white);
+        color: var(--hits-text-white);
+        font-family: 'FuturaDemiC', Arial, sans-serif;
     }
-
-    .favourite-view-all-description {
+    
+    .hits-view-all-description {
         font-size: 0.9rem;
         line-height: 1.5;
         opacity: 0.9;
         margin: 0;
+        color: var(--hits-text-muted);
     }
-
-    .favourite-view-all-cta {
+    
+    .hits-view-all-cta {
         display: flex;
         align-items: center;
         gap: 5px;
         font-weight: 600;
         font-size: 0.95rem;
         margin-top: 10px;
-        transition: var(--transition);
+        transition: var(--hits-transition);
+        font-family: 'FuturaDemiC', Arial, sans-serif;
     }
-
-    .favourite-view-all-card:hover .favourite-view-all-cta {
+    
+    .hits-view-all-card:hover .hits-view-all-cta {
         gap: 8px;
     }
-
-    /* Бейджи для продуктов */
-    .favourite-product-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        z-index: 2;
-    }
-
-    .favourite-product-badge.sale {
-        background: var(--accent-color);
-        color: var(--text-white);
-    }
-
-    .favourite-product-badge.new {
-        background: var(--success-color);
-        color: var(--text-white);
-    }
-
-    .favourite-product-badge.hit {
-        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-        color: var(--text-white);
-    }
-
-    .favourite-product-badge.promotion {
-        background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
-        color: var(--text-white);
-    }
-
-    /* Для карточки "Все товары" убираем бейджи */
-    .favourite-view-all-card .favourite-product-badge {
-        display: none;
-    }
-
+    
     /* ===== АДАПТИВНОСТЬ ===== */
-
-    /* На ПК с кнопками */
-    @media (min-width: 970px) {
-        .favourite-product-card {
-            width: calc(25% - 15px);
-        }
-        
-        @media (max-width: 1200px) {
-            .favourite-product-card {
-                width: calc(33.333% - 14px);
-            }
-        }
-
-        .favourite-products-container {
-            overflow-x: auto;
-            flex-wrap: nowrap;
-        }
-        
-        .section-header-nav {
-            display: flex !important;
-        }
-    }
-
-    /* На планшетах и меньше */
+    
+    /* Планшеты (769px - 969px) */
     @media (max-width: 969px) {
         .desktop-only {
             display: none !important;
         }
         
-        .mobile-only {
-            display: flex !important;
-        }
-        
-        .favourite-products-container {
+        .hits-products-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             padding-right: 20px;
         }
         
-        .favourite-product-card {
+        .hits-product-wrapper {
             width: 280px !important;
             flex: 0 0 280px !important;
+            height: 520px;
+        }
+        
+        /* Шапка блока для планшетов - КНОПКА ОСТАЕТСЯ СПРАВА */
+        .section-header {
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+        
+        .section-title-hits {
+            font-size: 36px;
         }
         
         .section-header-nav {
-            display: none !important;
+            display: none;
+        }
+        
+        .view-all-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .hits-stories {
+            gap: 20px;
+        }
+        
+        .story-circle {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .story-label {
+            font-size: 0.8rem;
+        }
+        
+        .hits-section {
+            --hits-corner-size: 70px;
+        }
+        
+        .corner-icon .material-icons {
+            font-size: 28px;
+        }
+        
+        .hits-product-image {
+            height: 280px;
         }
     }
-
-    @media (max-width: 579px) {
-        .favourite-product-image {
-            height: 180px;
+    
+    /* Большие телефоны (577px - 768px) */
+    @media (max-width: 768px) {
+        .section-title-hits {
+            font-size: 32px;
         }
-
-        .favourite-view-all-content {
+        
+        .view-all-btn {
+            padding: 10px 18px;
+            font-size: 0.85rem;
+        }
+        
+        .hits-stories {
+            gap: 15px;
+        }
+        
+        .story-circle {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .hits-product-wrapper {
+            height: 500px;
+        }
+        
+        .hits-product-image {
+            height: 260px;
+        }
+    }
+    
+    /* Средние телефоны (481px - 576px) */
+    @media (max-width: 576px) {
+        .hits-section {
+            padding: 60px 0 40px;
+        }
+        
+        .section-header {
+            gap: 15px;
+        }
+        
+        .section-title-hits {
+            font-size: 28px;
+        }
+        
+        .view-all-btn {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
+        
+        .hits-product-image {
+            height: 240px;
+        }
+        
+        .hits-view-all-content {
             padding: 20px;
             gap: 12px;
         }
-
-        .favourite-view-all-icon {
+        
+        .hits-view-all-icon {
             width: 45px;
             height: 45px;
             margin-bottom: 5px;
         }
-
-        .favourite-view-all-icon .material-icons {
+        
+        .hits-view-all-icon .material-icons {
             font-size: 1.5rem;
         }
-
-        .favourite-view-all-title {
+        
+        .hits-view-all-title {
             font-size: 1.1rem;
         }
-
-        .favourite-view-all-description {
+        
+        .hits-view-all-description {
             font-size: 0.85rem;
         }
+        
+        .hits-stories {
+            gap: 10px;
+        }
+        
+        .story-circle {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .story-label {
+            font-size: 0.75rem;
+        }
+        
+        .hits-product-wrapper {
+            height: 480px;
+        }
+        
+        .hits-section {
+            --hits-corner-size: 60px;
+        }
+        
+        .corner-icon .material-icons {
+            font-size: 24px;
+        }
     }
-
+    
+    /* Маленькие телефоны (421px - 480px) */
     @media (max-width: 480px) {
-        .favourite-product-actions {
+        .section-title-hits {
+            font-size: 26px;
+        }
+        
+        .view-all-btn {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            min-width: 120px;
+        }
+        
+        .hits-product-actions {
             flex-direction: column;
         }
         
-        .favourite-btn-add-to-cart {
+        .hits-btn-add-to-cart {
             width: 100%;
         }
-
-        .favourite-view-all-content {
+        
+        .hits-btn-favorite {
+            width: 100%;
+            height: 44px;
+        }
+        
+        .hits-view-all-content {
             padding: 15px;
         }
+        
+        .hits-product-wrapper {
+            height: 500px;
+        }
+        
+        .hits-product-image {
+            height: 220px;
+        }
+        
+        .hits-section {
+            --hits-corner-size: 55px;
+        }
+        
+        .corner-icon .material-icons {
+            font-size: 22px;
+        }
+        
+        .container {
+            padding: 0 15px;
+        }
     }
-
+    
+    /* Очень маленькие телефоны (до 420px) */
+    @media (max-width: 420px) {
+        .section-header {
+            gap: 10px;
+        }
+        
+        .section-title-hits {
+            font-size: 24px;
+        }
+        
+        .view-all-btn {
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            min-width: 110px;
+        }
+        
+        .hits-stories {
+            gap: 8px;
+        }
+        
+        .story-circle {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .story-label {
+            font-size: 0.7rem;
+        }
+        
+        .hits-product-wrapper {
+            min-width: 260px;
+            height: 480px;
+        }
+        
+        .hits-product-image {
+            height: 200px;
+        }
+        
+        .hits-product-info {
+            padding: 15px;
+        }
+        
+        .hits-product-name {
+            font-size: 1.1rem;
+        }
+        
+        .hits-product-price {
+            font-size: 1.2rem;
+        }
+    }
+    
     /* Отключаем hover-эффекты на тач-устройствах */
     @media (hover: none) and (pointer: coarse) {
-        .favourite-product-card-inner:hover {
+        .hits-product-card-inner:hover {
             transform: none;
-            box-shadow: none;
+            box-shadow: var(--hits-shadow-light);
         }
         
-        .favourite-product-card-inner:hover .favourite-product-image {
-            transform: none;
+        .hits-btn-add-to-cart:hover {
+            background: var(--hits-primary-color);
         }
         
-        .favourite-product-card-inner:hover .favourite-btn-favorite {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .favourite-btn-add-to-cart:hover {
-            transform: none;
-            background: var(--primary-color);
-        }
-        
-        .favourite-btn-favorite:hover {
-            transform: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: inherit;
-        }
-        
-        .favourite-slider-nav:hover {
+        .hits-btn-favorite:hover {
             background: transparent;
-            color: var(--primary-color);
+            border-color: #e0e0e0;
+        }
+        
+        .hits-view-all-card:hover .hits-product-card-inner {
             transform: none;
         }
         
-        .favourite-view-all-card:hover .favourite-product-card-inner {
-            transform: none;
-        }
-        
-        .favourite-view-all-card:hover .favourite-view-all-icon {
+        .hits-view-all-card:hover .hits-view-all-icon {
             transform: none;
             background: rgba(255,255,255,0.2);
         }
         
-        .favourite-view-all-card:hover .favourite-view-all-cta {
+        .hits-view-all-card:hover .hits-view-all-cta {
             gap: 5px;
         }
-    }
-
-    /* На десктопе показываем при наведении на карточку */
-    @media (hover: hover) and (pointer: fine) {
-        .favourite-product-card-inner:hover .favourite-btn-favorite {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .view-all-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: none;
         }
         
-        .favourite-product-card-inner:hover .favourite-btn-favorite.active,
-        .favourite-btn-favorite.active {
-            opacity: 1;
-            transform: translateY(0);
+        .hits-slider-nav:hover {
+            background: transparent;
+            transform: none;
         }
     }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Уникальные селекторы для блока "Может понравиться"
-    const favouriteProductsContainer = document.querySelector('.favourite-products-container');
-    const favouritePrevBtn = document.querySelector('.favourite-slider-prev');
-    const favouriteNextBtn = document.querySelector('.favourite-slider-next');
+    // Уникальные селекторы для блока "Хиты"
+    const hitsProductsContainer = document.querySelector('.hits-products-container');
+    const hitsPrevBtn = document.querySelector('.hits-slider-prev');
+    const hitsNextBtn = document.querySelector('.hits-slider-next');
     
     // Функция для прокрутки слайдов
-    function scrollFavouriteProducts(direction) {
-        if (!favouriteProductsContainer) {
-            console.log('Контейнер не найден');
-            return;
-        }
+    function scrollHitsProducts(direction) {
+        if (!hitsProductsContainer) return;
         
-        const cards = document.querySelectorAll('.favourite-product-card');
-        if (cards.length === 0) {
-            console.log('Карточки не найдены');
-            return;
-        }
+        const cards = document.querySelectorAll('.hits-product-wrapper');
+        if (cards.length === 0) return;
         
         // Берем ширину первой карточки + gap
         const cardWidth = cards[0].offsetWidth + 20;
         const scrollAmount = cardWidth * direction;
         
-        console.log('Прокрутка на:', scrollAmount, 'px');
-        
-        favouriteProductsContainer.scrollBy({
+        hitsProductsContainer.scrollBy({
             left: scrollAmount,
             behavior: 'smooth'
         });
     }
     
     // Инициализация слайдера
-    function initFavouriteSlider() {
-        console.log('Инициализация слайдера, ширина окна:', window.innerWidth);
-        
+    function initHitsSlider() {
         if (window.innerWidth > 969) {
-            console.log('Десктоп: добавляем обработчики');
             // На десктопе добавляем обработчики
-            if (favouritePrevBtn) {
-                favouritePrevBtn.onclick = () => scrollFavouriteProducts(-1);
-                console.log('Кнопка "Назад" настроена');
+            if (hitsPrevBtn) {
+                hitsPrevBtn.onclick = () => scrollHitsProducts(-1);
             }
-            if (favouriteNextBtn) {
-                favouriteNextBtn.onclick = () => scrollFavouriteProducts(1);
-                console.log('Кнопка "Вперед" настроена');
+            if (hitsNextBtn) {
+                hitsNextBtn.onclick = () => scrollHitsProducts(1);
             }
         } else {
-            console.log('Мобильные: удаляем обработчики');
             // На мобильных удаляем обработчики
-            if (favouritePrevBtn) {
-                favouritePrevBtn.onclick = null;
+            if (hitsPrevBtn) {
+                hitsPrevBtn.onclick = null;
             }
-            if (favouriteNextBtn) {
-                favouriteNextBtn.onclick = null;
+            if (hitsNextBtn) {
+                hitsNextBtn.onclick = null;
             }
         }
     }
     
     // Инициализируем при загрузке
-    initFavouriteSlider();
+    initHitsSlider();
     
     // Обновляем при изменении размера окна
-    window.addEventListener('resize', initFavouriteSlider);
+    window.addEventListener('resize', initHitsSlider);
     
     // Управление видимостью элементов
-    function handleFavouriteVisibility() {
-        const sectionHeaderNav = document.querySelector('.favourite-products-section .section-header-nav');
-        const viewAllCard = document.querySelector('.favourite-view-all-card');
+    function handleHitsVisibility() {
+        const sectionHeaderNav = document.querySelector('.hits-section .section-header-nav');
+        const viewAllCard = document.querySelector('.hits-view-all-card');
         
         if (window.innerWidth <= 969) {
             if (sectionHeaderNav) sectionHeaderNav.style.display = 'none';
@@ -3424,12 +3730,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    handleFavouriteVisibility();
-    window.addEventListener('resize', handleFavouriteVisibility);
+    handleHitsVisibility();
+    window.addEventListener('resize', handleHitsVisibility);
 
-    // Избранное для блока "Может понравиться"
-    const favouriteBtns = document.querySelectorAll('.favourite-products-section .favourite-btn-favorite');
-    favouriteBtns.forEach(btn => {
+    // Избранное для кнопок в карточках
+    const hitsFavoriteBtns = document.querySelectorAll('.hits-btn-favorite');
+    hitsFavoriteBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -3437,30 +3743,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const icon = this.querySelector('.material-icons');
             if (icon.textContent === 'favorite_border') {
                 icon.textContent = 'favorite';
-                icon.style.color = '#ef4444';
-                this.classList.add('active');
+                icon.style.color = '#689550';
             } else {
                 icon.textContent = 'favorite_border';
-                icon.style.color = '';
-                this.classList.remove('active');
+                icon.style.color = '#666';
             }
         });
     });
 
-    console.log('Скрипт блока "Может понравиться" загружен');
+    console.log('Скрипт блока "Хиты" загружен');
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4583,7 +4876,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="section-header">
             <div class="section-header-content">
                 <div class="section-header-text">
-                    <h2 class="section-title">Специальные предложения</h2>
+                    <h2 class="promo-section-title">Специальные предложения</h2>
                     <p class="section-subtitle">Эксклюзивные условия для вашей красоты</p>
                 </div>
                 <div class="promo-controls-wrapper">
@@ -4689,10 +4982,64 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <style>
+    @font-face {
+        font-family: 'FuturaDemiC';
+        src: url('../fonts/futurademic.woff2') format('woff2'),
+            url('../fonts/futurademic.woff') format('woff'),
+            url('../fonts/futurademic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    /* ===== ПЕРЕМЕННЫЕ ДЛЯ ВСЕХ БЛОКОВ ===== */
+    :root {
+        /* Основные цвета из вашего кода */
+        --hits-primary-color: #689550;
+        --hits-primary-dark: #4f7340;
+        --hits-primary-light: #84b36d;
+        --hits-primary-rgb: 104, 149, 80;
+        
+        /* Цвета фона */
+        --hits-bg-primary: #f7faf5;
+        --hits-bg-secondary: #ffffff;
+        --hits-bg-tertiary: #edf4e8;
+        --hits-bg-dark: #364f2a;
+        
+        /* Акцентные цвета */
+        --hits-accent-color: #e97c1f;
+        --hits-accent-rgb: 233, 124, 31;
+
+        /* Текстовые цвета */
+        --hits-text-primary: #2A7A4C;
+        --hits-text-secondary: #2A7A4C;
+        --hits-text-light: #2A7A4C;
+        --hits-text-white: #ffffff;
+        --hits-text-muted: rgba(41, 38, 38, 0.7);
+
+        /* Дополнительные цвета */
+        --hits-error-color: #ff6b6b;
+        --hits-success-color: #10b981;
+
+        /* Градиенты */
+        --hits-gradient-primary: linear-gradient(135deg, var(--hits-primary-color), var(--hits-primary-light));
+        --hits-gradient-dark: linear-gradient(135deg, var(--hits-bg-dark), #2d2d2d);
+        
+        /* Тени */
+        --hits-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+        --hits-shadow-medium: 0 10px 30px rgba(var(--hits-primary-rgb), 0.1);
+        --hits-shadow-heavy: 0 15px 35px rgba(var(--hits-primary-rgb), 0.3);
+        
+        /* Разное */
+        --hits-border-radius: 8px;
+        --hits-transition: all 0.3s ease;
+        --hits-corner-size: 80px;
+    }
+    
     /* ===== СТИЛИ БЛОКА АКЦИЙ ===== */
     .promo-banners-section {
         padding: 80px 0;
-        background: var(--bg-tertiary);
+        background: var(--hits-gradient-primary); /* Теперь будет работать */
         overflow: hidden;
     }
 
@@ -4729,14 +5076,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .promo-arrow {
-        background: transparent;
-        border: none;
+        background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Белая рамка */
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: var(--transition);
-        color: var(--primary-color);
+        transition: var(--hits-transition);
+        color: var(--hits-text-white); /* Белый цвет иконок */
         font-size: 1.8rem;
         padding: 8px;
         border-radius: 6px;
@@ -4745,26 +5092,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .promo-arrow:hover {
-        color: var(--primary-dark);
-        background: rgba(0,0,0,0.05);
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
     }
 
-    .section-title {
+    .promo-section-title {
         font-size: 2.2rem;
         font-weight: 800;
-        color: var(--primary-color);
+        color: var(--hits-text-white); /* Белый цвет как в хитах */
         margin-bottom: 10px;
         white-space: normal;
         word-wrap: break-word;
         line-height: 1.2;
+        font-family: 'FuturaDemiC', Arial, sans-serif; /* Тот же шрифт */
+        text-transform: uppercase; /* Как в хитах */
+        letter-spacing: 1px;
+        color: white !important;
     }
 
     .section-subtitle {
         font-size: 1.1rem;
-        color: var(--text-secondary);
+        color: var(--hits-text-white); /* Белый цвет */
         line-height: 1.6;
         max-width: 600px;
         white-space: normal;
+        opacity: 0.9; /* Легкая прозрачность как в хитах */
     }
 
     /* Слайдер */
@@ -4803,20 +5155,20 @@ document.addEventListener('DOMContentLoaded', function() {
     .promo-banner-inner {
         border-radius: 20px;
         overflow: hidden;
-        transition: var(--transition);
+        transition: var(--hits-transition);
         height: 100%;
         display: flex;
         flex-direction: column;
-        /* Убираем тень в статике */
+        background: var(--hits-bg-secondary); /* Белый фон карточек */
+        box-shadow: var(--hits-shadow-light); /* Такие же тени как в хитах */
     }
 
     @media (hover: hover) and (pointer: fine) {
         .promo-banner-inner:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.03); /* Такая же мягкая тень как в других блоках */
+            transform: translateY(-5px); /* Такой же эффект как в хитах */
+            box-shadow: var(--hits-shadow-medium); /* Такие же тени как в хитах */
         }
     }
-
 
     .banner-image {
         position: relative;
@@ -4824,7 +5176,7 @@ document.addEventListener('DOMContentLoaded', function() {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        transition: var(--transition);
+        transition: var(--hits-transition);
         overflow: hidden;
     }
 
@@ -4832,8 +5184,8 @@ document.addEventListener('DOMContentLoaded', function() {
         position: absolute;
         top: 20px;
         left: 20px;
-        background: var(--text-white);
-        color: var(--primary-color);
+        background: var(--hits-text-white); /* Белый фон бейджей */
+        color: var(--hits-primary-color); /* Зеленый текст */
         padding: 10px 20px;
         border-radius: 25px;
         font-weight: 700;
@@ -4841,22 +5193,23 @@ document.addEventListener('DOMContentLoaded', function() {
         z-index: 2;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: var(--hits-shadow-light);
+        font-family: 'FuturaDemiC', Arial, sans-serif; /* Тот же шрифт */
     }
 
     .banner-badge-sale {
-        background: var(--accent-color);
-        color: var(--text-white);
+        background: var(--hits-accent-color); /* Оранжевый для распродаж */
+        color: var(--hits-text-white);
     }
 
     .banner-badge-kit {
-        background: var(--success-color);
-        color: var(--text-white);
+        background: var(--hits-success-color); /* Зеленый для наборов */
+        color: var(--hits-text-white);
     }
 
     .banner-badge-new {
-        background: var(--primary-color);
-        color: var(--text-white);
+        background: var(--hits-primary-color); /* Основной зеленый */
+        color: var(--hits-text-white);
     }
 
     .banner-overlay {
@@ -4873,7 +5226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        background: var(--bg-secondary);
+        background: var(--hits-bg-secondary); /* Белый фон */
     }
 
     .banner-header {
@@ -4887,24 +5240,23 @@ document.addEventListener('DOMContentLoaded', function() {
     .banner-title {
         font-size: 1.4rem;
         font-weight: 700;
-        color: var(--text-primary);
         line-height: 1.3;
         flex: 1;
         margin: 0;
+        font-family: 'FuturaDemiC', Arial, sans-serif; /* Тот же шрифт */
     }
 
     .banner-date {
         font-size: 0.85rem;
-        color: var(--text-light);
+
         white-space: nowrap;
         padding: 6px 10px;
-        background: var(--bg-light);
+        background: var(--hits-bg-primary); /* Светло-зеленый фон */
         border-radius: 6px;
         font-weight: 600;
     }
 
     .banner-description {
-        color: var(--text-secondary);
         font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 20px;
@@ -4915,10 +5267,15 @@ document.addEventListener('DOMContentLoaded', function() {
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        color: var(--primary-color);
+        color: var(--hits-primary-color); /* Зеленый цвет */
         font-weight: 600;
         font-size: 0.95rem;
-        transition: var(--transition);
+        transition: var(--hits-transition);
+        font-family: 'FuturaDemiC', Arial, sans-serif; /* Тот же шрифт */
+    }
+
+    .banner-cta:hover {
+        gap: 8px; /* Такой же эффект как в хитах */
     }
 
     /* ===== АДАПТИВНОСТЬ ===== */
@@ -4945,7 +5302,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .promo-slider-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-right: 0; /* УБИРАЕМ padding-right */
+            padding-right: 0;
         }
         
         /* Добавляем небольшой отступ после последнего слайда */
@@ -4984,7 +5341,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gap: 20px;
         }
 
-        .section-title {
+        .promo-section-title {
             font-size: 1.8rem;
             line-height: 1.3;
         }
@@ -4996,7 +5353,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .promo-slider-container {
             margin: 0 -16px;
             padding-left: 16px;
-            padding-right: 0; /* УБИРАЕМ padding-right */
+            padding-right: 0;
         }
         
         .promo-slider-container::after {
@@ -5030,12 +5387,12 @@ document.addEventListener('DOMContentLoaded', function() {
             margin-bottom: 30px;
         }
         
-        .section-title {
-            font-size: 1.6rem;
+        .promo-section-title {
+            font-size: 1.4rem;
         }
         
         .promo-slider-container {
-            padding-right: 0; /* УБИРАЕМ padding-right */
+            padding-right: 0;
         }
         
         .promo-slider-container::after {
@@ -5074,13 +5431,16 @@ document.addEventListener('DOMContentLoaded', function() {
     @media (hover: none) and (pointer: coarse) {
         .promo-banner-inner:hover {
             transform: none;
-            box-shadow: none;
+            box-shadow: var(--hits-shadow-light);
         }
-    }
-    @media (hover: none) and (pointer: coarse) {
-        .promo-banner-inner:hover {
+        
+        .promo-arrow:hover {
+            background: rgba(255, 255, 255, 0.1);
             transform: none;
-            box-shadow: none;
+        }
+        
+        .banner-cta:hover {
+            gap: 5px;
         }
     }
 </style>
@@ -6806,11 +7166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         background: var(--bg-secondary);
     }
 
-    /* Новинки - светлый акцентный */
-    .new-products-section {
-        background: var(--bg-tertiary);
-    }
-
     /* Бренды - чистый белый */
     .brands-section {
         background: var(--bg-secondary);
@@ -6821,10 +7176,6 @@ document.addEventListener('DOMContentLoaded', function() {
         background: var(--bg-primary);
     }
 
-    /* Акции - светлый акцентный */
-    .promotions-section {
-        background: var(--bg-tertiary);
-    }
 
     /* Преимущества - чистый белый */
     .advantages-section {
