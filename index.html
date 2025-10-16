@@ -2864,23 +2864,6 @@ body:not(.user-authorized) .mobile-profile .dropdown-unauthorized {
                         </div>
                     </div>
                 </div>
-
-                <!-- Специальная карточка "Все товары" в конце (только для десктопа) -->
-                <a href="/all-hits" class="hits-product-card hits-view-all-card desktop-only">
-                    <div class="hits-product-card-inner">
-                        <div class="hits-view-all-content">
-                            <div class="hits-view-all-icon">
-                                <span class="material-icons">arrow_forward</span>
-                            </div>
-                            <h3 class="hits-view-all-title">Все товары</h3>
-                            <p class="hits-view-all-description">Откройте для себя полную коллекцию наших товаров</p>
-                            <div class="hits-view-all-cta">
-                                <span>Смотреть все</span>
-                                <span class="material-icons">chevron_right</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
             </div>
         </div>
     </div>
@@ -4273,577 +4256,609 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
    <!-- Блок Пакетные решения -->
-    <section class="kits-section">
-        <div class="container">
-            <!-- Заголовок и описание -->
-            <div class="kits-header">
-                <h2 class="section-title">Готовые наборы для комплексного лечения</h2>
-                <p class="kits-description">
-                    Подберите набор косметики, который решает конкретную задачу — от выпадения, себореи или ломкости волос. 
-                    Каждый комплект подобран по рекомендациям трихологов и включает шампунь, маску и активное средство.
-                </p>
-            </div>
+<section class="kits-section">
+    <div class="container">
+        <!-- Заголовок и описание -->
+        <div class="kits-header">
+            <h2 class="section-title">Готовые наборы для комплексного лечения</h2>
+            <p class="kits-description">
+                Подберите набор косметики, который решает конкретную задачу — от выпадения, себореи или ломкости волос. 
+                Каждый комплект подобран по рекомендациям трихологов и включает шампунь, маску и активное средство.
+            </p>
+        </div>
 
-            <!-- Сетка наборов -->
-            <div class="kits-grid">
-                <!-- Набор 1 - Против выпадения -->
-                <div class="kit-card">
-                    <!-- Бейдж выгоды -->
-                    <div class="discount-badge">🔥 Выгода 14%</div>
-                    
-                    <div class="kit-header">
-                        <div class="kit-icon">💧</div>
-                        <h3>Пакет "Против перхоти"(150 BYN)</h3>
-                        <p>Комплексное решение для укрепления волосяных фолликулов и снижения выпадения</p>
-                    </div>
+        <!-- Сетка наборов -->
+        <div class="kits-grid">
+            <!-- Набор 1 - Против выпадения -->
+            <div class="kit-card">
+                <!-- Бейдж выгоды -->
+                <div class="kit-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');">
+                    <div class="kit-badge">Lorem, ipsum.</div>
+                </div>
+                
+                <div class="kit-header">
+                    <h3>Пакет "Против перхоти"</h3>
+                    <p>Комплексное решение для укрепления волосяных фолликулов и снижения выпадения</p>
+                </div>
 
-                    <!-- Состав набора -->
-                    <div class="kit-products">
-                        <h4>
-                            <span class="material-icons">layers</span>
-                            Состав набора:
-                        </h4>
-                        <div class="products-list">
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">clean_hands</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Маска от перхоти(62 BYN)</div>
-                                    <div class="product-size">250 мл</div>
-                                </div>
+                <!-- Состав набора -->
+                <div class="kit-products">
+                    <h4>
+                        <span class="material-icons">layers</span>
+                        Состав набора:
+                    </h4>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">39 BYN</div>
+                                <div class="price-old">50 BYN</div>
                             </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">spa</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Шампунь от перхоти(50 BYN)</div>
-                                    <div class="product-size">250 мл</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">star</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Лосьон от перхоти(45 BYN)</div>
-                                    <div class="product-size">100 мл</div>
-                                </div>
+                            <div class="product-details">
+                                <div class="product-name">Маска от перхоти</div>
+                                <div class="product-size">250 мл</div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Цена и кнопка -->
-                    <div class="kit-footer">
-                        <div class="pricing">
-                            <div class="price-info">
-                                <div class="old-price">150.00 руб.</div>
-                                <div class="new-price">129.00 руб.</div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
                             </div>
-                            <div class="savings">
-                                <div>Экономия</div>
-                                <div class="savings-amount">21.00 руб.</div>
+                            <div class="product-details">
+                                <div class="product-name">Шампунь от перхоти</div>
+                                <div class="product-size">250 мл</div>
                             </div>
                         </div>
-                        <button class="btn-kit">
-                            <span class="material-icons">shopping_cart</span>
-                            <span class="btn-text">Добавить в корзину</span>
-                        </button>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Лосьон от перхоти</div>
+                                <div class="product-size">100 мл</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Набор 2 - От себореи и перхоти -->
-                <div class="kit-card">
-                    <div class="discount-badge">🌿 Выгода 20%</div>
-                    
-                    <div class="kit-header">
-                        <div class="kit-icon">🌿</div>
-                        <h3>Пакет "От себореи и перхоти"</h3>
-                        <p>Нормализация работы сальных желез и устранение перхоти</p>
-                    </div>
-
-                    <div class="kit-products">
-                        <h4>
-                            <span class="material-icons">layers</span>
-                            Состав набора:
-                        </h4>
-                        <div class="products-list">
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">clean_hands</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Шампунь OPTIMA</div>
-                                    <div class="product-size">250 мл</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">water_drop</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Лосьон-пилинг</div>
-                                    <div class="product-size">100 мл</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">spa</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Успокаивающая маска</div>
-                                    <div class="product-size">200 мл</div>
-                                </div>
-                            </div>
+                <!-- Цена и кнопка -->
+                <div class="kit-footer">
+                    <div class="pricing">
+                        <div class="price-info">
+                            <div class="old-price">150.00 руб.</div>
+                            <div class="new-price">129.00 руб.</div>
+                        </div>
+                        <div class="savings">
+                            <div>Экономия</div>
+                            <div class="savings-amount">21.00 руб.</div>
                         </div>
                     </div>
-
-                    <div class="kit-footer">
-                        <div class="pricing">
-                            <div class="price-info">
-                                <div class="old-price">240.00 руб.</div>
-                                <div class="new-price">192.00 руб.</div>
-                            </div>
-                            <div class="savings">
-                                <div>Экономия</div>
-                                <div class="savings-amount">48.00 руб.</div>
-                            </div>
-                        </div>
-                        <button class="btn-kit">
-                            <span class="material-icons">shopping_cart</span>
-                            <span class="btn-text">Добавить в корзину</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Набор 3 - Для роста волос -->
-                <div class="kit-card">
-                    <div class="discount-badge">🌸 Выгода 30%</div>
-                    
-                    <div class="kit-header">
-                        <div class="kit-icon">🌸</div>
-                        <h3>Пакет "Для роста волос"</h3>
-                        <p>Активация роста и пробуждение спящих волосяных фолликулов</p>
-                    </div>
-
-                    <div class="kit-products">
-                        <h4>
-                            <span class="material-icons">layers</span>
-                            Состав набора:
-                        </h4>
-                        <div class="products-list">
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">clean_hands</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Шампунь MONNALI</div>
-                                    <div class="product-size">250 мл</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">psychology</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Ампулы для роста</div>
-                                    <div class="product-size">10 шт × 5 мл</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-icon">
-                                    <span class="material-icons">auto_awesome</span>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Стимулирующая сыворотка</div>
-                                    <div class="product-size">60 мл</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="kit-footer">
-                        <div class="pricing">
-                            <div class="price-info">
-                                <div class="old-price">320.00 руб.</div>
-                                <div class="new-price">224.00 руб.</div>
-                            </div>
-                            <div class="savings">
-                                <div>Экономия</div>
-                                <div class="savings-amount">96.00 руб.</div>
-                            </div>
-                        </div>
-                        <button class="btn-kit">
-                            <span class="material-icons">shopping_cart</span>
-                            <span class="btn-text">Добавить в корзину</span>
-                        </button>
-                    </div>
+                    <button class="btn-kit">
+                        <span class="material-icons">shopping_cart</span>
+                        <span class="btn-text">Добавить в корзину</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Кнопка "Посмотреть все наборы" -->
-            <div class="kits-footer">
-                <button class="btn-view-all">
-                    <a href="nabory.html" style="text-decoration: none; color: var(--primary-color);"><span>Посмотреть все наборы</span></a>
-                    <span class="material-icons">arrow_forward</span>
-                </button>
+            <!-- Набор 2 - От себореи и перхоти -->
+            <div class="kit-card">
+                <div class="kit-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');">
+                    <div class="kit-badge">Lorem, ipsum.</div>
+                </div>
+                
+                <div class="kit-header">
+                    <h3>Пакет "От себореи и перхоти"</h3>
+                    <p>Нормализация работы сальных желез и устранение перхоти</p>
+                </div>
+
+                <div class="kit-products">
+                    <h4>
+                        <span class="material-icons">layers</span>
+                        Состав набора:
+                    </h4>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">39 BYN</div>
+                                <div class="price-old">50 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Маска от перхоти</div>
+                                <div class="product-size">250 мл</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Шампунь от перхоти</div>
+                                <div class="product-size">250 мл</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Лосьон от перхоти</div>
+                                <div class="product-size">100 мл</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kit-footer">
+                    <div class="pricing">
+                        <div class="price-info">
+                            <div class="old-price">240.00 руб.</div>
+                            <div class="new-price">192.00 руб.</div>
+                        </div>
+                        <div class="savings">
+                            <div>Экономия</div>
+                            <div class="savings-amount">48.00 руб.</div>
+                        </div>
+                    </div>
+                    <button class="btn-kit">
+                        <span class="material-icons">shopping_cart</span>
+                        <span class="btn-text">Добавить в корзину</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Набор 3 - Для роста волос -->
+            <div class="kit-card">
+                <div class="kit-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241');">
+                    <div class="kit-badge">Lorem, ipsum.</div>
+                </div>
+                
+                <div class="kit-header">
+                    <h3>Пакет "Для роста волос"</h3>
+                    <p>Активация роста и пробуждение спящих волосяных фолликулов</p>
+                </div>
+
+                <div class="kit-products">
+                    <h4>
+                        <span class="material-icons">layers</span>
+                        Состав набора:
+                    </h4>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">39 BYN</div>
+                                <div class="price-old">50 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Маска от перхоти</div>
+                                <div class="product-size">250 мл</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Шампунь от перхоти</div>
+                                <div class="product-size">250 мл</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <div class="price-new">45 BYN</div>
+                                <div class="price-old">80 BYN</div>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Лосьон от перхоти</div>
+                                <div class="product-size">100 мл</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kit-footer">
+                    <div class="pricing">
+                        <div class="price-info">
+                            <div class="old-price">320.00 руб.</div>
+                            <div class="new-price">224.00 руб.</div>
+                        </div>
+                        <div class="savings">
+                            <div>Экономия</div>
+                            <div class="savings-amount">96.00 руб.</div>
+                        </div>
+                    </div>
+                    <button class="btn-kit">
+                        <span class="material-icons">shopping_cart</span>
+                        <span class="btn-text">Добавить в корзину</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
 
-    <style>
-        /* ===== СТИЛИ БЛОКА ПАКЕТНЫХ РЕШЕНИЙ ===== */
+        <!-- Кнопка "Посмотреть все наборы" -->
+        <div class="kits-footer">
+            <button class="btn-view-all">
+                <a href="nabory.html" style="text-decoration: none; color: var(--primary-color);"><span>Посмотреть все наборы</span></a>
+                <span class="material-icons">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ===== СТИЛИ БЛОКА ПАКЕТНЫХ РЕШЕНИЙ ===== */
+    .kits-section {
+        padding: 80px 0;
+        background: var(--bg-primary);
+    }
+
+    .kits-header {
+        margin-bottom: 60px;
+    }
+
+    .kits-description {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 950px;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+
+    .kits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+        align-items: stretch;
+    }
+
+    .kit-card {
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+        transition: var(--transition);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .kit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-heavy);
+    }
+
+    /* ДОБАВЛЯЕМ КАРТИНКУ СВЕРХУ */
+    .kit-image {
+        height: 190px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Устанавливаем разные картинки для каждого набора */
+
+    /* БЕЙДЖ НА КАРТИНКЕ */
+    .kit-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: var(--text-white);
+        color: var(--primary-color);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        font-family: 'FuturaDemiC', Arial, sans-serif;
+    }
+
+    /* Разные надписи для каждого набора */
+    .kit-badge {
+        content: "НОВАЯ КОЛЛЕКЦИЯ";
+    }
+
+    .kit-header {
+        padding: 25px 25px 15px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-light);
+        flex-shrink: 0;
+    }
+
+    .kit-header h3 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .kit-header p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .kit-products {
+        padding: 20px 25px;
+        flex: 1;
+    }
+
+    .kit-products h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .products-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: var(--overlay-light);
+        border-radius: 10px;
+        transition: var(--transition);
+    }
+
+    .product-item:hover {
+        background: rgba(var(--primary-rgb), 0.1);
+    }
+
+    /* ЗАМЕНА ИКОНОК НА ПРЯМОУГОЛЬНИКИ С ЦЕНАМИ */
+    .product-icon {
+        width: 80px;
+        height: 50px;
+        background: var(--primary-color);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        padding: 4px;
+        position: relative;
+    }
+
+    .price-old {
+        font-size: 0.9rem;
+        color: #e0e0e0;
+        text-decoration: line-through;
+        line-height: 1;
+        font-weight: 500;
+    }
+
+    .price-new {
+        font-size: 1rem;
+        color: var(--text-white);
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .product-details {
+        flex: 1;
+    }
+
+    .product-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    .product-size {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        margin-top: 2px;
+    }
+
+    .kit-footer {
+        padding: 20px 25px 25px;
+        background: rgba(var(--primary-rgb), 0.03);
+        flex-shrink: 0;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .old-price {
+        font-size: 1rem;
+        color: var(--text-light);
+        text-decoration: line-through;
+        margin-bottom: 5px;
+    }
+
+    .new-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary-color);
+    }
+
+    .savings {
+        text-align: right;
+    }
+
+    .savings-amount {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--accent-color);
+    }
+
+    .btn-kit {
+        width: 100%;
+        background: var(--gradient-primary);
+        color: var(--text-white);
+        border: none;
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-kit:hover {
+        box-shadow: 
+            0 8px 20px rgba(var(--primary-rgb), 0.3),
+            0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-kit:active {
+        transform: scale(0.98);
+    }
+
+    .kits-footer {
+        text-align: center;
+    }
+
+    .btn-view-all {
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        padding: 15px 40px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-view-all:hover {
+        background: var(--primary-color);
+        color: var(--text-white);
+    }
+
+    /* ===== АДАПТИВНОСТЬ БЛОКА ПАКЕТНЫХ РЕШЕНИЙ ===== */
+    @media (max-width: 1024px) {
+        .kits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
         .kits-section {
-            padding: 80px 0;
-            background: var(--bg-primary);
-        }
-
-        .kits-header {
-            margin-bottom: 60px;
-        }
-
-        .kits-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 950px;
-            line-height: 1.6;
-            margin-top: 20px;
+            padding: 60px 0;
         }
 
         .kits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-            align-items: stretch; /* Выравниваем карточки по высоте */
-        }
-
-        .kit-card {
-            background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%; /* Занимаем всю доступную высоту */
-        }
-
-        /* ОСТАВЛЯЕМ анимацию наведения на карточку */
-        .kit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .discount-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, var(--accent-color), #f97316);
-            color: var(--text-white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 2;
-            box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        @media (max-width: 1024px) {
-            .discount-badge {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-                top: 15px;
-                right: 15px;
-            }
-        }
-
-        /* Уменьшаем бейдж на мобильных */
-        @media (max-width: 768px) {
-            .discount-badge {
-                padding: 5px 10px;
-                font-size: 0.8rem;
-                top: 12px;
-                right: 12px;
-                border-radius: 15px;
-            }
-        }
-
-        /* Еще меньше на очень маленьких экранах */
-        @media (max-width: 480px) {
-            .discount-badge {
-                padding: 4px 8px;
-                font-size: 0.75rem;
-                top: 10px;
-                right: 10px;
-                border-radius: 12px;
-            }
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .kit-header {
-            padding: 30px 30px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-light);
-            flex-shrink: 0; /* Фиксируем размер заголовка */
-        }
-
-        .kit-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .kit-header h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .kit-header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            padding: 20px 20px 15px;
         }
 
         .kit-products {
-            padding: 25px 30px;
-            flex: 1; /* Занимаем всё доступное пространство */
-        }
-
-        .kit-products h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .products-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .product-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            background: var(--overlay-light);
-            border-radius: 10px;
-            transition: var(--transition);
-        }
-
-        /* УБИРАЕМ трансформацию, оставляем только hover эффект */
-        .product-item:hover {
-            background: rgba(var(--primary-rgb), 0.1);
-            /* transform: translateX(5px); УБИРАЕМ */
-        }
-
-        .product-icon {
-            width: 30px;
-            height: 30px;
-            background: var(--primary-color);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .product-icon .material-icons {
-            color: var(--text-white);
-            font-size: 1rem;
-        }
-
-        .product-details {
-            flex: 1;
-        }
-
-        .product-name {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        .product-size {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
+            padding: 15px 20px;
         }
 
         .kit-footer {
-            padding: 20px 30px 30px;
-            background: rgba(var(--primary-rgb), 0.03);
-            flex-shrink: 0; /* Фиксируем размер футера */
+            padding: 15px 20px 20px;
         }
 
-        .pricing {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .old-price {
-            font-size: 1rem;
-            color: var(--text-light);
-            text-decoration: line-through;
-            margin-bottom: 5px;
+        .kit-header h3 {
+            font-size: 1.2rem;
         }
 
         .new-price {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
+            font-size: 1.6rem;
         }
 
-        .savings {
-            text-align: right;
+        .product-icon {
+            width: 70px;
+            height: 44px;
         }
 
-        .savings-amount {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
+        .price-old {
+            font-size: 0.8rem;
         }
 
-        /* ИСПРАВЛЕННЫЕ СТИЛИ КНОПКИ БЕЗ ПОДСКАКИВАНИЯ */
-        .btn-kit {
-            width: 100%;
-            background: var(--gradient-primary);
-            color: var(--text-white);
-            border: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-weight: 700;
+        .price-new {
+            font-size: 0.9rem;
+        }
+
+        .kit-badge {
+            font-size: 0.8rem;
+            padding: 6px 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .kits-header {
+            margin-bottom: 40px;
+        }
+
+        .kits-description {
             font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* УБИРАЕМ подскакивание кнопки при наведении */
-        .btn-kit:hover {
-            /* transform: translateY(-2px); УБИРАЕМ */
-            box-shadow: 
-                0 8px 20px rgba(var(--primary-rgb), 0.3),
-                0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Активное состояние (нажатие) */
-        .btn-kit:active {
-            transform: scale(0.98);
-        }
-
-        /* Состояние после добавления в корзину */
-        .btn-kit.added {
-            background: var(--success-color);
-        }
-
-        .kits-footer {
-            text-align: center;
+        .product-item {
+            padding: 10px;
         }
 
         .btn-view-all {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 15px 40px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            width: 100%;
+            justify-content: center;
         }
 
-        /* УБИРАЕМ подскакивание и для этой кнопки */
-        .btn-view-all:hover {
-            background: var(--primary-color);
-            color: var(--text-white);
-            /* transform: translateY(-2px); УБИРАЕМ */
+        .product-icon {
+            width: 65px;
+            height: 40px;
         }
 
-        /* ===== АДАПТИВНОСТЬ БЛОКА ПАКЕТНЫХ РЕШЕНИЙ ===== */
-        @media (max-width: 1024px) {
-            .kits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .price-old {
+            font-size: 0.75rem;
         }
 
-        @media (max-width: 768px) {
-            .kits-section {
-                padding: 60px 0;
-            }
-
-            .kits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .kit-header {
-                padding: 25px 25px 15px;
-            }
-
-            .kit-products {
-                padding: 20px 25px;
-            }
-
-            .kit-footer {
-                padding: 15px 25px 25px;
-            }
-
-            .kit-icon {
-                font-size: 2.5rem;
-            }
-
-            .kit-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .new-price {
-                font-size: 1.6rem;
-            }
+        .price-new {
+            font-size: 0.85rem;
         }
 
-        @media (max-width: 480px) {
-            .kits-header {
-                margin-bottom: 40px;
-            }
-
-            .kits-description {
-                font-size: 1rem;
-            }
-
-            .product-item {
-                padding: 8px;
-            }
-
-            .btn-view-all {
-                width: 100%;
-                justify-content: center;
-            }
+        .kit-badge {
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            top: 10px;
+            left: 10px;
         }
-        .btn-view-all:hover,
-        .btn-view-all:hover a,
-        .btn-view-all:hover span {
-            color: var(--text-white) !important;
-        }
-    </style>
+    }
+
+    .btn-view-all:hover,
+    .btn-view-all:hover a,
+    .btn-view-all:hover span {
+        color: var(--text-white) !important;
+    }
+</style>
 
 
 
