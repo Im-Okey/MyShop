@@ -2060,11 +2060,7 @@ body.cart-mobile-open {
 
 
 
-
-
-
 <style>
-    /* ===== ОБНОВЛЕННЫЕ CSS ПЕРЕМЕННЫЕ ===== */
 
     .container {
         max-width: 1400px;
@@ -2072,7 +2068,8 @@ body.cart-mobile-open {
         padding: 0 20px;
     }
 
-    .product-page {
+    /* ===== ОБЩИЕ СТИЛИ СТРАНИЦЫ НАБОРА ===== */
+    .kit-page {
         padding: 40px 0 80px;
     }
 
@@ -2118,7 +2115,7 @@ body.cart-mobile-open {
     }
 
     /* Основной контент */
-    .product-layout {
+    .kit-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
@@ -2126,8 +2123,8 @@ body.cart-mobile-open {
         align-items: start;
     }
 
-    /* Галерея - ВЫСОТА КАК У ПРАВОГО БЛОКА */
-    .product-gallery {
+    /* Галерея */
+    .kit-gallery {
         height: fit-content;
     }
 
@@ -2141,7 +2138,6 @@ body.cart-mobile-open {
         justify-content: center;
         box-shadow: var(--shadow-light);
         border: 1px solid var(--border-light);
-        /* Высота рассчитывается автоматически под контент */
         min-height: 590px;
     }
 
@@ -2188,82 +2184,72 @@ body.cart-mobile-open {
         padding: 15px;
     }
 
-    /* Информация о товаре */
-    .product-info {
+    /* Информация о наборе */
+    .kit-info {
         padding: 20px 0;
         height: 100%;
     }
 
-    .product-brand {
-        font-size: 0.9rem;
-        color: var(--text-light);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        font-weight: 500;
+    .kit-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
     }
 
-    .product-title {
+    .kit-title {
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 1.2;
-        margin-bottom: 20px;
         color: var(--text-primary);
+        flex: 1;
+        margin-right: 20px;
     }
 
-    .product-description {
+    .kit-badge {
+        background: var(--accent-color);
+        color: var(--text-white);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        flex-shrink: 0;
+    }
+
+    .kit-description {
         font-size: 1.1rem;
         line-height: 1.6;
         color: var(--text-secondary);
         margin-bottom: 25px;
     }
 
-    /* ХАРАКТЕРИСТИКИ В ВЕРХНЕМ БЛОКЕ */
-    .product-specs-compact {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        margin-bottom: 25px;
-        padding: 20px;
+    /* Блок выгоды */
+    .kit-savings {
         background: var(--bg-tertiary);
         border-radius: var(--border-radius);
+        padding: 20px;
+        margin-bottom: 25px;
         border: 1px solid var(--border-light);
-    }
-
-    .spec-item-compact {
         display: flex;
-        flex-direction: column;
-        gap: 5px;
-        min-height: 50px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .spec-name-compact {
-        font-size: 0.8rem;
-        color: var(--text-light);
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        line-height: 1.3;
+    .savings-text {
+        font-size: 1rem;
+        color: var(--text-secondary);
     }
 
-    .spec-value-compact {
-        font-size: 0.95rem;
-        color: var(--text-primary);
-        font-weight: 600;
-        line-height: 1.4;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        display: flex;
-        align-items: flex-start;
+    .savings-amount {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--accent-color);
     }
 
-    .spec-value-compact.long-text {
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
-
-    /* Цена НА СТРАНИЦЕ ТОВАРА */
-    .product-pricing {
+    /* Цена */
+    .kit-pricing {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -2283,7 +2269,7 @@ body.cart-mobile-open {
     }
 
     /* Блок кнопок */
-    .product-actions {
+    .kit-actions {
         display: flex;
         gap: 15px;
         margin-bottom: 40px;
@@ -2338,8 +2324,87 @@ body.cart-mobile-open {
         color: var(--text-white);
     }
 
+    /* Состав набора */
+    .kit-composition {
+        margin-bottom: 30px;
+    }
+
+    .composition-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+    }
+
+    .products-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: var(--bg-secondary);
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+        border: 1px solid var(--border-light);
+    }
+
+    .product-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-light);
+    }
+
+    .product-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-white);
+        flex-shrink: 0;
+    }
+
+    .product-details {
+        flex: 1;
+    }
+
+    .product-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 5px;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.4;
+    }
+
+    .product-price {
+        text-align: right;
+        min-width: 80px;
+    }
+
+    .product-original-price {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        text-decoration: line-through;
+    }
+
+    .product-current-price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
     /* Преимущества */
-    .product-features {
+    .kit-features {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -2369,7 +2434,7 @@ body.cart-mobile-open {
     }
 
     /* ОСНОВНАЯ ИНФОРМАЦИЯ */
-    .product-main-info {
+    .kit-main-info {
         background: var(--bg-secondary);
         border-radius: 16px;
         padding: 40px;
@@ -2414,7 +2479,7 @@ body.cart-mobile-open {
     }
 
     /* СПОСОБ ПРИМЕНЕНИЯ */
-    .product-usage {
+    .kit-usage {
         background: var(--bg-secondary);
         border-radius: 16px;
         padding: 40px;
@@ -2433,8 +2498,8 @@ body.cart-mobile-open {
         line-height: 1.8;
     }
 
-    /* ПОХОЖИЕ ТОВАРЫ - СЛАЙДЕР */
-    .related-products {
+    /* ПОХОЖИЕ НАБОРЫ - СЛАЙДЕР */
+    .related-kits {
         margin-top: 60px;
     }
 
@@ -2465,11 +2530,11 @@ body.cart-mobile-open {
         gap: 12px;
     }
 
-    .products-slider {
+    .kits-slider {
         position: relative;
     }
 
-    .products-container {
+    .kits-container {
         display: flex;
         gap: 25px;
         overflow-x: auto;
@@ -2480,7 +2545,7 @@ body.cart-mobile-open {
         margin: -10px -5px;
     }
 
-    .products-container::-webkit-scrollbar {
+    .kits-container::-webkit-scrollbar {
         display: none;
     }
 
@@ -2494,7 +2559,7 @@ body.cart-mobile-open {
         background: var(--bg-secondary);
         border-radius: 16px;
         overflow: hidden;
-        transition: all 0.5s ease; /* Добавляем плавный переход для всех свойств */
+        transition: all 0.5s ease;
         border: 1px solid var(--border-light);
         box-shadow: var(--shadow-light);
         position: relative;
@@ -2503,13 +2568,12 @@ body.cart-mobile-open {
         flex-direction: column;
     }
 
-
     .product-card:hover .product-card-inner {
         transform: translateY(-5px);
         box-shadow: var(--shadow-medium);
     }
 
-    /* КНОПКА ИЗБРАННОГО - ПОЯВЛЯЕТСЯ ТОЛЬКО ПРИ НАВЕДЕНИИ ИЛИ ЕСЛИ АКТИВНА */
+    /* КНОПКА ИЗБРАННОГО */
     .card-favorite-btn {
         position: absolute;
         top: 15px;
@@ -2529,7 +2593,6 @@ body.cart-mobile-open {
         opacity: 0;
     }
 
-    /* Всегда показываем если активна */
     .card-favorite-btn.active {
         opacity: 1;
         background: var(--primary-color);
@@ -2537,7 +2600,6 @@ body.cart-mobile-open {
         color: var(--text-white);
     }
 
-    /* Показываем при наведении на карточку */
     .product-card:hover .card-favorite-btn {
         opacity: 1;
     }
@@ -2592,24 +2654,54 @@ body.cart-mobile-open {
         flex-grow: 1;
     }
 
-    /* ЦЕНА В КАРТОЧКАХ - УНИКАЛЬНЫЕ КЛАССЫ */
-    .card-pricing {
+    /* БЕЙДЖИ */
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        z-index: 2;
+    }
+
+    .badge-sale {
+        background: var(--accent-color);
+        color: var(--text-white);
+    }
+
+    .badge-new {
+        background: var(--success-color);
+        color: var(--text-white);
+    }
+
+    .badge-hit {
+        background: var(--error-color);
+        color: var(--text-white);
+    }
+
+    /* ЦЕНА В КАРТОЧКАХ */
+    .related-product-price {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin-bottom: 15px;
     }
 
-    .card-current-price {
+    .related-current-price {
         font-size: 1.2rem;
         font-weight: 700;
         color: var(--primary-color);
-        display: block;
     }
 
-    .card-old-price {
-        font-size: 0.9rem;
+    .related-old-price {
+        font-size: 1rem;
+        margin-bottom: 10px;
         color: var(--text-light);
         text-decoration: line-through;
-        display: block;
-        margin-top: 2px;
     }
 
     .card-actions {
@@ -2641,42 +2733,18 @@ body.cart-mobile-open {
         background: var(--primary-dark);
     }
 
-    /* БЕЙДЖИ */
-    .product-badge {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        z-index: 2;
-    }
-
-    .badge-sale {
-        background: var(--accent-color);
-        color: var(--text-white);
-    }
-
-    .badge-new {
-        background: var(--success-color);
-        color: var(--text-white);
-    }
-
-    .badge-hit {
-        background: var(--error-color);
-        color: var(--text-white);
+    /* Скрываем view-all-link на десктопе */
+    .view-all-link.desktop-only {
+        display: none;
     }
 
     /* Адаптивность */
     @media (max-width: 1024px) {
-        .product-layout {
+        .kit-layout {
             gap: 40px;
         }
         
-        .product-title {
+        .kit-title {
             font-size: 1.8rem;
         }
         
@@ -2690,13 +2758,23 @@ body.cart-mobile-open {
     }
 
     @media (max-width: 768px) {
-        .product-layout {
+        .kit-layout {
             grid-template-columns: 1fr;
             gap: 30px;
         }
         
-        /* НА ТЕЛЕФОНЕ КНОПКА ИЗБРАННОГО СПРАВА */
-        .product-actions {
+        .kit-header {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .kit-title {
+            margin-right: 0;
+            font-size: 1.5rem;
+        }
+        
+        .kit-actions {
             flex-direction: row;
         }
         
@@ -2705,17 +2783,12 @@ body.cart-mobile-open {
             flex-shrink: 0;
         }
         
-        .product-features {
+        .kit-features {
             grid-template-columns: 1fr;
         }
         
-        .product-specs-compact {
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        
-        .product-main-info,
-        .product-usage {
+        .kit-main-info,
+        .kit-usage {
             padding: 25px;
         }
         
@@ -2724,7 +2797,7 @@ body.cart-mobile-open {
             min-width: 280px;
         }
         
-        .products-container {
+        .kits-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -2736,7 +2809,7 @@ body.cart-mobile-open {
     }
 
     @media (max-width: 480px) {
-        .product-page {
+        .kit-page {
             padding: 20px 0 40px;
         }
         
@@ -2744,26 +2817,10 @@ body.cart-mobile-open {
             padding: 0 15px;
         }
         
-        .product-title {
-            font-size: 1.5rem;
-        }
-        
         .current-price {
             font-size: 1.8rem;
         }
         
-        .product-specs-compact {
-            padding: 15px;
-        }
-        
-        .spec-name-compact {
-            font-size: 0.75rem;
-        }
-        
-        .spec-value-compact {
-            font-size: 0.9rem;
-        }
-
         .gallery-main {
             min-height: 300px;
         }
@@ -2771,64 +2828,19 @@ body.cart-mobile-open {
         .main-image {
             padding: 20px;
         }
+        
+        .product-item {
+            padding: 12px;
+        }
+        
+        .product-icon {
+            width: 50px;
+            height: 50px;
+        }
     }
-
-    /* Скрываем view-all-link на десктопе */
-    .view-all-link.desktop-only {
-        display: none;
-    }
-    .related-product-price {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .related-current-price {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--primary-color);
-    }
-
-    .related-old-price {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        color: var(--text-light);
-        text-decoration: line-through;
-    }
-
-    /* Убираем старые стили цен в карточках */
-    .card-pricing {
-        display: none;
-    }
-
-    .card-current-price,
-    .card-old-price {
-        display: none;
-    }
-
-    .kit-description,
-    .info-content,
-    .usage-content,
-    .product-description {
-        text-align: justify;
-        text-justify: inter-word;
-        hyphens: auto;
-    }
-
-    /* Для лучшего переноса слов в русском языке */
-    .kit-description p,
-    .info-content p,
-    .usage-content p,
-    .product-description {
-        word-break: break-word;
-        line-height: 1.7;
-    }
-
 </style>
 
-
-<section class="product-page">
+<section class="kit-page">
     <div class="container">
         <!-- Хлебные крошки -->
         <nav class="breadcrumbs">
@@ -2840,18 +2852,18 @@ body.cart-mobile-open {
                     <a href="/catalog" class="breadcrumbs-link">Каталог</a>
                 </li>
                 <li class="breadcrumbs-item">
-                    <span class="breadcrumbs-current">Шампунь для роста волос</span>
+                    <span class="breadcrumbs-current">Набор для роста волос "PROFESSIONAL CARE"</span>
                 </li>
             </ul>
         </nav>
 
         <!-- Основной контент -->
-        <div class="product-layout">
-            <!-- Галерея - ВЫСОТА ПОДСТРАИВАЕТСЯ ПОД ПРАВЫЙ БЛОК -->
-            <div class="product-gallery">
+        <div class="kit-layout">
+            <!-- Галерея -->
+            <div class="kit-gallery">
                 <div class="gallery-main">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" 
-                            alt="Шампунь для роста волос OPTIMA" 
+                            alt="Набор для роста волос PROFESSIONAL CARE" 
                             class="main-image">
                 </div>
                 <div class="gallery-thumbs">
@@ -2870,52 +2882,32 @@ body.cart-mobile-open {
                 </div>
             </div>
 
-            <!-- Информация о товаре -->
-            <div class="product-info">
-                <div class="product-brand">OPTIMA</div>
-                <h1 class="product-title">Шампунь для стимуляции роста волос с экстрактом красного перца</h1>
+            <!-- Информация о наборе -->
+            <div class="kit-info">
+                <div class="kit-header">
+                    <h1 class="kit-title">Набор для роста волос "PROFESSIONAL CARE"</h1>
+                    <div class="kit-badge">Выгода 25%</div>
+                </div>
                 
-                <p class="product-description">
-                    Профессиональный шампунь для интенсивной стимуляции роста волос. Укрепляет волосяные фолликулы, 
-                    пробуждает спящие луковицы и предотвращает выпадение.
+                <p class="kit-description">
+                    Комплексное решение для интенсивной стимуляции роста волос. Набор создан трихологами 
+                    для максимального эффекта и включает все необходимое для восстановления и укрепления волос.
                 </p>
 
-                <!-- ХАРАКТЕРИСТИКИ -->
-                <div class="product-specs-compact">
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Категория</span>
-                        <span class="spec-value-compact">Шампуни</span>
-                    </div>
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Производитель</span>
-                        <span class="spec-value-compact">OPTIMA</span>
-                    </div>
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Назначение</span>
-                        <span class="spec-value-compact long-text">Для стимуляции роста волос, От выпадения волос</span>
-                    </div>
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Объём</span>
-                        <span class="spec-value-compact">250 мл / 500 мл / 1000 мл</span>
-                    </div>
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Артикул</span>
-                        <span class="spec-value-compact">№12345678912345</span>
-                    </div>
-                    <div class="spec-item-compact">
-                        <span class="spec-name-compact">Страна производства</span>
-                        <span class="spec-value-compact">Италия</span>
-                    </div>
+                <!-- Блок выгоды -->
+                <div class="kit-savings">
+                    <div class="savings-text">Ваша экономия при покупке набора:</div>
+                    <div class="savings-amount">71.00 руб.</div>
                 </div>
 
                 <!-- Цена -->
-                <div class="product-pricing">
-                    <div class="current-price">45.00 руб.</div>
-                    <div class="old-price">56.00 руб.</div>
+                <div class="kit-pricing">
+                    <div class="current-price">214.00 руб.</div>
+                    <div class="old-price">285.00 руб.</div>
                 </div>
 
                 <!-- Кнопки -->
-                <div class="product-actions">
+                <div class="kit-actions">
                     <button class="btn-add-to-cart" id="addToCart">
                         <span class="material-icons">shopping_cart</span>
                         Добавить в корзину
@@ -2925,8 +2917,54 @@ body.cart-mobile-open {
                     </button>
                 </div>
 
+                <!-- Состав набора -->
+                <div class="kit-composition">
+                    <h3 class="composition-title">Состав набора:</h3>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <span class="material-icons">clean_hands</span>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Шампунь укрепляющий OPTIMA</div>
+                                <div class="product-description">250 мл. Укрепляет волосяные фолликулы и стимулирует рост</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="product-original-price">50.00 руб.</div>
+                                <div class="product-current-price">39.00 руб.</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <span class="material-icons">science</span>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Сыворотка-активатор роста</div>
+                                <div class="product-description">50 мл. Интенсивно питает и пробуждает спящие луковицы</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="product-original-price">80.00 руб.</div>
+                                <div class="product-current-price">45.00 руб.</div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">
+                                <span class="material-icons">spa</span>
+                            </div>
+                            <div class="product-details">
+                                <div class="product-name">Укрепляющая маска DSD de Luxe</div>
+                                <div class="product-description">200 мл. Восстанавливает структуру и предотвращает выпадение</div>
+                            </div>
+                            <div class="product-price">
+                                <div class="product-original-price">80.00 руб.</div>
+                                <div class="product-current-price">45.00 руб.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Преимущества -->
-                <div class="product-features">
+                <div class="kit-features">
                     <div class="feature-item">
                         <div class="feature-icon">
                             <span class="material-icons">local_shipping</span>
@@ -2956,40 +2994,43 @@ body.cart-mobile-open {
         </div>
 
         <!-- ОСНОВНАЯ ИНФОРМАЦИЯ -->
-        <div class="product-main-info">
+        <div class="kit-main-info">
             <div class="info-section">
-                <h3 class="info-title">Описание продукта</h3>
+                <h3 class="info-title">Описание набора</h3>
                 <div class="info-content">
-                    <p>Шампунь OPTIMA для стимуляции роста волос — это инновационная формула, разработанная с участием ведущих трихологов для комплексного решения проблемы медленного роста, выпадения и ослабления волос.</p>
+                    <p>Набор "PROFESSIONAL CARE" для роста волос — это комплексное решение, разработанное ведущими трихологами для интенсивной стимуляции роста, укрепления и восстановления волос. Каждое средство в наборе дополняет действие других, создавая синергетический эффект и обеспечивая максимальный результат.</p>
                     
-                    <p>Средство содержит уникальный запатентованный комплекс активных компонентов, которые работают на клеточном уровне, укрепляя волосяные фолликулы, стимулируя кровообращение в коже головы и создавая оптимальные условия для здорового роста волос.</p>
+                    <p>Набор создан для тех, кто столкнулся с проблемой медленного роста, выпадения и ослабления волос. Все продукты подобраны таким образом, чтобы воздействовать на проблему комплексно: от очищения и подготовки кожи головы до глубокого питания и защиты волосяных фолликулов.</p>
 
-                    <p><strong>Основные преимущества и особенности:</strong></p>
+                    <p><strong>Преимущества использования набора:</strong></p>
                     <ul>
-                        <li>Значительно усиливает микроциркуляцию крови в коже головы благодаря экстракту красного перца и никотиновой кислоте</li>
-                        <li>Эффективно пробуждает спящие волосяные фолликулы и активизирует фазу активного роста (анаген)</li>
-                        <li>Укрепляет корни волос, снижает выпадение и предотвращает ломкость по всей длине</li>
-                        <li>Создает оптимальные условия для роста новых здоровых и сильных волос</li>
-                        <li>Подходит для ежедневного использования, не утяжеляет волосы и не вызывает привыкания</li>
+                        <li>Экономия до 25% по сравнению с покупкой продуктов по отдельности</li>
+                        <li>Все средства идеально сочетаются между собой и усиливают действие друг друга</li>
+                        <li>Профессиональный подбор продуктов для решения конкретной проблемы</li>
+                        <li>Удобство использования - все необходимое в одной упаковке</li>
+                        <li>Оптимальная последовательность применения для максимального эффекта</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- СПОСОБ ПРИМЕНЕНИЯ -->
-        <div class="product-usage">
+        <div class="kit-usage">
             <h3 class="info-title">Способ применения и рекомендации</h3>
             <div class="usage-content">
-                <p>Нанесите небольшое количество шампуня на влажные волосы, распределите по всей длине, особое внимание уделяя коже головы. Тщательно вспеньте массажными движениями и массируйте кожу головы в течение 2-3 минут для усиления кровообращения и лучшего проникновения активных компонентов.</p>
+                <p><strong>Рекомендуемая схема применения:</strong></p>
+                <p>1. <strong>Шампунь укрепляющий OPTIMA:</strong> Нанесите на влажные волосы, вспеньте и массируйте кожу головы 2-3 минуты. Смойте теплой водой. Используйте 2-3 раза в неделю.</p>
                 
-                <p>Оставьте шампунь на 1-2 минуты для усиления терапевтического эффекта, затем тщательно смойте большим количеством теплой проточной воды. При сильном выпадении рекомендуется оставлять средство на 3-5 минут для более глубокого воздействия.</p>
+                <p>2. <strong>Сыворотка-активатор роста:</strong> На чистую сухую кожу головы нанесите небольшое количество сыворотки, распределяя по проборам. Легко помассируйте до полного впитывания. Не смывать. Применяйте ежедневно вечером.</p>
                 
-                <p><strong>Рекомендации по использованию:</strong> Для достижения видимых результатов используйте шампунь 2-3 раза в неделю на протяжении минимум 2-3 месяцев. Для профилактики достаточно использования 1-2 раза в неделю. Для усиления эффекта рекомендуется комплексное применение с сывороткой для роста волос OPTIMA и тоником для кожи головы.</p>
+                <p>3. <strong>Укрепляющая маска DSD de Luxe:</strong> После шампуня нанесите на влажные волосы по всей длине, особое внимание уделяя корням. Оставьте на 5-7 минут, затем тщательно смойте. Используйте 1-2 раза в неделю вместо кондиционера.</p>
+                
+                <p><strong>Курс применения:</strong> Для достижения видимых результатов рекомендуется использовать набор непрерывно в течение 2-3 месяцев. Первые улучшения обычно заметны через 4-6 недель регулярного применения.</p>
             </div>
         </div>
 
-        <!-- ПОХОЖИЕ ТОВАРЫ - 4 КАРТОЧКИ -->
-        <div class="related-products">
+        <!-- ПОХОЖИЕ НАБОРЫ - 4 КАРТОЧКИ -->
+        <div class="related-kits">
             <div class="section-header">
                 <h2 class="section-title">Вам может понравиться</h2>
                 <a href="/catalog" class="view-all-link desktop-only">
@@ -2998,9 +3039,9 @@ body.cart-mobile-open {
                 </a>
             </div>
             
-            <div class="products-slider">
-                <div class="products-container">
-                    <!-- Товар 1 -->
+            <div class="kits-slider">
+                <div class="kits-container">
+                    <!-- Набор 1 -->
                     <div class="product-card">
                         <div class="product-card-inner">
                             <button class="card-favorite-btn">
@@ -3008,15 +3049,15 @@ body.cart-mobile-open {
                             </button>
                             <div class="product-badge badge-sale">-20%</div>
                             <div class="card-image">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Сыворотка для роста">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Набор от себореи">
                             </div>
                             <div class="card-content">
-                                <div class="card-brand">MONNALI</div>
-                                <h3 class="card-title">Сыворотка для интенсивного роста волос</h3>
+                                <div class="card-brand">PROFESSIONAL CARE</div>
+                                <h3 class="card-title">Набор "От себореи и перхоти"</h3>
                                 <!-- ОБНОВЛЕННАЯ СТРУКТУРА ЦЕН -->
                                 <div class="related-product-price">
-                                    <span class="related-current-price">68.00 руб.</span>
-                                    <span class="related-old-price">85.00 руб.</span>
+                                    <span class="related-current-price">192.00 руб.</span>
+                                    <span class="related-old-price">240.00 руб.</span>
                                 </div>
                                 <div class="card-actions">
                                     <button class="card-btn card-btn-primary">
@@ -3028,7 +3069,7 @@ body.cart-mobile-open {
                         </div>
                     </div>
                     
-                    <!-- Товар 2 -->
+                    <!-- Набор 2 -->
                     <div class="product-card">
                         <div class="product-card-inner">
                             <button class="card-favorite-btn">
@@ -3036,14 +3077,14 @@ body.cart-mobile-open {
                             </button>
                             <div class="product-badge badge-new">NEW</div>
                             <div class="card-image">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Маска укрепляющая">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Набор для объема">
                             </div>
                             <div class="card-content">
-                                <div class="card-brand">DSD de Luxe</div>
-                                <h3 class="card-title">Укрепляющая маска против выпадения</h3>
+                                <div class="card-brand">PROFESSIONAL CARE</div>
+                                <h3 class="card-title">Набор "Для объема и густоты"</h3>
                                 <!-- ОБНОВЛЕННАЯ СТРУКТУРА ЦЕН -->
                                 <div class="related-product-price">
-                                    <span class="related-current-price">52.00 руб.</span>
+                                    <span class="related-current-price">224.00 руб.</span>
                                 </div>
                                 <div class="card-actions">
                                     <button class="card-btn card-btn-primary">
@@ -3055,7 +3096,7 @@ body.cart-mobile-open {
                         </div>
                     </div>
                     
-                    <!-- Товар 3 -->
+                    <!-- Набор 3 -->
                     <div class="product-card">
                         <div class="product-card-inner">
                             <button class="card-favorite-btn active">
@@ -3063,14 +3104,14 @@ body.cart-mobile-open {
                             </button>
                             <div class="product-badge badge-hit">ХИТ</div>
                             <div class="card-image">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Лосьон активатор">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Набор для увлажнения">
                             </div>
                             <div class="card-content">
-                                <div class="card-brand">OPTIMA</div>
-                                <h3 class="card-title">Лосьон-активатор роста для волос</h3>
+                                <div class="card-brand">PROFESSIONAL CARE</div>
+                                <h3 class="card-title">Набор "Интенсивное увлажнение"</h3>
                                 <!-- ОБНОВЛЕННАЯ СТРУКТУРА ЦЕН -->
                                 <div class="related-product-price">
-                                    <span class="related-current-price">78.00 руб.</span>
+                                    <span class="related-current-price">207.00 руб.</span>
                                 </div>
                                 <div class="card-actions">
                                     <button class="card-btn card-btn-primary">
@@ -3082,7 +3123,7 @@ body.cart-mobile-open {
                         </div>
                     </div>
 
-                    <!-- Товар 4 -->
+                    <!-- Набор 4 -->
                     <div class="product-card">
                         <div class="product-card-inner">
                             <button class="card-favorite-btn">
@@ -3090,15 +3131,15 @@ body.cart-mobile-open {
                             </button>
                             <div class="product-badge badge-sale">-15%</div>
                             <div class="card-image">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Шампунь объем">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NOPHOTO.svg/1024px-NOPHOTO.svg.png?20210118073241" alt="Набор полный уход">
                             </div>
                             <div class="card-content">
-                                <div class="card-brand">FABAO</div>
-                                <h3 class="card-title">Шампунь для объема и блеска</h3>
+                                <div class="card-brand">PROFESSIONAL CARE</div>
+                                <h3 class="card-title">Набор "Полный уход премиум"</h3>
                                 <!-- ОБНОВЛЕННАЯ СТРУКТУРА ЦЕН -->
                                 <div class="related-product-price">
-                                    <span class="related-current-price">42.00 руб.</span>
-                                    <span class="related-old-price">49.00 руб.</span>
+                                    <span class="related-current-price">273.00 руб.</span>
+                                    <span class="related-old-price">420.00 руб.</span>
                                 </div>
                                 <div class="card-actions">
                                     <button class="card-btn card-btn-primary">
@@ -3150,7 +3191,7 @@ body.cart-mobile-open {
             });
         });
 
-        // Избранное для карточек похожих товаров
+        // Избранное для карточек похожих наборов
         const cardFavoriteBtns = document.querySelectorAll('.card-favorite-btn');
         cardFavoriteBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -3160,7 +3201,7 @@ body.cart-mobile-open {
             });
         });
 
-        // Добавление в корзину для похожих товаров
+        // Добавление в корзину для похожих наборов
         const cardAddToCartBtns = document.querySelectorAll('.card-btn-primary');
         cardAddToCartBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -3176,6 +3217,7 @@ body.cart-mobile-open {
         });
     });
 </script>
+
 
 
 
