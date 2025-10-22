@@ -25,8 +25,11 @@
             <!-- Логотип -->
             <a href="index.html" style="text-decoration: none;">
                 <div class="logo">
-                    <div class="logo-icon">H</div>
-                    <span class="logo-text">Название</span>
+                    <div class="logo-icon">
+                        <!-- Замените URL на путь к вашему логотипу -->
+                        <img src="img/photo_2025-10-22_15-35-44.jpg" alt="Логотип СИЛА ВОЛОС" style="width: 40px;">
+                    </div>
+                    <span class="logo-text">СИЛА ВОЛОС</span>
                 </div>
             </a>
             
@@ -290,13 +293,14 @@
             <div class="container">
                 <div class="hero-content-wrapper">
                     <h1 class="hero-title">Профессиональная лечебная косметика для здоровья ваших волос</h1>
-                    <p class="hero-subtitle">Подберите эффективные средства от выпадения, перхоти и себореи, созданные для восстановления и укрепления волос. Мы работаем только с ведущими мировыми брендами</p>
-                    <p class="hero-emphasis">Мы решаем ваши проблемы, а не продаем косметику!</p>
+                    <p class="hero-subtitle">Подберите эффективный уход от выпадения, перхоти и раздражения кожи головы. Мы решаем ваши проблемы, а не просто продаём косметику.</p>
+         
+                    <p class="hero-emphasis">Здоровые волосы — это не мечта. Это результат правильного ухода.</p>
                     <div class="hero-buttons">
                         <a href="catalog.html">
                             <button class="action-btn action-btn--primary">
                                 <span class="material-icons action-btn__icon">local_offer</span>
-                                <span>Перейти в каталог</span>
+                                <span>Посмотреть каталог</span>
                             </button>
                         </a>
                         <button class="action-btn action-btn--secondary">
@@ -781,6 +785,437 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+<!-- Добавьте этот код после существующих секций -->
+<section class="problems-section">
+    <div class="container">
+        <!-- Заголовок и описание в стиле пакетных решений -->
+        <div class="problems-header kits-header">
+            <h2 class="section-title">Подберите решение именно под свою проблему</h2>
+            <p class="problems-description kits-description">
+                Мы собрали для вас косметику, которая работает: без обещаний — с результатом.
+            </p>
+        </div>
+
+        <div class="problems-grid">
+            <!-- Карточка 1 -->
+            <div class="problem-card">
+                <div class="card-icon">
+                    <span class="material-icons">psychology</span>
+                </div>
+                <h3 class="card-title">Выпадение волос</h3>
+                <p class="card-description">Верните густоту и уверенность. Активируйте спящие фолликулы.</p>
+                <div class="card-action-hint">
+                    <span class="hint-text">Подобрать</span>
+                    <span class="hint-arrow material-icons">chevron_right</span>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="problem-card">
+                <div class="card-icon">
+                    <span class="material-icons">mood_bad</span>
+                </div>
+                <h3 class="card-title">Перхоть и себорея</h3>
+                <p class="card-description">Успокойте кожу головы и избавьтесь от зуда уже после первых применений.</p>
+                <div class="card-action-hint">
+                    <span class="hint-text">Подобрать</span>
+                    <span class="hint-arrow material-icons">chevron_right</span>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="problem-card">
+                <div class="card-icon">
+                    <span class="material-icons">content_cut</span>
+                </div>
+                <h3 class="card-title">Повреждённые волосы</h3>
+                <p class="card-description">Восстановите структуру, блеск и эластичность. Волосы снова живые.</p>
+                <div class="card-action-hint">
+                    <span class="hint-text">Подобрать</span>
+                    <span class="hint-arrow material-icons">chevron_right</span>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="problem-card">
+                <div class="card-icon">
+                    <span class="material-icons">spa</span>
+                </div>
+                <h3 class="card-title">Уход и профилактика</h3>
+                <p class="card-description">Поддерживайте здоровье волос между курсами — мягкий уход каждый день.</p>
+                <div class="card-action-hint">
+                    <span class="hint-text">Подобрать</span>
+                    <span class="hint-arrow material-icons">chevron_right</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="problems-cta">
+            <a href="#" class="btn btn-primary cta-button">
+                <span class="material-icons">search</span>
+                Подобрать средства сейчас
+            </a>
+            <p class="cta-micro">Это займёт не больше минуты</p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* ===== СТИЛИ БЛОКА "КАКАЯ У ВАС ЗАДАЧА?" ===== */
+.problems-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.problems-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+}
+
+/* Заголовок в стиле пакетных решений */
+.problems-header {
+    margin-bottom: 60px;
+}
+
+.problems-header .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    white-space: normal;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.problems-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 950px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.problem-card {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 40px 30px 30px; /* Больше места снизу для подсказки */
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.problem-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--bg-tertiary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: var(--transition);
+}
+
+.problem-card:hover .card-icon {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.card-icon .material-icons {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.problem-card:hover .card-icon .material-icons {
+    color: var(--text-white);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.card-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-size: 1rem;
+}
+
+/* Стили для подсказки действия */
+.card-action-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    opacity: 0.9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hint-text {
+    transition: transform 0.3s ease;
+}
+
+.hint-arrow {
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+}
+
+/* Анимация разъезжания стрелочки при наведении на ПК */
+@media (hover: hover) {
+    .problem-card:hover .card-action-hint {
+        gap: 12px;
+    }
+    
+    .problem-card:hover .hint-arrow {
+        transform: translateX(4px);
+        color: var(--primary-dark);
+    }
+    
+    .problem-card:hover .hint-text {
+        transform: translateX(-2px);
+    }
+}
+
+/* На мобильных делаем более выраженным */
+@media (max-width: 768px) {
+    .problem-card {
+        border: 2px solid var(--primary-light);
+        background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+        padding: 30px 20px 50px;
+    }
+    
+    .card-action-hint {
+        background: var(--primary-color);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        box-shadow: var(--shadow-light);
+    }
+    
+    .problem-card:active {
+        transform: scale(0.98);
+        background: var(--bg-tertiary);
+    }
+    
+    .problem-card:active .card-action-hint {
+        background: var(--primary-dark);
+    }
+}
+
+.problems-cta {
+    text-align: center;
+}
+
+.cta-button {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-micro {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .problems-header .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .problems-section {
+        padding: 60px 0;
+    }
+    
+    .problems-header {
+        margin-bottom: 40px;
+    }
+    
+    .problems-header .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .problems-description {
+        font-size: 1rem;
+    }
+    
+    .problems-grid {
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .problem-card {
+        padding: 30px 20px 50px;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .card-icon .material-icons {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .problems-section {
+        padding: 40px 0;
+    }
+    
+    .problems-header .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .problems-description {
+        font-size: 0.95rem;
+    }
+    
+    .problems-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .card-action-hint {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Анимация появления карточек при скролле
+    const problemCards = document.querySelectorAll('.problem-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    problemCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+    
+    // Обработка клика по карточкам
+    problemCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const title = this.querySelector('.card-title').textContent;
+            console.log(`Выбрана проблема: ${title}`);
+            // Здесь можно добавить логику перехода к подбору средств
+        });
+    });
+    
+    // Обработка CTA кнопки
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Здесь можно добавить логику открытия формы подбора средств
+            console.log('Открытие формы подбора средств');
+        });
+    }
+});
+</script>
+
 
 
 
